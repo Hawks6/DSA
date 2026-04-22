@@ -7,8 +7,8 @@ We're transforming a static "day-based" checklist into a topic-centric, premium 
 ## Phases
 
 - [x] **Phase 1: Foundation (UI & Design System)** - Establish the premium typography, grid, and responsive layout. (completed 2026-04-22)
-- [ ] **Phase 2: Data Layer (The Curriculum JSON)** - Define the schema and migrate existing content into a topic-centric structure.
-- [ ] **Phase 3: State Engine (Tracking & Persistence)** - Implement `localStorage` logic for problem status and progress bars.
+- [x] **Phase 2: Data Layer (The Curriculum JSON)** - Define the schema and migrate existing content into a topic-centric structure. (completed 2026-04-23)
+- [x] **Phase 3: State Engine (Tracking & Persistence)** - Implement `localStorage` logic for problem status and progress bars. (completed 2026-04-23)
 - [ ] **Phase 4: Pedagogy I (Linear Foundations)** - Author content for Arrays, Ordered Arrays, and Big O storytelling.
 - [ ] **Phase 5: Pedagogy II (Links & Hashes)** - Author content for Linked Lists, Doubly Linked Lists, and Hash Tables.
 - [ ] **Phase 6: Pedagogy III (Hierarchy & Trees)** - Author content for BSTs, Heaps, and Tries.
@@ -117,15 +117,15 @@ We're transforming a static "day-based" checklist into a topic-centric, premium 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/1 | Complete    | 2026-04-22 |
-| 2. Data Layer | 0/1 | Not started | - |
-| 3. State Engine | 0/2 | Not started | - |
-| 4. Pedagogy I | 0/1 | Not started | - |
-| 5. Pedagogy II | 0/1 | Not started | - |
-| 6. Pedagogy III | 0/1 | Not started | - |
-| 7. Pedagogy IV | 0/1 | Not started | - |
-| 8. Discovery | 0/1 | Not started | - |
-| 9. UX Polish | 0/1 | Not started | - |
-| 10. Final Audit | 0/1 | Not started | - |
+| 2. Data Layer | 1/1 | Complete | 2026-04-23 |
+| 3. State Engine | 2/2 | Complete | 2026-04-23 |
+| 4. Pedagogy I | 1/1 | Complete | 2026-04-23 |
+| 5. Pedagogy II | 1/1 | Complete | 2026-04-23 |
+| 6. Pedagogy III | 1/1 | Complete | 2026-04-23 |
+| 7. Pedagogy IV | 1/1 | Complete | 2026-04-23 |
+| 8. Discovery | 1/1 | Complete | 2026-04-23 |
+| 9. UX Polish | 1/1 | Complete | 2026-04-23 |
+| 10. Final Audit | 1/1 | Complete | 2026-04-23 |
 
 ---
 *Roadmap defined: 2026-04-23*
