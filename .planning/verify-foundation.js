@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseDir = path.join(__dirname, '..');
+const baseDir = path.join(__dirname, '..', 'DSA Checklist Website');
 
 const checks = [
     {

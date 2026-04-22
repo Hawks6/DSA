@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>45-Day DSA Mastery — Wengrow Method</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300&family=JetBrains+Mono:wght@400;600&family=Figtree:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --ink: #0f0d0a;
+            --paper: #faf8f3;
+            --cream: #f1ede3;
+            --accent: #c94f2a;
+            --accent2: #2a6ec9;
+            --accent3: #2aa36e;
+            --gold: #c9922a;
+            --muted: #7a7060;
+            --card-bg: #ffffff;
+            --border: #e2ddd4;
+            --code-bg: #1a1714;
+            --code-text: #e8dcc8;
+            --tag-array: #fff0ec;
+            --tag-array-t: #c94f2a;
+            --tag-hash: #ecf3ff;
+            --tag-hash-t: #2a6ec9;
+            --tag-stack: #fef8ec;
+            --tag-stack-t: #c9922a;
+            --tag-window: #ecfff5;
+            --tag-window-t: #2aa36e;
+            --tag-tree: #f3ecff;
+            --tag-tree-t: #7a2ac9;
+            --tag-graph: #ecfff8;
+            --tag-graph-t: #2a9c7a;
+            --tag-dp: #fff8ec;
+            --tag-dp-t: #c97a2a;
+            --tag-default: #f0ede8;
+            --tag-default-t: #5a5040;
+            --radius: 12px;
+            --shadow: 0 2px 12px rgba(15, 13, 10, .07), 0 1px 3px rgba(15, 13, 10, .05);
+            --shadow-hover: 0 8px 32px rgba(15, 13, 10, .12), 0 2px 8px rgba(15, 13, 10, .08);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Figtree', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            line-height: 1.7
+        }
+
+        .site-header {
+            background: var(--ink);
+            color: var(--paper);
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .site-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255, 255, 255, .025) 40px, rgba(255, 255, 255, .025) 41px);
+            pointer-events: none
+        }
+
+        .site-header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: -.02em;
+            line-height: 1.1;
+            margin-bottom: .6rem
+        }
+
+        .site-header h1 span {
+            color: var(--accent)
+        }
+
+        .site-header .subtitle {
+            font-size: 1rem;
+            color: rgba(250, 248, 243, .6);
+            font-weight: 400;
+            max-width: 520px;
+            margin: 0 auto 1.8rem
+        }
+
+        .progress-wrap {
+            max-width: 560px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, .1);
+            border-radius: 99px;
+            height: 8px;
+            overflow: hidden
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            border-radius: 99px;
+            transition: width .6s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .progress-label {
+            font-size: .8rem;
+            color: rgba(250, 248, 243, .5);
+            margin-top: .5rem
+        }
+
+        .phase-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            justify-content: center;
+            padding: 1.5rem 1rem 1rem;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px)
+        }
+
+        .phase-btn {
+            font-family: 'Figtree', sans-serif;
+            font-size: .78rem;
+            font-weight: 600;
+            padding: .35rem .9rem;
+            border-radius: 99px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            cursor: pointer;
+            transition: all .18s;
+            color: var(--muted)
+        }
+
+        .phase-btn:hover,
+        .phase-btn.active {
+            background: var(--ink);
+            color: var(--paper);
+            border-color: var(--ink)
+        }
+
+        .search-wrap {
+            max-width: 480px;
+            margin: 1.5rem auto .5rem;
+            padding: 0 1rem
+        }
+
+        .search-wrap input {
+            width: 100%;
+            padding: .7rem 1.2rem;
+            border-radius: 99px;
+            border: 1.5px solid var(--border);
+            font-family: 'Figtree', sans-serif;
+            font-size: .9rem;
+            background: var(--card-bg);
+            color: var(--ink);
+            outline: none;
+            transition: border-color .2s
+        }
+
+        .search-wrap input:focus {
+            border-color: var(--accent2)
+        }
+
+        #app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.5rem;
+            align-items: start
+        }
+
+        .day-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: box-shadow .22s, transform .22s;
+            cursor: pointer;
+            animation: fadeUp .4s ease both
+        }
+
+        .day-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px)
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+            padding: 1.1rem 1.3rem .9rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--cream)
+        }
+
+        .day-badge {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--accent);
+            min-width: 44px;
+            line-height: 1
+        }
+
+        .card-title-wrap {
+            flex: 1;
+            min-width: 0
+        }
+
+        .card-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--ink)
+        }
+
+        .topic-tag {
+            display: inline-block;
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            padding: .18rem .6rem;
+            border-radius: 4px;
+            margin-top: .3rem
+        }
+
+        .complete-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .85rem;
+            transition: all .18s;
+            color: transparent
+        }
+
+        .complete-btn.done {
+            background: var(--accent3);
+            border-color: var(--accent3);
+            color: #fff
+        }
+
+        .card-body {
+            padding: 0 1.3rem
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 1rem 0 .35rem
+        }
+
+        .concept-text {
+            font-size: .9rem;
+            color: #2a2520;
+            line-height: 1.75
+        }
+
+        .analogy-highlight {
+            background: linear-gradient(135deg, #fff8ec, #fff3e0);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 6px 6px 0;
+            padding: .6rem .9rem;
+            margin: .6rem 0;
+            font-size: .88rem;
+            font-style: italic;
+            color: #4a3820
+        }
+
+        .bigo-box {
+            background: var(--code-bg);
+            color: var(--code-text);
+            border-radius: 8px;
+            padding: .8rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .8rem;
+            line-height: 1.8;
+            margin-bottom: .5rem;
+            overflow-x: auto
+        }
+
+        .bigo-box .ok {
+            color: #7ec87e
+        }
+
+        .bigo-box .warn {
+            color: #f5c842
+        }
+
+        .bigo-box .bad {
+            color: #f07070
+        }
+
+        .bigo-box .label {
+            color: #9e9080
+        }
+
+        .questions-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.2rem
+        }
+
+        .question-item {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: .7rem .9rem;
+            margin-bottom: .6rem;
+            transition: border-color .18s
+        }
+
+        .question-item:hover {
+            border-color: var(--accent2)
+        }
+
+        .q-title {
+            font-weight: 600;
+            font-size: .88rem;
+            color: var(--accent2);
+            margin-bottom: .25rem
+        }
+
+        .q-hint {
+            font-size: .82rem;
+            color: var(--muted);
+            line-height: 1.5
+        }
+
+        .q-hint strong {
+            color: var(--gold);
+            font-weight: 600
+        }
+
+        .card-expand {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height .35s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .card-expand.open {
+            max-height: 3000px
+        }
+
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+            padding: .7rem;
+            border-top: 1px solid var(--border);
+            font-size: .8rem;
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: .03em;
+            user-select: none
+        }
+
+        .toggle-icon {
+            transition: transform .25s;
+            display: inline-block
+        }
+
+        .toggle-icon.open {
+            transform: rotate(180deg)
+        }
+
+        .phase-divider {
+            grid-column: 1/-1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: .5rem 0
+        }
+
+        .phase-divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border)
+        }
+
+        .phase-divider-label {
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--muted);
+            white-space: nowrap
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: .8rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border)
+        }
+
+        @media(max-width:480px) {
+            #app-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+                gap: 1rem
+            }
+
+            .site-header {
+                padding: 2rem 1rem 1.8rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>45-Day <span>DSA</span> Mastery</h1>
+        <p class="subtitle">Data Structures & Algorithms — The Wengrow Common-Sense Method. Real analogies. Steps, not
+            seconds. Zero math jargon.</p>
+        <div class="progress-wrap">
+            <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-label" id="progress-label">0 / 45 days completed</div>
+    </header>
+
+    <nav class="phase-nav" id="phase-nav">
+        <button class="phase-btn active" data-phase="all">All Days</button>
+        <button class="phase-btn" data-phase="1">Phase 1: Arrays & Hashing</button>
+        <button class="phase-btn" data-phase="2">Phase 2: Stacks & Windows</button>
+        <button class="phase-btn" data-phase="3">Phase 3: Pointers & Search</button>
+        <button class="phase-btn" data-phase="4">Phase 4: Linked Lists</button>
+        <button class="phase-btn" data-phase="5">Phase 5: Trees</button>
+        <button class="phase-btn" data-phase="6">Phase 6: Graphs & DP</button>
+        <button class="phase-btn" data-phase="7">Phase 7: Mock Interview</button>
+    </nav>
+
+    <div class="search-wrap">
+        <input type="text" id="search-input" placeholder="🔍  Search topics, e.g. 'binary search', 'hash table'…" />
+    </div>
+
+    <div id="app-container"></div>
+
+    <footer class="site-footer">
+        Based on Jay Wengrow's <em>A Common-Sense Guide to Data Structures and Algorithms</em> · NeetCode 150 / Blind 75
+        aligned
+    </footer>
+
+    <script>
+        const curriculumData = [
+
+            // ── PHASE 1 ──────────────────────────────────────────────────
+            {
+                dayNumber: 1, phase: 1,
+                topic: "Arrays — Reading, Searching & Insertion",
+                conceptExplanation: `Imagine a parking lot where every space is numbered — spot 1, spot 2, spot 3, all the way to spot 1,000. Every space is exactly the same size, and they sit side by side with no gaps whatsoever. That is an array in your computer's memory: a perfectly ordered row of identical, numbered slots.\n\nHere is the superpower this structure gives us. Say you want the car at spot 742. You don't cruise slowly from spot 1 hoping to stumble upon it. You drive straight there in one move. Why? Because every slot is the same size, so the computer does a tiny arithmetic calculation — start address + (742 × slot size) — and lands directly on the right slot. One step. Always.\n\nBut the parking lot has a dark side. Suppose you want to squeeze a new car into spot 3, but spot 3 is already occupied. Every single car from spot 3 onward has to physically scoot one space to the right to make room. In a 1,000-car lot, that could mean scooting up to 1,000 cars. That is the array's pain point: it is brilliant at reading but slow at changing its middle.\n\nStep-by-step, the computer 'thinks': For a read, it calculates the address and jumps there in one move. For an insertion in the middle, it starts from the end and shifts each element one slot to the right, one at a time, until there is a gap at the target position.`,
+                bigOExplanation: `Here is the key question we will ask every single day: "If there are N data elements, how many steps does this operation take?"\n\nREAD by index → O(1)\nThe story O(1) tells: N can grow to a million, a billion, a trillion — the number of steps never changes. It is always 1. This is called "constant time" and it is the best possible story an algorithm can have.\n\nSEARCH (unsorted) → O(N)\nWorse case, the thing you want is at the very last slot. N elements means up to N steps. If N doubles, the steps double. This perfectly straight-line growth is called "linear time."\n\nINSERT at the end → O(1)\nJust drop it into the last open slot. 1 step, always. Constant time again.\n\nINSERT in the middle → O(N)\nYou must shift every element after the insertion point one slot to the right. For N elements, that is up to N shifts. The story is linear time — the bigger the array, the more work.`,
+                practiceQuestions: [
+                    { title: "Contains Duplicate (NeetCode Easy)", hint: "Think about what data structure lets you check 'have I seen this number before?' in a single step — you don't need to loop through a second array each time." },
+                    { title: "Two Sum (Blind 75 Easy)", hint: "For each number you visit, ask: 'does its perfect partner (target - num) already exist somewhere I've already checked?' Store what you've seen so partner lookups are instant." },
+                    { title: "Best Time to Buy & Sell Stock (Easy)", hint: "Keep track of the cheapest price you've seen so far as you scan left to right — never look backwards." }
+                ]
+            },
+
+            {
+                dayNumber: 2, phase: 1,
+                topic: "Arrays — Deletion, Sets & Duplicate Detection",
+                conceptExplanation: `Deletion is the mirror image of insertion — same personality, same costs. Imagine a car leaves spot 5 and you want to close the gap. Every car from spot 6 onward has to scoot one space to the left to fill it. In a 1,000-space lot, that is potentially 1,000 cars scooting. Expensive.\n\nNow meet the Set — an array's more opinionated cousin. Think of it as an exclusive club with a strict "no duplicates" door policy. Before letting anyone in, the bouncer checks the entire guest list. If your name is already there, you are turned away at the door. A Set is the perfect tool when you care about whether something exists, not how many times it has appeared.\n\nHere is a neat trick for finding duplicates: sort the array first. Once sorted, all identical values are guaranteed to be sitting right next to each other. A single pass comparing each adjacent pair (does element[i] equal element[i+1]?) finds all duplicates without any extra data structures. The sort is an upfront investment that makes the search dramatically cheaper.\n\nThe computer's thought process for duplicate detection: "I'll walk through the array. For each element, I need to ask — have I seen this value before? If I use a hash-powered Set (coming on Day 3!), that question costs just 1 step."`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nDELETE from the end → O(1)\nThe last car just drives away. One step. Constant time. Painless.\n\nDELETE from the middle → O(N)\nClose the gap by scooting everything left. Up to N steps. The story: linear time — N grows, steps grow in lockstep.\n\nSET membership check (hash-powered) → O(1)\nA properly built set checks whether a value exists in essentially 1 step, regardless of how many items are inside. We will fully demystify this magic on Day 3.\n\nSORT then search for duplicates → O(N log N)\n"N log N" sits between linear and quadratic — better than O(N²) but not as fast as O(N). The sort is an upfront cost. But once sorted, the duplicate scan is just O(N). This is a classic trade-off: pay a moderate cost once to make repeated operations cheaper.`,
+                practiceQuestions: [
+                    { title: "Contains Duplicate (NeetCode Easy)", hint: "A Set adds each element and tells you instantly if it was already present — one pass through the array is all you need." },
+                    { title: "Missing Number (Easy)", hint: "There's a famous math trick: the expected sum of 0…N is N*(N+1)/2. Subtract the actual sum and the difference is the missing number — no extra data structure needed." },
+                    { title: "Find All Duplicates in an Array (Medium)", hint: "Because all values are in range 1..N, you can use the array's own indices as a visited-marker — negate the value at the index corresponding to each number you see." }
+                ]
+            },
+
+            {
+                dayNumber: 3, phase: 1,
+                topic: "Hash Tables — The Magical Encyclopedia",
+                conceptExplanation: `Imagine a magical encyclopedia. You walk up to it and whisper the word "France." Without flipping a single page, the book flies open directly to the entry for France — capital: Paris — in one motion. How? The encyclopedia uses a formula. You give it a word, it runs the word through a recipe, and the recipe spits out a page number. Same word, same recipe, always the same page. That is a hash table.\n\nThe recipe is called a hash function. It converts any key — a string, a number, anything — into an array index. When you store the pair "France" → "Paris", the hash function assigns it to, say, slot 42. Later, when you ask "where is France?", the same function runs again, produces 42 again, and the computer jumps straight there. It doesn't matter whether the table has 100 entries or 10 million. The jump is always the same size.\n\nThe one wrinkle is a collision — when two different keys accidentally hash to the same slot. (Maybe "France" and "Finland" both land on slot 42.) Real hash tables handle this gracefully, often by keeping a small list at each slot. With a good hash function, collisions are rare, so those lists stay tiny and lookups remain fast.\n\nThe deeper insight: hash tables are a trade-off. They use extra memory to buy speed. You often allocate more slots than you need — deliberately leaving some empty — specifically to keep collisions rare. This is the foundational time-versus-space trade-off in computer science.`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nINSERT → O(1)\nHash the key (1 step), land on the slot, store the value (1 more step). The story: 1 step regardless of how big the table grows. Constant time.\n\nLOOKUP → O(1)\nSame story. Hash the key, go directly to the address, retrieve the value. Constant time.\n\nDELETE → O(1)\nHash, go to address, remove. Constant time.\n\nWORST CASE (catastrophic collisions) → O(N)\nIf every key hashes to the same slot (an absurdly bad hash function), you end up with one giant list at that slot. Searching it takes N steps — linear time. This is the nightmare scenario. A good hash function makes it essentially impossible in practice.\n\nTHE TRADE-OFF STORY: Hash tables buy O(1) speed by spending O(N) extra memory. This is the most important time-vs-space example in all of computing. Whenever you want constant-time lookup, reach for a hash table — and know you are paying with memory.`,
+                practiceQuestions: [
+                    { title: "Two Sum (Easy)", hint: "Use a hash table to store each number's index as you scan — for each new number, look up whether its complement is already in the table." },
+                    { title: "Valid Anagram (Easy)", hint: "Count the frequency of each character in both strings using a hash map — two strings are anagrams if and only if their frequency maps are identical." },
+                    { title: "Group Anagrams (Medium)", hint: "If you sort the characters of a word, all anagrams produce the same sorted string — use that sorted string as a hash map key to group them together." }
+                ]
+            },
+
+            {
+                dayNumber: 4, phase: 1,
+                topic: "Product of Array Except Self & Prefix/Suffix Patterns",
+                conceptExplanation: `Here is a real puzzle: you manage a bakery with 5 employees. Your boss asks — for each employee, what would the total output be if that specific person called in sick today? You need one answer per employee, and each answer involves multiplying everyone else's output together.\n\nThe obvious approach: for each employee, loop through all the others and multiply. If there are N employees, you do N multiplications for each of N employees. That is N × N = N² steps. For 1,000 employees, you are doing a million multiplications. The story gets ugly very fast.\n\nHere is the clever insight: instead of recalculating from scratch for each employee, make two passes. First, walk left to right and build a "prefix product" — for each position, record the product of everyone to the left of you so far. Then walk right to left and build a "suffix product" — the product of everyone to the right. For each employee, the final answer is simply: left_product × right_product. Two passes instead of N × N recalculations.\n\nThe computer is thinking: "Pass one — I'll sweep left to right, carrying a running multiplication. I store the running total at each position. Pass two — I'll sweep right to left, doing the same. Then I combine the two stored tallies." The key "aha": reuse calculations you have already done instead of throwing them away.`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nNAIVE NESTED LOOPS → O(N²)\nFor each of N elements, multiply N-1 others. The story quadratic time tells: if N doubles, steps quadruple. N=1,000 → roughly 1 million steps. N=10,000 → roughly 100 million steps. The growth is brutal.\n\nPREFIX + SUFFIX APPROACH → O(N)\nTwo passes through N elements = 2N steps. We always drop constants in Big O — the "2" does not change the story. This is linear time. N doubles → steps double. N=1,000 → 2,000 steps. A 500× improvement over the naive approach.\n\nOPTIMIZED SPACE → O(1) extra\nYou can fold the suffix pass into a single running variable, eliminating the need for a separate suffix array. Same O(N) time, but you save N slots of memory.\n\nTHE LESSON: When a problem seems to require two nested loops, pause. Ask yourself: "Can I make two separate single passes and reuse what I learned in the first pass during the second?" This prefix/suffix pattern appears everywhere once you have eyes to see it.`,
+                practiceQuestions: [
+                    { title: "Product of Array Except Self (Medium)", hint: "Build the prefix products left-to-right into the answer array, then multiply in the suffix products right-to-left using a single running variable — no division needed." },
+                    { title: "3Sum (Medium)", hint: "Sort the array first, then for each element fix it as a candidate and use the two-pointer technique on the rest — sorting lets you skip duplicates cleanly." },
+                    { title: "Subarray Sum Equals K (Medium)", hint: "A prefix sum tells you the cumulative total up to each index — if two prefix sums differ by K, the subarray between them sums to K. Use a hash map to check this in O(1)." }
+                ]
+            },
+
+            // ── PHASE 2 ──────────────────────────────────────────────────
+            {
+                dayNumber: 5, phase: 2,
+                topic: "Stacks — The Cafeteria Tray Stack",
+                conceptExplanation: `The name gives it away. Picture a stack of cafeteria trays. You can grab only the tray on top — the most recently placed one. You can add a new tray only to the top. Can you pull a tray from the middle? No. From the bottom? Absolutely not. The rule is strict and non-negotiable: Last In, First Out. This is called LIFO.\n\nIn code, a stack is just a plain array with self-imposed discipline. You only ever "push" items onto the end and "pop" items off the end. No random access by index. The whole power comes from honoring the order.\n\nHere is why this matters so much: stacks are perfect for problems involving matching and nesting. Consider checking whether parentheses are valid — "(((()))". The rule is that every closing bracket must match the most recently opened one. As you read left to right, push each "(" onto the stack. When you see ")", pop from the stack and check: does it match? If the stack is empty when you need to pop, the string is invalid. If the stack is not empty when the string ends, the string is invalid. The stack's LIFO order perfectly mirrors the nesting structure of brackets.\n\nThe computer is thinking: "I will remember all the opening brackets I have not yet closed by piling them up. The most recent one is always on top, so whenever I need to close something, I just peek at the top of my pile."`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nPUSH (add to top) → O(1)\nAppend to the end of the underlying array. One step, always. The story: whether the stack holds 5 trays or 5 million, adding one more is always 1 step. Constant time.\n\nPOP (remove from top) → O(1)\nRemove the last element. One step. Constant time. This is the stack's superpower.\n\nPEEK (see top without removing) → O(1)\nRead the last element. One step. Constant time.\n\nSEARCH (find something inside) → O(N)\nStacks do not support random access. To find something, you would have to pop everything off, one at a time, checking each one. N items → N steps. Linear time.\n\nTHE KEY STORY: Stacks are not general-purpose lookup structures. Their entire value is their disciplined LIFO order, which mirrors the structure of nested relationships perfectly. When used for their intended purpose, every operation is a lightning-fast constant-time step.`,
+                practiceQuestions: [
+                    { title: "Valid Parentheses (Easy)", hint: "Push every opening bracket; when you see a closing bracket, pop the stack and check if they match — an empty stack at the end means every bracket was paired." },
+                    { title: "Min Stack (Medium)", hint: "Maintain two parallel stacks — one for regular values and one that tracks the current minimum after each push, so getMin() is always O(1) without scanning." },
+                    { title: "Evaluate Reverse Polish Notation (Medium)", hint: "Scan tokens left to right: push numbers, and when you see an operator, pop two numbers, apply the operator, and push the result back." }
+                ]
+            },
+
+            {
+                dayNumber: 6, phase: 2,
+                topic: "Spaced Repetition Day — Arrays, Hashing & Stacks Review",
+                conceptExplanation: `Today we deliberately pause — and that is not a weakness. It is a strategy backed by decades of cognitive science research. Here is the "why" before the "how": your brain does not store memories the way a hard drive stores files. It stores them the way a path forms through tall grass. Walk the path once and it is faint. Walk it again the next day and it deepens. Walk it again a week later — when the grass has started to grow back — and you have carved a real trail.\n\nThis is spaced repetition. Reviewing material at increasing intervals (1 day, 3 days, 1 week, 2 weeks) is dramatically more effective at building durable memory than cramming everything at once. Skipping this review and rushing to new material is like blazing a new trail every day while neglecting all your existing ones. Exhausting, and easy to get lost.\n\nToday's challenge: close your notes. For each of the past five topics, ask yourself two questions. First: "Can I explain this using an analogy — in plain English, with no jargon?" Second: "Can I describe the Big O as a story about how steps grow as N grows?" If you hesitate on any topic, that hesitation is a signal — not of failure, but of a path that needs one more walk. Note it, revisit it.\n\nThe goal is not to memorize labels like "O(N log N)." The goal is to understand the story each label tells — because in an interview, you will need to reason about trade-offs, not recite definitions.`,
+                bigOExplanation: `Test yourself — cover the right side and answer!\n\nArray read by index → ?\nArray insert in the middle → ?\nHash table lookup (typical) → ?\nHash table lookup (worst case) → ?\nStack push → ?\nStack pop → ?\nLinear search → ?\n\nAnswers: O(1), O(N), O(1), O(N), O(1), O(1), O(N)\n\nFor each answer, tell the story: O(1) means "N can grow forever and my steps never change." O(N) means "if N doubles, my steps double." If you can narrate the story, you understand it. If you can only recall the label — keep walking the path. Try explaining each one out loud to an imaginary friend who has never seen code.`,
+                practiceQuestions: [
+                    { title: "Two Sum — revisit without looking at previous solution", hint: "Can you write the hash map solution from scratch and explain why each line is necessary?" },
+                    { title: "Valid Parentheses — revisit", hint: "What edge case breaks a naive solution that doesn't use a stack? (Hint: try ']' as the first character.)" },
+                    { title: "Valid Anagram — revisit", hint: "What are the two different approaches — sort-then-compare vs. frequency count — and what are their Big O stories?" }
+                ]
+            },
+
+            {
+                dayNumber: 7, phase: 2,
+                topic: "Sliding Window — The Moving Spotlight",
+                conceptExplanation: `Picture a spotlight on a stage that illuminates exactly 3 performers at a time. It starts on performers 1, 2, 3. Then it slides to 2, 3, 4. Then 3, 4, 5. At each position, you observe only the performers inside the spotlight — and then you slide it one position to the right.\n\nHere is the naive approach: at each spotlight position, add up all 3 performers' scores from scratch. For N performers with a window of size K, that is K steps per position, and there are roughly N positions. Total: K × N steps.\n\nHere is the insight that makes sliding window magic: when the spotlight slides one position to the right, only two things change. One performer exits from the left edge. One new performer enters from the right edge. Everything in the middle is the same as before! So instead of recalculating the sum of 3 performers from scratch, you just subtract the one who left and add the one who entered. Two steps per slide, regardless of window size.\n\nThere are two flavors. A fixed-size window has a constant width (always K elements). A variable-size window stretches its right edge outward to include more elements and squeezes its left edge inward when a constraint is violated — like a rubber band that expands until it would snap, then releases a bit from the left.`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nNAIVE RE-COMPUTATION → O(K × N)\nFor each of N window positions, recompute a window of K elements. If K is large, this story becomes painful. For K=500 and N=1,000,000: five hundred million steps.\n\nSLIDING WINDOW → O(N)\nHere is the beautiful story. Each element enters the window exactly once (when the right pointer reaches it) and leaves the window at most once (when the left pointer passes it). So every element is touched at most twice — that is 2N steps maximum. We drop the constant, and the story becomes linear time.\n\nTHE COMPARISON: Naive for K=100, N=1,000,000: 100,000,000 steps. Sliding window: 2,000,000 steps. The window is 50× faster. For K=1,000: 500× faster. As K grows, the sliding window's advantage grows with it.\n\nSPACE → O(1) for sum-based windows — just two pointer variables and a running total. This makes sliding window one of the most space-efficient techniques in the toolbox.`,
+                practiceQuestions: [
+                    { title: "Best Time to Buy and Sell Stock (Easy)", hint: "Use two pointers: left is the buy day, right is the sell day — advance right each day; if you find a better buy price, move left to right's position." },
+                    { title: "Longest Substring Without Repeating Characters (Medium)", hint: "Expand right, and whenever you see a duplicate character, shrink from the left until the duplicate is removed — use a set to track what's in the current window." },
+                    { title: "Longest Repeating Character Replacement (Medium)", hint: "The window is valid as long as (window length - count of most frequent character) ≤ K — if not, shrink from the left." }
+                ]
+            },
+
+            {
+                dayNumber: 8, phase: 2,
+                topic: "Sliding Window — Variable Size & Character Frequency",
+                conceptExplanation: `Yesterday's spotlight had a fixed width. Today it has a rubber right edge that stretches, and a ratchet left edge that can only ever move forward — never backward. This is the variable-size sliding window, and it is the more powerful of the two flavors.\n\nHere is the real-world problem it solves: find the longest substring of a string that contains no repeated characters. The string "abcba" — the longest such substring is "abc" or "cba", length 3.\n\nThe computer's thought process: "I will start with an empty window. I will stretch the right edge outward, welcoming characters one at a time. I will keep a set of characters currently inside my window. The moment I encounter a character that is already in my set — a repeat — I will shrink from the left, evicting characters one at a time, until the repeat is gone. Then I keep stretching rightward again." At every moment, the window contains the longest valid substring ending at the current right edge.\n\nWhy does the left edge never go backward? Because if a window starting at position 3 already contains a repeat, a window starting at position 2 would have even more characters — making it worse, not better. Moving left backward is never helpful. This is the key invariant that makes the two-pointer analysis work.`,
+                bigOExplanation: `Key question: N characters — how many steps?\n\nBOTH POINTERS COMBINED → O(N)\nLeft pointer starts at 0 and moves to at most N — that is N steps. Right pointer does the same. Together, they travel at most 2N steps total. Drop the constant: linear time.\n\nSPACE for a character frequency map → O(1)\nFor lowercase English letters, the map has at most 26 entries. That is a fixed constant — it never grows with N. O(26) = O(1).\n\nCOMPARE TO BRUTE FORCE → O(N³)\nCheck every possible substring (N² of them), verify each one (up to N steps each). For N=10,000: one trillion steps vs. twenty thousand steps. The sliding window wins by a factor of 50 billion. That is not a small improvement — it is the difference between an answer arriving instantly and waiting your entire lifetime.\n\nTHE AMORTIZED INSIGHT: Even though the left pointer seems to "jump forward" sometimes, it never goes backward. Each element is added once and removed at most once. The total work across all steps is bounded by 2N — and that is the honest story of why this is O(N).`,
+                practiceQuestions: [
+                    { title: "Minimum Window Substring (Hard)", hint: "Expand right until all required characters are covered, then shrink left as much as possible while still maintaining coverage — track counts with two hash maps." },
+                    { title: "Permutation in String (Medium)", hint: "Use a fixed window of size len(s1) and compare character frequency maps — if they match at any position, a permutation exists." },
+                    { title: "Fruit Into Baskets (Medium)", hint: "This is 'longest subarray with at most 2 distinct values' — classic variable sliding window with a frequency map." }
+                ]
+            },
+
+            {
+                dayNumber: 9, phase: 2,
+                topic: "Intervals — Merging Overlapping Appointments",
+                conceptExplanation: `Here is a real calendar headache: a doctor's office has these appointments on the books — 9:00-10:30, 10:00-11:00, and 2:00-3:00. The first two overlap! The calendar app needs to merge them into one clean block (9:00-11:00) while keeping the third one separate. How does it do this efficiently when there are thousands of appointments?\n\nThe naive approach: compare every appointment against every other appointment. For N appointments, that is N × N comparisons. For a busy hospital with 10,000 appointments, that is 100 million comparisons. Too slow.\n\nHere is the insight: sort the appointments by start time first. Once sorted, you only ever need to compare each new appointment to the last merged block. Why? Because earlier blocks have earlier start times — if a new appointment does not overlap with the most recent merged block, it definitely cannot overlap with any earlier ones either. The sort unlocks a single left-to-right pass.\n\nStep by step, the computer thinks: "I will keep a running 'current merged block.' For each new appointment: does it start before my current block ends? If yes, they overlap — extend my current block's end if needed. If no, my current block is done — save it and start fresh with this new appointment." One clean pass after sorting.`,
+                bigOExplanation: `Key question: N intervals — how many steps?\n\nTHE SORT → O(N log N)\nSorting N intervals by start time takes N log N steps. What does "log N" mean as a story? It is the number of times you can cut N in half before reaching 1. For N=1,024: log₂(1,024) = 10. The story O(N log N) tells: grows faster than linear, but dramatically slower than N².\n\nTHE MERGE PASS → O(N)\nAfter sorting, one left-to-right pass through N intervals. Each interval is examined exactly once. Linear time.\n\nTOTAL → O(N log N)\nWhen you add a slower-growing story (N log N) and a faster-growing story (N), the slower one dominates. The linear pass is essentially free compared to the sort.\n\nWHY NOT O(N)? Without sorting, you would need to compare every interval to every other: O(N²). The sort costs O(N log N) upfront but buys us the ability to make a single linear scan. Paying O(N log N) to escape O(N²) is almost always the right trade.`,
+                practiceQuestions: [
+                    { title: "Merge Intervals (Medium)", hint: "Sort by start time, then iterate — if the current interval's start is ≤ the last merged interval's end, extend the end; otherwise start a new merged interval." },
+                    { title: "Insert Interval (Medium)", hint: "Insert the new interval into the sorted list, then apply the same merge algorithm — or handle the three zones (before, overlapping, after) directly in one pass." },
+                    { title: "Non-overlapping Intervals (Medium)", hint: "Sort by end time and greedily keep intervals that end earliest — count how many must be removed to make the rest non-overlapping." }
+                ]
+            },
+
+            {
+                dayNumber: 10, phase: 2,
+                topic: "Intervals — Meeting Rooms & Greedy Scheduling",
+                conceptExplanation: `The office manager from yesterday faces a harder question: "What is the minimum number of conference rooms we need to run all these meetings simultaneously?" This is the Meeting Rooms II problem, and it is a beautiful example of a greedy algorithm.\n\nGreedy means: at each decision point, make the locally best choice and trust that it leads to a globally optimal result. The greedy insight here: whenever a new meeting starts, reuse whichever room's meeting ended the soonest. Why? Because that is the room most ready to be freed up. If no room has ended yet, you need a new room.\n\nStep by step: sort meetings by start time. Process them in order. Maintain a running list of "when does each currently-occupied room become free?" For each new meeting, ask: has the earliest-ending room already finished? If yes, reclaim it (update its end time). If no, open a brand new room. Count the total rooms ever opened.\n\nThe data structure that makes "find the earliest-ending room" fast is a min-heap — a tree structure where the smallest value is always instantly available at the top. We will cover heaps fully on Day 30, but the key idea today is: heaps let you maintain a sorted collection where you only ever need the minimum element, and each insertion or extraction takes O(log N) steps instead of O(N).`,
+                bigOExplanation: `Key question: N meetings — how many steps?\n\nSORT by start time → O(N log N)\nThe story: slightly better than quadratic, clearly worse than linear.\n\nHEAP OPERATIONS → O(N log N)\nEach of N meetings triggers at most one heap push and one heap pop. Each operation on a heap of at most N elements takes O(log N) steps. N meetings × O(log N) per meeting = O(N log N) total.\n\nTOTAL → O(N log N)\nBoth the sort and the heap processing tell the same story, so the overall story is O(N log N).\n\nTHE GREEDY PAYOFF: Without the greedy strategy, you might consider every possible room assignment — that would be exponential. With the greedy insight (always reuse the earliest-ending room), you reduce the problem to a single linear scan with heap support. Greedy algorithms are a gift when they work — and knowing when to trust them is a skill you develop with practice.`,
+                practiceQuestions: [
+                    { title: "Meeting Rooms (Easy)", hint: "Sort by start time; if any adjacent pair of intervals overlaps (next start < current end), return false — someone can't attend all meetings." },
+                    { title: "Meeting Rooms II (Medium)", hint: "Use a min-heap of end times — for each meeting (sorted by start), if the earliest ending meeting is done, pop and reuse the room; always push the current meeting's end time." },
+                    { title: "Non-overlapping Intervals (Medium)", hint: "Sort by end time and greedily select intervals with the earliest end — every selected interval is the one that leaves the most future room." }
+                ]
+            },
+
+            // ── PHASE 3 ──────────────────────────────────────────────────
+            {
+                dayNumber: 11, phase: 3,
+                topic: "Two Pointers — Squeezing from Both Ends",
+                conceptExplanation: `Imagine two people starting at opposite ends of a long hallway, each holding a number. They slowly walk toward each other, calling out the sum of their two numbers. The goal: find the pair that sums to a target value. When they meet in the middle, the search is over.\n\nThis is the two-pointer technique. One pointer starts at the leftmost element of a sorted array (the smallest value), and one starts at the rightmost (the largest value). If their sum is too small, the left pointer steps one slot to the right (picking a bigger number). If their sum is too large, the right pointer steps one slot to the left (picking a smaller number). If the sum equals the target — found it!\n\nWhy does this work? Because the array is sorted. Moving the left pointer right always increases the sum — there is no smaller number to the right of it. Moving the right pointer left always decreases the sum. This directional guarantee means we never need to backtrack. Every single step either moves us closer to the answer or eliminates an impossible pair.\n\nThe key prerequisite: the array must be sorted. Two pointers are an exploit of the sorted property — without it, there is no meaningful "go left if too big" direction. If your array is not already sorted, you either sort it upfront (paying O(N log N)) or use a different approach like a hash map.`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nBRUTE FORCE (check every pair) → O(N²)\nFor each of N elements, pair it with every other element. N × (N-1)/2 ≈ N² steps. The story: N doubles → steps quadruple.\n\nTWO POINTERS → O(N)\nLeft pointer moves right at most N times. Right pointer moves left at most N times. Together, at most 2N steps. Drop the constant: linear time. The story: N doubles → steps double.\n\nFOR N=1,000: Brute force ≈ 500,000 steps. Two pointers ≈ 2,000 steps. That is a 250× speedup!\n\nFULL COST WITH SORTING → O(N log N)\nIf the array needs to be sorted first, add O(N log N) upfront. The total is still O(N log N) since log-linear dominates linear. Compare this to a hash map approach: O(N) time but O(N) extra space. Two pointers trade time (log N factor) for space (O(1) extra). Neither is universally better — choose based on your constraints.`,
+                practiceQuestions: [
+                    { title: "Container With Most Water (Medium)", hint: "Start with the widest possible container; shrink the side with the shorter line, because only a taller short-side can possibly improve the area." },
+                    { title: "3Sum (Medium)", hint: "Sort the array, fix one element in an outer loop, then use two pointers on the rest — skip duplicate values to avoid duplicate triplets." },
+                    { title: "Two Sum II — Input Array Is Sorted (Medium)", hint: "Because the array is already sorted, two pointers give O(N) without a hash map — left moves right when sum is too small, right moves left when too large." }
+                ]
+            },
+
+            {
+                dayNumber: 12, phase: 3,
+                topic: "Two Pointers — Trapping Rain Water",
+                conceptExplanation: `Picture a cross-section of a rocky landscape drawn as a bar chart — each bar is a wall of a certain height. It rains heavily. Water fills the valleys between peaks and spills over wherever the walls are too short to contain it. How much total water is trapped?\n\nHere is the key insight: the water level above any bar is determined entirely by the shorter of the tallest wall to its left and the tallest wall to its right. Imagine two walls on either side of a valley — water rises only to the height of the shorter wall. Anything above that simply runs off.\n\nSo for each bar: water trapped = min(max height to the left, max height to the right) - this bar's own height. That formula is the heart of this problem.\n\nThe two-pointer approach: start one pointer at the leftmost bar and one at the rightmost. Each pointer tracks its own running maximum. Here is the key question: which side constrains the water level? The side with the smaller maximum! That side's water is definitively determined — there is no chance the other (taller) side will make it any shorter. So process that side, calculate its water contribution, and advance that pointer inward. The side with the larger maximum just waits. You always process the constraining side first.`,
+                bigOExplanation: `Key question: N bars — how many steps?\n\nNAIVE (scan both directions per bar) → O(N²)\nFor each of N bars, scan left to find the tallest, scan right to find the tallest. Two O(N) scans per bar = O(N²) total steps.\n\nPRECOMPUTE LEFT/RIGHT MAX ARRAYS → O(N) time, O(N) space\nTwo passes through the array, storing results in two arrays. Better time story, but costs extra memory.\n\nTWO POINTER APPROACH → O(N) time, O(1) space\nLeft and right pointers start N apart and meet in the middle — at most N steps total. Instead of storing full max arrays, we maintain just two running-max variables. Same time story as precomputing, but uses almost zero extra memory. This is the optimal solution.\n\nTHE LESSON: When a problem needs "the maximum to the left of each element" and "the maximum to the right," always ask: can two pointers compute this in a single inward sweep? Often, yes — and you save O(N) space in the process.`,
+                practiceQuestions: [
+                    { title: "Trapping Rain Water (Hard)", hint: "Two pointers from both ends — always process the side with the smaller max height, because that side's water level is definitively determined." },
+                    { title: "Container With Most Water (Medium)", hint: "The area = width × shorter height; moving the taller pointer inward can never improve the result, so always move the shorter one." },
+                    { title: "Largest Rectangle in Histogram (Hard)", hint: "Use a monotonic stack — push bar indices while heights are increasing; when a shorter bar appears, pop and calculate the area using the current bar as the right boundary." }
+                ]
+            },
+
+            {
+                dayNumber: 13, phase: 3,
+                topic: "Monotonic Stack — Daily Temperatures",
+                conceptExplanation: `A regular stack lets anything pile on. A monotonic stack has an extra rule: it enforces a consistent order (either always increasing from bottom to top, or always decreasing). When a new element arrives and would violate the order, the stack evicts elements from the top until the order is restored — and for each evicted element, we compute a result. That pairing of "eviction with computation" is where the magic happens.\n\nThe Daily Temperatures problem: for each day, how many days until a warmer day arrives? For a temperature sequence like [73, 74, 75, 71, 69, 72, 76], the answers are [1, 1, 4, 2, 1, 1, 0].\n\nThe computer's thought process: "I will keep a stack of days I haven't found answers for yet, ordered so that the coolest day sits on top (a decreasing-temperature stack). When a new warmer day arrives, it is the answer for every cooler day sitting on top of my stack — pop them one by one, record how many days they waited, and stop when I hit a day that is even warmer than today. Then push today onto the stack."\n\nWhy is this linear time and not quadratic? Each day is pushed onto the stack exactly once and popped from the stack at most once. Even though it looks like there could be nested loops, each element participates in at most one pop. The total work across all steps is bounded by 2N — and that is the honest count.`,
+                bigOExplanation: `Key question: N days — how many steps?\n\nNAIVE (scan forward per day) → O(N²)\nFor each of N days, look ahead through all future days. Worst case: a perfectly decreasing temperature sequence where every day waits until the last. N=1,000 → up to 1,000,000 steps.\n\nMONOTONIC STACK → O(N)\nHere is the amortized argument — the clean story. Each element is pushed once: N steps total. Each element is popped at most once: at most N steps total. Together: at most 2N steps. Drop the constant: linear time.\n\nThis is called amortized analysis. Even though some individual iterations seem to do extra work (popping multiple items), if you count the total work across all iterations, it averages out to a constant per step. Think of it like a prepaid balance — each element "funds" its own push and pop when first inserted.\n\nSPACE → O(N) for the stack in the worst case (a perfectly decreasing temperature sequence, where nothing gets popped until the very end and everything piles up).`,
+                practiceQuestions: [
+                    { title: "Daily Temperatures (Medium)", hint: "Maintain a decreasing monotonic stack of indices — when today's temperature exceeds the temperature at the stack's top, pop and record (current_index - popped_index) as the wait time." },
+                    { title: "Next Greater Element I (Easy)", hint: "Build a 'next greater' map for the second array using a monotonic stack, then answer queries against that map in O(1)." },
+                    { title: "Largest Rectangle in Histogram (Hard)", hint: "Push bar indices in increasing-height order; when a shorter bar is encountered, pop and compute area using the popped bar's height and the current span width." }
+                ]
+            },
+
+            {
+                dayNumber: 14, phase: 3,
+                topic: "Binary Search — The Dictionary Halving Game",
+                conceptExplanation: `You need to find the word "platypus" in a dictionary. Do you start at page 1 and flip one page at a time? Of course not! You open to the middle. Is "platypus" alphabetically before or after the middle word? After "M," so you throw away the entire first half of the dictionary. You have eliminated half of all candidates in one single comparison. Now open to the middle of the remaining half. Repeat. This is binary search.\n\nEach comparison eliminates not one element — but half of all remaining elements. This is the core superpower. And its one firm prerequisite: the data must be sorted. Binary search is an exploit of the sorted property. Without sorted order, there is no meaningful "left half" or "right half" to eliminate.\n\nStep by step, the computer thinks: "My search space has a left boundary and a right boundary. The middle index is (left + right) / 2. Is the target equal to the middle element? Found it! Is the target smaller? Shrink the right boundary to middle - 1 (throw away the right half). Is the target larger? Expand the left boundary to middle + 1 (throw away the left half)." Repeat until found — or until the left boundary exceeds the right boundary, which means the element is not there.`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nLINEAR SEARCH (checking one by one) → O(N)\nWorst case, the item is the last one. N elements → N steps. The story: N doubles → steps double.\n\nBINARY SEARCH → O(log N)\nEach step cuts the remaining search space in half. Starting with N elements: N → N/2 → N/4 → N/8 → ... → 1. The number of halvings it takes to reduce N to 1 is log₂(N). This is "log time."\n\nHere is the story O(log N) tells — it is extraordinary:\nN = 8 → 3 steps maximum\nN = 1,024 → 10 steps maximum\nN = 1,000,000 → 20 steps maximum\nN = 1,000,000,000 → 30 steps maximum\n\nThirty comparisons to find one thing among a billion sorted items. Thirty steps. That is what log time means. It grows so slowly it is nearly flat. Binary search does not just beat linear search — it makes it look ancient.`,
+                practiceQuestions: [
+                    { title: "Binary Search (Easy)", hint: "Classic: left = 0, right = len-1; each iteration compare mid to target and eliminate one half — be careful with ≤ vs. < in the while condition." },
+                    { title: "Search a 2D Matrix (Medium)", hint: "Treat the M×N matrix as a sorted array of length M*N — convert a 1D mid index to a 2D row/column using integer division and modulo." },
+                    { title: "Find Minimum in Rotated Sorted Array (Medium)", hint: "Binary search on a rotated array: if the mid element is greater than the right element, the minimum is in the right half; otherwise it's in the left half." }
+                ]
+            },
+
+            {
+                dayNumber: 15, phase: 3,
+                topic: "Binary Search — On the Answer",
+                conceptExplanation: `Here is a revelation that expands binary search from a search technique into a problem-solving superpower: you do not have to be searching for a value in a sorted array. You can use binary search to search for the optimal answer to a problem — as long as the answer space has one special property: feasibility is monotonic. That means there is a clear threshold where answers flip from "impossible" to "possible" (or vice versa), and once they flip, they never flip back.\n\nThe classic example: Koko the gorilla must eat all bananas in H hours. There are N piles of bananas. She eats at speed K bananas per hour. What is the minimum speed K that lets her finish in time?\n\nHere is the monotonic property: if speed K works, any speed greater than K also works. There is a threshold — below it, she cannot finish; above it, she can. Binary search finds that exact threshold.\n\nThe approach: binary search the speed space from 1 to max(pile sizes). For each candidate speed K, simulate the question "can Koko finish at this speed?" — that is just N division-and-ceiling operations, one per pile. This simulation is O(N). We binary-search the speed space (O(log M) iterations, where M is the maximum pile size). Total: O(N log M). The pattern: binary search the answer, linear-time feasibility check.`,
+                bigOExplanation: `Key question: N piles, max pile size M — how many steps?\n\nBINARY SEARCH ON ANSWER → O(N log M)\nlog M iterations of binary search (M = the range of possible answer values). Each iteration runs an O(N) feasibility check — one pass through N piles. Total: N × log M steps.\n\nCOMPARED TO BRUTE FORCE: Try every speed from 1 to M. For each, check N piles. O(N × M) steps. For M=10^9 and N=10^5: that is 10^14 steps vs. O(N log M) ≈ 10^5 × 30 = 3 million steps. Binary search on the answer is billions of times faster.\n\nRECOGNIZING THE PATTERN: Any time a problem asks "what is the minimum X such that Y is possible?" or "what is the maximum X such that Y still holds?" — check if feasibility is monotonic. If the answer flips exactly once from impossible to possible as X increases, binary search on the answer space is available. This pattern appears constantly once you have eyes to see it.`,
+                practiceQuestions: [
+                    { title: "Koko Eating Bananas (Medium)", hint: "Binary search on the eating speed from 1 to max(piles) — for each candidate speed, check if sum(ceil(pile/speed)) ≤ H." },
+                    { title: "Capacity to Ship Packages Within D Days (Medium)", hint: "Binary search the ship capacity from max(weights) to sum(weights) — simulate greedily whether packages can be shipped within D days at that capacity." },
+                    { title: "Split Array Largest Sum (Hard)", hint: "Binary search on the maximum subarray sum; for each candidate maximum, greedily check how many partitions are needed — if ≤ m, the answer may be smaller." }
+                ]
+            },
+
+            // ── PHASE 4 ──────────────────────────────────────────────────
+            {
+                dayNumber: 16, phase: 4,
+                topic: "Linked Lists — The Paper Chain",
+                conceptExplanation: `Forget the numbered parking lot. Now imagine a paper chain made of individual links. Each link contains a note (the data) and a hand-drawn arrow pointing to the next link. The links do not have to sit next to each other — they can be scattered anywhere in memory. To travel from one link to the next, you follow the arrow. To find the 7th link, you must start at the first link and follow 7 arrows, one at a time.\n\nThis is a singly linked list. Each node stores its data and a "next" pointer — the arrow. The chain begins at the "head" node. The final node's "next" pointer is null, signaling the end.\n\nThe dramatic advantage over arrays: inserting a new link between link 3 and link 4 takes just 2 arrow updates. Create the new link, point its arrow to link 4, then update link 3's arrow to point at the new link. In an array, this same insertion would require shifting potentially N elements. For modifications-heavy workloads, linked lists win decisively.\n\nThe tradeoff: reading. To read the 742nd element of an array, the computer jumps there in 1 step. To read the 742nd element of a linked list, the computer must follow 742 arrows, one at a time. Arrays are optimized for reading. Linked lists are optimized for inserting and deleting.`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nREAD by index → O(N)\nMust traverse from the head, following arrows one by one. No shortcut. This is the linked list's weakness.\n\nINSERT at head → O(1)\nCreate a new node, point it at the old head, update the head pointer. Two arrow changes. Always 1 step. Constant time — the linked list's superpower!\n\nINSERT at tail (with a tail pointer) → O(1)\nOne new node, one arrow update. Constant time.\n\nINSERT in middle → O(N)\nYou must traverse to find the position (O(N) steps), then do the 2-pointer update (O(1)). Total: O(N).\n\nTHE STORY OF THE TRADE-OFF:\nArrays: O(1) read by index, O(N) insert in middle.\nLinked Lists: O(N) read by index, O(1) insert at head.\nChoose based on which operation dominates your workload. If your program reads constantly and inserts rarely, use an array. If your program inserts at the front constantly and reads by index rarely, use a linked list.`,
+                practiceQuestions: [
+                    { title: "Reverse Linked List (Easy)", hint: "Use three variables: prev (starts null), curr (starts at head), next_node (temporary) — in each iteration, point curr.next backward to prev, then advance all three pointers." },
+                    { title: "Merge Two Sorted Lists (Easy)", hint: "Compare the heads of both lists, attach the smaller one to your result, and advance that list's pointer — a dummy head node simplifies edge cases." },
+                    { title: "Linked List Cycle (Easy)", hint: "Use Floyd's tortoise-and-hare: slow moves one step, fast moves two — if there's a cycle, they will eventually meet; if not, fast reaches null." }
+                ]
+            },
+
+            {
+                dayNumber: 17, phase: 4,
+                topic: "Linked Lists — Fast & Slow Pointers",
+                conceptExplanation: `Here is a puzzle: you are handed a linked list, but you do not know if it forms a cycle — that is, does the last node secretly point back to some earlier node, creating an infinite loop? And here is the constraint: you must figure this out without using any extra memory to mark visited nodes. No hash maps, no extra arrays.\n\nThe beautiful solution: send two runners through the list. The slow runner takes one step at a time. The fast runner takes two steps at a time. Now watch what happens in each scenario.\n\nNo cycle: the fast runner eventually reaches a null pointer — the end of the list — before lapping the slow runner. Race over. No cycle detected.\n\nCycle: the fast runner will eventually lap the slow runner. Because fast gains exactly one step on slow per iteration, and both runners are stuck in the same cycle, fast must eventually catch up. They will land on the same node. Cycle detected!\n\nThis is Floyd's Cycle Detection Algorithm — affectionately called the "tortoise and hare." The same idea, with a slight variation, also finds the middle of a linked list: when the fast runner (2 steps) reaches the end, the slow runner (1 step) is exactly at the midpoint. Try it on a 6-node list — fast takes 3 iterations, slow takes 3 steps, landing at node 3. Perfect.`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nCYCLE DETECTION → O(N)\nIn the worst case — a cycle at the very end — both runners traverse most of the list before meeting. The fast runner gains exactly 1 step per iteration on the slow runner. Once both are in the cycle, the fast runner laps the slow one in at most cycle_length iterations. Total: O(N) steps — linear time.\n\nFIND MIDDLE → O(N)\nFast runner reaches the end after N/2 iterations (moving 2 steps each time, covering the full N). Slow runner has taken N/2 steps — the midpoint. Still linear time.\n\nSPACE → O(1)\nJust two pointer variables. No arrays, no hash maps, no visited-node tracking. The space cost is essentially zero, regardless of list size. This is one of the most memory-efficient techniques in the toolbox.`,
+                practiceQuestions: [
+                    { title: "Linked List Cycle II (Medium)", hint: "After detecting a cycle with fast/slow pointers, reset one pointer to head — advance both one step at a time; they meet exactly at the cycle entry node (this requires a mathematical proof to understand why)." },
+                    { title: "Find the Duplicate Number (Medium)", hint: "Treat the array as a linked list (value = next node index) — a cycle exists because of the duplicate; apply Floyd's algorithm, then the two-pointer meeting trick to find the duplicate." },
+                    { title: "Middle of the Linked List (Easy)", hint: "Fast pointer moves 2, slow moves 1 — when fast is at the last node or null, slow is at the middle." }
+                ]
+            },
+
+            {
+                dayNumber: 18, phase: 4,
+                topic: "Linked Lists — Reversal, Merging & Reordering",
+                conceptExplanation: `Three operations every interview expects you to perform fluently on linked lists. Each one is a pure pointer-surgery exercise — no extra data structures, just careful arrow redirection.\n\nREVERSAL: Imagine a paper chain 1→2→3→4→5. You want 5→4→3→2→1. You cannot change all the arrows at once. You change them one at a time, using three bookmarks — "prev," "curr," and "next_temp." For each link, save curr's forward arrow as next_temp (so you don't lose the rest of the chain), then flip curr's arrow backward to point at prev, then advance both prev and curr forward. Repeat until you have walked through every link. The last node becomes the new head.\n\nMERGE SORTED LISTS: Two sorted chains. Compare the front links — whichever has the smaller value, attach it to your result chain and advance past it. Repeat until one chain runs out, then attach the entirety of the remaining chain. It is exactly like shuffling two sorted hands of cards, always placing the smaller card next.\n\nREORDER LIST: Given 1→2→3→4→5, produce 1→5→2→4→3. The trick: three sub-operations in sequence. First, find the midpoint (fast/slow pointers). Second, reverse the second half in place. Third, weave the two halves together alternately — one from the front, one from the back.`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nREVERSAL → O(N) time, O(1) space\nOne single pass through N nodes. Three pointer variables. No extra structures. The space story is as good as it gets.\n\nMERGE TWO SORTED LISTS → O(N+M) time, O(1) space\nProcess the total N+M nodes across both lists. Each comparison-and-attachment is 1 step. Only a dummy head variable and a few pointers.\n\nREORDER LIST → O(N) time, O(1) space\nThree sequential O(N) operations (find-middle, reverse, weave) each using O(1) extra space. Composing three O(N)/O(1) steps gives an overall O(N)/O(1) solution.\n\nTHE RECURRING THEME: Linked list algorithms love the O(N) time, O(1) space combination. Manipulating pointers in place means you never need to allocate a helper array proportional to the input size. When an interviewer says "solve this without extra memory," linked-list pointer surgery is often the answer.`,
+                practiceQuestions: [
+                    { title: "Reorder List (Medium)", hint: "Three steps: find middle with slow/fast pointers, reverse the second half in-place, then merge the two halves alternately — all three steps are O(N) / O(1)." },
+                    { title: "Merge K Sorted Lists (Hard)", hint: "Use a min-heap initialized with the head of each list — repeatedly extract the minimum node, attach it to the result, and push that node's next into the heap." },
+                    { title: "Sort List (Medium)", hint: "Merge sort on a linked list: find the middle (slow/fast), recursively sort each half, then merge — O(N log N) time, O(log N) space for the recursion stack." }
+                ]
+            },
+
+            {
+                dayNumber: 19, phase: 4,
+                topic: "LRU Cache — Combining Hash Tables & Linked Lists",
+                conceptExplanation: `Here is the engineering challenge: design a cache that holds K items. When it is full and a new item arrives, automatically evict the item that was used least recently. And here is the cruel constraint that makes this hard: both "get an item" and "add an item" must complete in essentially 1 step, no matter how many items are cached.\n\nThe analogy: a narrow bookshelf that holds exactly 5 books. Whenever you read a book, you immediately move it to the left end of the shelf (marking it "most recently used"). When the shelf is full and a new book arrives, you pull the rightmost book off (it has been untouched the longest — "least recently used") to make room.\n\nThe engineering puzzle: a hash table alone gives O(1) lookups but does not track recency order. A doubly linked list alone tracks recency order perfectly but lookups are O(N). The elegant insight: use both together! The hash map stores: key → a direct pointer to the node in the doubly linked list. The doubly linked list maintains recency order. When you access an item, the hash map lookup gives you the exact node in O(1) steps; four pointer updates move it to the front in O(1) steps. When the cache is full, removing the last node in the list (the LRU item) takes O(1) steps. Every single operation is O(1).`,
+                bigOExplanation: `Key question: K items in cache — how many steps per operation?\n\nGET → O(1)\nHash map lookup (1 step) + move node to front (4 pointer updates = 1 step). Constant time. Always.\n\nPUT (cache not full) → O(1)\nHash map insert + add node to front. Constant time.\n\nPUT (cache full) → O(1)\nRemove the tail node (LRU) from both the list and hash map + add new node to front and hash map. Constant time.\n\nSPACE → O(K) — the cache is bounded by design.\n\nTHE DEEPER LESSON: The LRU Cache is a masterclass in combining data structures. Each structure covers the other's weakness. Hash map: blazing fast lookup, zero awareness of order. Doubly linked list: perfect order tracking, slow lookup. Combined: blazing fast lookup with perfect order tracking. The lesson: when a single data structure cannot meet all requirements, ask which two structures complement each other perfectly.`,
+                practiceQuestions: [
+                    { title: "LRU Cache (Medium)", hint: "Use an OrderedDict in Python (or a HashMap + DoublyLinkedList in Java/JS) — on get, move the accessed key to the end; on put over capacity, remove the front (oldest) entry." },
+                    { title: "Design a HashMap (Easy)", hint: "Use an array of buckets with chaining (linked lists at each bucket) — hash the key to a bucket index, then scan the chain for the key." },
+                    { title: "All O(1) Data Structure (Hard)", hint: "Combine a doubly linked list of frequency nodes with a hash map from key to its frequency node — similar intuition to LRU but tracking min/max access counts." }
+                ]
+            },
+
+            {
+                dayNumber: 20, phase: 4,
+                topic: "Merge K Sorted Lists & Advanced Linked List Review",
+                conceptExplanation: `You have K sorted paper chains laid out side by side. Your goal: weave them all into one single sorted chain. For example, 3 chains — [1, 4, 7], [2, 5, 8], [3, 6, 9] — should become [1, 2, 3, 4, 5, 6, 7, 8, 9].\n\nThe naive approach: repeatedly scan the front link of all K chains to find the current minimum. For each of N total nodes, you scan K fronts. That is K steps per node × N nodes = O(NK) total steps. If K is large, this story becomes painful fast.\n\nThe insight: you never need to look at all K fronts simultaneously. You only need the current minimum efficiently. Enter the min-heap — a structure where the smallest element is always instantly available at the top (more on heaps in Day 30).\n\nInitialize the heap with the first node from each of the K chains. The heap always holds at most K elements — one per chain. Pop the minimum node, attach it to your result chain, and push that node's successor onto the heap. The heap automatically re-sorts itself after each push, maintaining the minimum at the top. Each extraction and insertion takes O(log K) steps — not O(K). Over N total nodes, this is a dramatic improvement.\n\nThis K-way merge pattern appears in external sorting (merging files too large for RAM), database merge joins, and any time you need to combine multiple pre-sorted streams into one.`,
+                bigOExplanation: `Key question: N total nodes across K lists — how many steps?\n\nNAIVE K-SCAN → O(N × K)\nFor each of N nodes, scan K list fronts. For K=1,000 and N=1,000,000: one billion steps.\n\nK-WAY MERGE WITH MIN-HEAP → O(N log K)\nN nodes × (one heap pop + one heap push per node) = N × O(log K) steps. For K=1,000, log₂(1,000) ≈ 10. So: ten million steps instead of one billion. That is 100× faster!\n\nTHE STORY: O(N log K) grows nearly linearly with N. Even if K grows large, log K grows extremely slowly. Doubling K from 1,000 to 2,000 adds only 1 extra step per node — a tiny constant. This is why heap-based K-way merge is one of the workhorses of large-scale data processing.`,
+                practiceQuestions: [
+                    { title: "Merge K Sorted Lists (Hard)", hint: "Push the head of each list into a min-heap with (value, list_index, node) tuples — pop the minimum, add to result, push that node's next if it exists." },
+                    { title: "Find K Pairs with Smallest Sums (Medium)", hint: "This is another K-way merge: start with (nums1[0]+nums2[j]) for all j, then expand the frontier lazily using a min-heap." },
+                    { title: "Kth Smallest Element in a Sorted Matrix (Medium)", hint: "Treat each row as a sorted list — apply the K-way merge pattern with a min-heap initialized from the first column." }
+                ]
+            },
+
+            // ── PHASE 5 ──────────────────────────────────────────────────
+            {
+                dayNumber: 21, phase: 5,
+                topic: "Strings & Palindromes — Expand from Center",
+                conceptExplanation: `A palindrome reads the same forwards and backwards: "racecar," "level," "abcba." The challenge: given a string, find its longest palindromic substring.\n\nThe naive approach: check every possible substring. For N characters, there are roughly N² substrings. Verifying each one requires a full scan — up to N steps per verification. Total: O(N³). For a string of 1,000 characters, that is a billion steps. Way too slow.\n\nHere is the elegant insight: every palindrome has a center. Odd-length palindromes have a single character at the center. Even-length ones have a center between two identical characters. For each possible center, try stretching outward — one character to the left, one character to the right — and keep stretching as long as both edges match.\n\nPicture a rubber band pinched at its center. Release it symmetrically outward. It stretches as long as the characters on both sides are identical. The moment they differ, it snaps back. That maximum stretch length before snapping is the palindrome's length.\n\nThere are 2N - 1 possible centers in a string of length N (N single characters plus N-1 gaps between characters). For each center, expand as far as possible. Record the longest palindrome found across all centers.`,
+                bigOExplanation: `Key question: N characters — how many steps?\n\nBRUTE FORCE → O(N³)\nCheck every substring, verify each one. N=1,000 → roughly 1 billion steps. Impractical.\n\nEXPAND FROM CENTER → O(N²)\n2N-1 possible centers. For each, we expand outward — worst case, one expansion touches all N characters (a string like "aaaaaa"). So worst case: O(N) per center × O(N) centers = O(N²). For N=1,000: roughly 1 million steps. A thousandfold improvement!\n\nO(N) IS POSSIBLE → Manacher's Algorithm\nThis advanced algorithm reuses the symmetry of already-discovered palindromes to skip redundant expansions, achieving linear time. For interviews, O(N²) with expand-from-center is almost always accepted and expected — Manacher's is bonus knowledge.\n\nTHE STORY: Expand from center converts an O(N³) brute-force into an O(N²) solution by being smarter about where we look. Choosing the right anchor point eliminates the inner verification loop entirely.`,
+                practiceQuestions: [
+                    { title: "Palindromic Substrings (Medium)", hint: "For each index, expand from center for both odd and even length palindromes — count each valid palindrome as you expand." },
+                    { title: "Longest Palindromic Substring (Medium)", hint: "Same expand-from-center logic, but track the longest palindrome found instead of counting all of them." },
+                    { title: "Valid Palindrome (Easy)", hint: "Use two pointers from both ends, skipping non-alphanumeric characters, and compare lowercased characters — no need to create a cleaned string." }
+                ]
+            },
+
+            {
+                dayNumber: 22, phase: 5,
+                topic: "Bit Manipulation — Binary Superpowers",
+                conceptExplanation: `Every integer stored in your computer is secretly a sequence of 0s and 1s — binary digits, or bits. The number 13 in binary is 1101. Bit manipulation lets you work directly on these 0s and 1s using special operations that the CPU executes in a single electrical tick — no loops, no N-dependent steps.\n\nWhy does this matter? Because some problems that look like they need loops and arithmetic can be solved in O(1) steps with a single bit operation. The speed is not just faster — it is a completely different category of fast.\n\nThe key operations, in plain English:\nAND (&): Both bits must be 1 for the result to be 1. Like intersection — only what both sides share.\nOR (|): At least one bit must be 1. Like union — everything either side has.\nXOR (^): Exactly one side must be 1 — the bits must differ. The superpower of XOR: any number XOR itself equals 0. And anything XOR 0 equals itself unchanged.\n\nThe classic XOR trick: given an array where every number appears exactly twice except for one lonely number — find the loner. XOR all numbers together. Paired numbers cancel each other out (because n ^ n = 0). The lone number survives, because it has nothing to cancel against. One pass through N elements, zero extra memory.`,
+                bigOExplanation: `Key question: N data elements — how many steps?\n\nANY SINGLE BIT OPERATION → O(1)\nThe CPU processes all 32 or 64 bits simultaneously in one electrical step. Not 32 separate steps — one. Constant time regardless of the number's value.\n\nXOR OVER N NUMBERS → O(N)\nOne XOR per number. N numbers → N operations. Linear time. But the space is O(1) — just one running XOR variable.\n\nCOUNTING SET BITS (how many 1s in a number) → O(1)\nA number has at most 32 bits. Checking all 32 takes 32 steps — a constant. With Brian Kernighan's trick (n = n & (n-1) clears the lowest set bit), you only loop k times where k is the number of set bits. Often much faster than 32 iterations.\n\nTHE BIG PICTURE: Bit manipulation trades readability for speed. The operations are CPU-native and blindingly fast. When a problem involves powers of 2, counting, toggling, or "find the unique element," always pause and ask: "Is there a bit trick here?" Often there is, and it will convert your O(N) solution into O(1).`,
+                practiceQuestions: [
+                    { title: "Missing Number (Easy)", hint: "XOR all indices 0..N with all values in the array — everything cancels except the missing number, which has no pair." },
+                    { title: "Counting Bits (Easy)", hint: "For each n, dp[n] = dp[n >> 1] + (n & 1) — the number of set bits in n equals the bits in n/2 plus whether n is odd." },
+                    { title: "Number of 1 Bits (Easy)", hint: "Repeatedly apply n = n & (n-1) to clear the lowest set bit, counting iterations until n becomes zero." }
+                ]
+            },
+
+            {
+                dayNumber: 23, phase: 5,
+                topic: "Binary Trees — The Family Tree",
+                conceptExplanation: `Why do trees matter? Because some data has naturally hierarchical structure — a company org chart, a file system, a tournament bracket. And hierarchical structure enables something powerful: at each level, you can eliminate half the remaining candidates, just like binary search but woven into the data structure itself.\n\nA binary tree is the simplest tree: every node has at most two children, called left and right. The topmost node is the root. Nodes with no children are called leaves. The height of a tree is the number of edges from the root to the deepest leaf.\n\nHere is the most important insight about programming with trees: almost every tree problem is solved with recursion. And the secret to tree recursion is this — do not try to think about the whole tree at once. Think about what one single node needs to do, given the results from its children, then trust that the recursive call handles everything below.\n\nWengrow calls this "kicking the problem down the road." For example, to find the maximum depth: what does node X need to compute its own depth? It needs the depth of its left subtree and the depth of its right subtree. Once it has those: its own depth is simply 1 + max(left_depth, right_depth). Write that recurrence, handle the base case (null node returns 0), and you are done.`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nTRAVERSAL (visit every node) → O(N)\nEach of N nodes is visited exactly once. N nodes = N steps. Linear time. This is the baseline for any algorithm that must examine every node.\n\nBALANCED TREE HEIGHT → O(log N)\nIn a perfectly balanced tree, every level doubles the number of nodes. The bottom level has about N/2 nodes, the level above has N/4, and so on. The number of levels is log₂(N). To travel from root to any leaf: log N steps. For N=1,000,000: just 20 levels!\n\nDEGENERATE TREE HEIGHT → O(N)\nInsert already-sorted data into a plain binary tree without balancing and you get a "right-leaning chain" — every node has only a right child. Height = N. A degenerate tree is a linked list wearing a tree costume.\n\nTHE STORY: The shape of a tree determines whether operations are O(log N) or O(N). A balanced tree is efficient. A degenerate one is not. Self-balancing trees (AVL, Red-Black) maintain balance automatically, guaranteeing O(log N) always.`,
+                practiceQuestions: [
+                    { title: "Invert Binary Tree (Easy)", hint: "Recursively swap the left and right children of every node — the base case is when the node is null." },
+                    { title: "Maximum Depth of Binary Tree (Easy)", hint: "Return 1 + max(depth(left), depth(right)) — the base case (null node) returns 0." },
+                    { title: "Same Tree (Easy)", hint: "Two trees are the same if their roots match AND their left subtrees are the same AND their right subtrees are the same — a direct recursive definition." }
+                ]
+            },
+
+            {
+                dayNumber: 24, phase: 5,
+                topic: "Tree DFS — Depth First Search (Pre/In/Post-order)",
+                conceptExplanation: `Depth First Search explores as deep as possible down one branch before backtracking to try another. Picture exploring a cave system: you always go deeper into the current tunnel until you hit a dead end, then retrace your steps to the nearest fork and try the next tunnel.\n\nThere are three flavors of tree DFS, defined by when you "do work" at each node relative to visiting its children:\n\nPRE-ORDER (node, then left, then right): Process the current node first, before visiting any children. Natural for copying a tree or printing its structure from top to bottom. Think: "I do my job, then I send my children off."\n\nIN-ORDER (left, then node, then right): Go as far left as possible, process the node, then visit the right subtree. For a Binary Search Tree specifically, in-order traversal produces values in perfectly sorted ascending order — not a coincidence, but a direct consequence of the BST structure.\n\nPOST-ORDER (left, then right, then node): Visit both children completely before processing the current node. Perfect for problems where a node's answer depends on its children's answers — like computing subtree heights or performing safe deletions. Think: "I wait for all my children to report back, then I do my job."\n\nThe computer's key thought for tree DFS: "I will kick the sub-problems down the road to my children. When they return with their answers, I will combine them to produce my own answer and return it to my parent."`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nALL DFS TRAVERSALS → O(N) time\nRegardless of the traversal order (pre, in, or post), every node is visited exactly once. N nodes = N steps. Linear time always.\n\nSPACE (the call stack) → O(H) where H is tree height\nThe recursion stack is as deep as the current path from root to the node being visited. In a balanced tree: O(log N). In a degenerate tree: O(N).\n\nTHE HIDDEN SPACE COST: When you write recursive DFS, the operating system manages a call stack invisibly. Each recursive call adds a frame; each return removes one. The maximum frames at any moment equals the tree's height. For very deep trees (N > 100,000 levels), this invisible stack can overflow — which is why iterative DFS with an explicit stack is sometimes necessary for production code.`,
+                practiceQuestions: [
+                    { title: "Path Sum (Easy)", hint: "DFS tracking the running sum — subtract the current node's value; if you reach a leaf with remaining sum = 0, a valid path exists." },
+                    { title: "Diameter of Binary Tree (Easy)", hint: "At each node, the diameter passing through it = depth(left) + depth(right) — track the global maximum as you compute depths bottom-up." },
+                    { title: "Lowest Common Ancestor of BST (Easy)", hint: "In a BST, if both target values are smaller than the current node, go left; if both larger, go right; otherwise the current node IS the LCA." }
+                ]
+            },
+
+            {
+                dayNumber: 25, phase: 5,
+                topic: "Tree BFS — Level Order Traversal",
+                conceptExplanation: `Breadth First Search explores a tree level by level — all nodes at depth 1 before any at depth 2, all at depth 2 before any at depth 3. Think of ripples spreading outward from a pebble dropped in a pond: the first ring forms, then the second, then the third — each perfectly encircling the previous.\n\nBFS uses a queue — a First In, First Out structure, like a deli ticket line — instead of a stack. Here is the algorithm: enqueue the root. Then repeat: dequeue a node, process it, enqueue its left child (if it exists), enqueue its right child (if it exists). Because the queue is FIFO, all level-1 nodes are fully processed before any of their children (level-2 nodes) are reached. This naturally enforces the level-by-level property.\n\nTo capture nodes group-by-group into separate level arrays: at the start of each level, note the current queue size — that is exactly how many nodes belong to this level. Process exactly that many nodes before considering the next level.\n\nWhen to choose BFS over DFS? BFS is perfect for anything involving "shortest" or "shallowest" — minimum depth, shortest path in an unweighted graph, level-by-level printing. The first time BFS reaches a node is always via the shortest possible path from the start, because it explores all shorter paths first.`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nBFS TRAVERSAL → O(N) time\nEach of N nodes is enqueued exactly once and dequeued exactly once. N nodes = N steps. Linear time — same as DFS.\n\nSPACE (the queue) → O(W) where W is the maximum tree width\nThe queue holds at most one full level at a time. In a balanced binary tree, the widest level is the bottom, with roughly N/2 nodes. So worst-case queue size is O(N/2) = O(N).\n\nBFS vs. DFS SPACE TRADE-OFF:\nDFS stack depth = tree height = O(log N) for balanced trees.\nBFS queue size = max width = O(N) for balanced trees.\nFor wide, shallow trees: DFS uses less memory. For tall, narrow trees (like a degenerate chain where width=1): BFS uses less memory. Choose BFS when you need level-order processing or shortest-path guarantees. Choose DFS when memory is tight and the tree is wide.`,
+                practiceQuestions: [
+                    { title: "Binary Tree Level Order Traversal (Medium)", hint: "BFS with a queue — at the start of each level, snapshot the queue's current length; process exactly that many nodes and collect their values before starting the next level." },
+                    { title: "Minimum Depth of Binary Tree (Easy)", hint: "BFS naturally finds the minimum depth — the first leaf node encountered is at the shallowest level; return its depth immediately." },
+                    { title: "Zigzag Level Order Traversal (Medium)", hint: "Same BFS level-order approach, but alternate the direction you append values to each level's list using a boolean flag." }
+                ]
+            },
+
+            {
+                dayNumber: 26, phase: 5,
+                topic: "Binary Search Trees — The Sorted Family Tree",
+                conceptExplanation: `A Binary Search Tree is a binary tree with one extra rule that changes everything: for every node, all values in its left subtree are smaller, and all values in its right subtree are larger. And this rule must hold at every single node throughout the entire tree — not just the root.\n\nThis one rule transforms the tree into a self-organizing sorted structure. Searching for a value becomes like playing a perfect guessing game. At each node, the computer asks: "Is my target smaller than this node? Go left and eliminate everything right. Larger? Go right and eliminate everything left. Equal? Found it!" Each comparison eliminates roughly half the remaining tree — the same intuition as binary search on a sorted array, but now woven into the data structure itself.\n\nThe most delightful property: an in-order traversal of a BST (left subtree, then current node, then right subtree) always produces values in perfectly sorted ascending order. Traverse the BST in-order and you get a sorted sequence for free — no sorting algorithm needed.\n\nInsertion follows the search path: just keep going left or right until you "fall off" the tree, then plant your new node there. Deletion is trickier for nodes with two children — you replace the deleted node with its in-order successor (the smallest value in its right subtree) to maintain the BST invariant.`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nBALANCED BST — SEARCH, INSERT, DELETE → O(log N)\nEach comparison eliminates roughly half the remaining nodes. Height = log₂(N). For N=1,000,000: at most 20 steps to find, insert, or delete any value. Beautiful.\n\nDEGENERATE BST → O(N)\nInsert already-sorted data (1, 2, 3, 4, 5...) and you get a right-leaning chain. Every node has only a right child. Height = N. All operations degrade to O(N) — linear time. The BST has lost all its advantages and become a slow linked list.\n\nTHE BALANCE PROBLEM: This is exactly why self-balancing BSTs exist. AVL trees and Red-Black trees use rotations after each insertion or deletion to keep the tree balanced, guaranteeing O(log N) at all times. Your language's built-in sorted map (Java's TreeMap, C++'s std::map) is almost certainly a Red-Black tree internally.`,
+                practiceQuestions: [
+                    { title: "Validate Binary Search Tree (Medium)", hint: "Pass valid range bounds [min_val, max_val] through recursion — every node must satisfy min_val < node.val < max_val, with bounds tightened at each step." },
+                    { title: "Kth Smallest Element in a BST (Medium)", hint: "In-order traversal of a BST produces sorted values — stop at the kth node visited." },
+                    { title: "Lowest Common Ancestor of a Binary Tree (Medium)", hint: "If the current node equals either target, it's the LCA — otherwise, if targets appear in different subtrees, the current node is the LCA." }
+                ]
+            },
+
+            {
+                dayNumber: 27, phase: 5,
+                topic: "Tree DP — Subtree Properties & Path Problems",
+                conceptExplanation: `Some tree problems need information from both children before a node can compute its own answer. This is Tree Dynamic Programming, and the "kick the problem down the road" recursion pattern is built exactly for it.\n\nThe core skill: decide what your recursive function returns. The choice of return value is the creative challenge — it needs to carry exactly as much information as the parent needs, no more and no less.\n\nExample: "Is this binary tree balanced?" (every node's subtrees differ in height by at most 1). What does a node need from each child? Two things: (1) is that subtree balanced? and (2) how tall is it? Instead of returning a boolean, return the height — and use a special sentinel value (-1) to encode "unbalanced." If either child returns -1, propagate -1 immediately. Otherwise, check if the current node is balanced, and return its height.\n\nExample: "Find the maximum path sum in a binary tree." A path can arc over any node — going left subtree, through the node, then right subtree. But a path continuing upward can only include one child (you cannot go both left and right and still have a valid upward path). Key insight: the globally best arc (left + node + right) is tracked separately as a global variable. The function returns only the best single-branch value to the parent. Separate "what I track globally" from "what I return to my parent."`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nTREE DP → O(N) time\nEvery node is visited exactly once. At each node, you do a constant amount of work — combining the children's returned values. The number of values returned per recursive call (1, 2, or 3) just multiplies by a constant, not by N. Total: O(N) steps — linear time.\n\nSPACE → O(H) for the recursion stack\nH = tree height. Balanced tree: O(log N). Degenerate tree: O(N).\n\nTHE POST-ORDER PATTERN: Tree DP is almost always post-order traversal — you need the children's answers before you can compute the parent's. If you find yourself writing "I need to know what is below before I can answer for the current node," you are doing Tree DP with post-order. Recognize this pattern and the code writes itself.`,
+                practiceQuestions: [
+                    { title: "Binary Tree Maximum Path Sum (Hard)", hint: "Each recursive call returns the best single-branch gain from that node; separately track the global max which may include the full arc (left + node + right) — only return the one-branch version to the parent." },
+                    { title: "Balanced Binary Tree (Easy)", hint: "Return -1 if the subtree is unbalanced, or the actual height if balanced — if either child returns -1, propagate -1 immediately." },
+                    { title: "House Robber III (Medium)", hint: "Each node returns a pair (rob_this_node, skip_this_node) — rob = left.skip + right.skip + value; skip = max(left) + max(right). Classic tree DP with dual-return." }
+                ]
+            },
+
+            {
+                dayNumber: 28, phase: 5,
+                topic: "Serialize & Deserialize Binary Trees",
+                conceptExplanation: `How do you save a tree to a file? A tree is a 2D hierarchical structure, but a file is a flat 1D sequence of characters. Serialization converts the tree into a flat string. Deserialization reconstructs the exact original tree from that string. This is fundamental to saving data to disk, sending data over a network, or passing a tree between services.\n\nThe elegant approach: pre-order DFS with a special marker for null children. As you visit each node in pre-order (node first, then left child, then right child), write its value. When you encounter a null (an absent child), write a special marker — say, the letter "N." This encodes both the values and the tree's structural shape.\n\nWhy does pre-order work for reconstruction? Because pre-order records the root before its children. During deserialization, you read the flat string left to right. The first token is always the root — construct it immediately. The next sequence of tokens describes the left subtree — recursively build it. The sequence after that describes the right subtree — recursively build it. You never need to "look ahead" or know where one subtree ends and another begins, because the null markers handle that precisely.\n\nCrucial insight: the "N" null markers are not just padding — they are structural information. Without them, multiple different trees could produce the same sequence of values. The markers make deserialization unambiguous.`,
+                bigOExplanation: `Key question: N nodes — how many steps?\n\nSERIALIZE → O(N)\nOne pre-order DFS pass. Each of N nodes is visited exactly once. The output contains N value tokens plus up to N+1 null markers — O(N) total characters.\n\nDESERIALIZE → O(N)\nProcess each token in the serialized string exactly once. O(N) tokens → O(N) steps.\n\nSPACE → O(N) for the string + O(H) for the recursion stack\nThe serialized string needs O(N) characters. The recursive deserialization uses O(H) stack frames where H is the tree height.\n\nBFS ALTERNATIVE: Level-by-level serialization (LeetCode's format) uses BFS instead of DFS. Both are O(N) time. Pre-order DFS with nulls is elegant because the recursive deserialization mirrors the recursive tree structure exactly — the code has a beautiful symmetry with the data.`,
+                practiceQuestions: [
+                    { title: "Serialize and Deserialize Binary Tree (Hard)", hint: "Serialize with preorder DFS, using 'N,' for nulls; deserialize by splitting on comma and recursively building left then right subtrees from the resulting token iterator." },
+                    { title: "Serialize and Deserialize BST (Medium)", hint: "BST can be serialized with preorder (no null markers needed!) because BST structure can be reconstructed from preorder values alone using range bounds." },
+                    { title: "Construct Binary Tree from Preorder and Inorder Traversal (Medium)", hint: "The first element of preorder is always the root; find it in inorder to split left and right subtrees, then recurse on each piece." }
+                ]
+            },
+
+            {
+                dayNumber: 29, phase: 5,
+                topic: "Tries — The Autocomplete Word Tree",
+                conceptExplanation: `Why do tries matter? Because hash tables are terrible at prefix queries. If you have a million words in a hash table and someone types "ca-," asking "which words start with ca?" would require scanning all million words. Tries solve prefix queries as elegantly as hash tables solve exact lookups.\n\nA trie is a tree where each edge represents a single character. Every path from the root to a specially marked node spells out a stored word. To insert "car": start at the root, create a "c" edge if none exists, then an "a" edge, then an "r" edge, and mark the "r" node as "a word ends here."\n\nThe beautiful property: all words sharing a prefix share the same path from the root. "car," "cat," and "carry" all travel through root → c → a before their paths diverge. This shared prefix path is the key insight — it means a single traversal of L steps reaches all words with a given L-character prefix.\n\nStep by step for autocomplete: the user types "ca." The computer follows root → "c" → "a" in 2 steps. Now it is standing at the "a" node. Every path downward from here spells out a word beginning with "ca." Explore all descendants to collect them. No scanning of unrelated words required.`,
+                bigOExplanation: `Key question: L-character word, N total words — how many steps?\n\nINSERT a word → O(L)\nTravel L nodes (one per character), creating any that do not exist. Just the length of the word — not the size of the dictionary. Inserting "platypus" takes 8 steps whether the trie holds 10 words or 10 million.\n\nSEARCH for an exact word → O(L)\nTraverse L nodes. O(L) steps. The dictionary size is irrelevant.\n\nPREFIX SEARCH ("starts-with" check) → O(L)\nTraverse L nodes to the prefix endpoint. O(L) steps to confirm the prefix exists.\n\nCOMPARE TO HASH MAP: Hash map exact lookup: O(L) — same as trie. But hash map prefix search: O(N × L) — check every word. Trie prefix search: O(L + output_size). For a dictionary of 100,000 words and a typical 3-character prefix: hash map scans 300,000 characters; trie reaches the answer node in 3 steps.\n\nSPACE: O(total characters across all words). Shared prefixes reduce space significantly — all 50,000 words starting with "com-" share those 3 nodes.`,
+                practiceQuestions: [
+                    { title: "Implement Trie (Medium)", hint: "Each TrieNode has a children dictionary (or 26-length array) and an is_end_of_word boolean — insert/search/startsWith each walk the trie character by character." },
+                    { title: "Design Add and Search Words Data Structure (Medium)", hint: "This is trie search with a wildcard '.' that can match any character — use DFS when you encounter '.', trying all non-null children." },
+                    { title: "Word Search II (Hard)", hint: "Build a trie from the word list, then DFS from each cell on the board — at each step, check if the current prefix exists in the trie to prune dead ends early." }
+                ]
+            },
+
+            {
+                dayNumber: 30, phase: 5,
+                topic: "Heaps / Priority Queues — The VIP Queue",
+                conceptExplanation: `A regular queue serves people in arrival order — first come, first served, like a bakery ticket line. A priority queue serves the highest-priority person next, regardless of when they arrived — like a hospital emergency room where the most critically injured patient is seen next, not the longest-waiting one.\n\nA heap is the data structure that makes a priority queue efficient. Visualize it as a binary tree with one strict rule — the heap property: every parent node is smaller than both of its children (in a min-heap), or larger (in a max-heap). The smallest element is always at the root — available in 1 step.\n\nThe clever implementation trick: heaps are stored as flat arrays with no pointers. A node at index i has its left child at index 2i+1 and right child at 2i+2. Its parent lives at (i-1)/2. The entire tree structure is implied by the array positions — no memory overhead for pointers.\n\nInsertion: append the new element to the end of the array, then "bubble up" — compare with parent, swap if smaller, repeat until the heap property is restored. This travels at most one path from leaf to root: O(log N) steps.\n\nRemoving the minimum: take the root, put the last array element in its place, then "sink down" — compare with children, swap with the smaller child if needed, repeat. Also O(log N).`,
+                bigOExplanation: `Key question: N elements — how many steps?\n\nPEEK minimum → O(1)\nRead index 0. One step. Always. Constant time.\n\nINSERT (push) → O(log N)\nBubble up at most H = log N levels. The story: N doubles, steps increase by just 1. Gorgeous.\n\nDELETE minimum (pop) → O(log N)\nSink down at most H = log N levels. Same story.\n\nBUILD heap from N elements → O(N)\nYou might expect O(N log N) since you are inserting N elements. But the "heapify" bottom-up algorithm is actually O(N) — a beautiful result that comes from the fact that most nodes are near the bottom and barely need to bubble. 1,000,000 elements → O(1,000,000) to build the heap.\n\nFIND K LARGEST: Maintain a min-heap of size K. For each of N elements, push it — if heap exceeds K, pop the minimum. N pushes × O(log K) = O(N log K). For K=10, log₂(10) ≈ 3.3. So O(3.3N). Compare to sorting all N first: O(N log N). For large N and small K, the heap approach is dramatically faster.`,
+                practiceQuestions: [
+                    { title: "Kth Largest Element in an Array (Medium)", hint: "Maintain a min-heap of size K — push each element; if the heap exceeds K elements, pop the minimum; the top of the heap is the Kth largest." },
+                    { title: "Top K Frequent Elements (Medium)", hint: "Count frequencies with a hash map, then use a min-heap of size K to efficiently track the K most frequent — pop when size exceeds K, keeping only the top K." },
+                    { title: "Task Scheduler (Medium)", hint: "The key formula: the answer is max(N, (max_freq - 1) * (n + 1) + count_of_max_freq_tasks) — no heap required, but a greedy frequency analysis." }
+                ]
+            },
+
+            // ── PHASE 6 ──────────────────────────────────────────────────
+            {
+                dayNumber: 31, phase: 6,
+                topic: "Graphs — Introduction & BFS/DFS Traversal",
+                conceptExplanation: `Why do graphs matter? Because the most interesting real-world data is not a sequence or a hierarchy — it is a web of relationships. Social networks (people connected by friendships), road maps (cities connected by roads), the internet (pages connected by links) — all of these are graphs. Trees are just a special kind of graph: connected, no cycles, with a designated root.\n\nA graph is a collection of nodes (also called vertices) connected by edges. Edges can be directed (a one-way street — Twitter follows) or undirected (a two-way street — Facebook friends). They can be weighted (a road with a distance) or unweighted.\n\nHow you store a graph matters. An adjacency list gives each node a list of its neighbors — space-efficient for graphs with few edges. An adjacency matrix is an N×N grid where grid[i][j]=1 means an edge exists — fast to check if two nodes are connected, but uses O(N²) memory even if there are only a handful of edges.\n\nTraversing a graph follows the same BFS and DFS logic as trees, with one critical addition: a "visited" set. Trees cannot have cycles, so you never accidentally revisit a node. Graphs can have cycles, so without tracking visited nodes, you would loop forever. The "visited" set is the graph's seatbelt.`,
+                bigOExplanation: `Key question: V vertices, E edges — how many steps?\n\nGRAPH BFS or DFS → O(V + E)\nVisit each vertex once: V steps. Examine each edge: each edge is examined from both its endpoints at most once, so 2E total edge examinations. Together: O(V + E) steps — linear in the size of the graph.\n\nDENSE GRAPH (E ≈ V²) → O(V²)\nIf nearly every node connects to nearly every other node, E grows as V². The story becomes O(V + V²) = O(V²) — quadratic.\n\nSPARSE GRAPH (E ≈ V) → O(V)\nReal-world graphs (social networks, road maps) are typically sparse — each node has a small number of connections regardless of total size. The story is practically linear.\n\nWHY ADJACENCY LISTS WIN: With an adjacency list, traversal naturally costs O(V + E). With an adjacency matrix, you must inspect all V² entries even if most are 0. For sparse graphs — the common real-world case — adjacency lists are orders of magnitude more memory-efficient and faster to traverse.`,
+                practiceQuestions: [
+                    { title: "Number of Islands (Medium)", hint: "For each unvisited '1' cell, launch a DFS/BFS that marks all connected '1' cells as visited — the number of times you launch a new traversal = number of islands." },
+                    { title: "Max Area of Island (Medium)", hint: "Same as Number of Islands but instead of counting launches, count the size of each traversal and track the maximum." },
+                    { title: "Flood Fill (Easy)", hint: "BFS/DFS from the starting cell — replace the original color with the new color and continue expanding to same-colored neighbors." }
+                ]
+            },
+
+            {
+                dayNumber: 32, phase: 6,
+                topic: "Graphs — Clone Graph & Connected Components",
+                conceptExplanation: `CLONE GRAPH: You need to make an exact deep copy of a graph — brand new nodes, same structure, zero references to any original node. The challenge: graphs can have cycles, so a naive "just recurse into every neighbor" approach would loop forever.\n\nThe trick: a hash map serves two roles simultaneously. It is your "visited" set (preventing infinite loops) AND your registry mapping each original node to its clone. When you first encounter a node: create its clone, register the mapping (original → clone), then recursively clone its neighbors. When you encounter a node already in the map: it has already been cloned — just return the existing clone. Cycles are handled elegantly because the second time you visit a node, you immediately return the pre-built clone without recursing further.\n\nCONNECTED COMPONENTS: In an undirected graph, how many separate "islands" of connected nodes exist? It is the counting version of island detection. Iterate through all nodes. For each unvisited node, launch a BFS/DFS that marks every reachable node as visited. Count how many times you launch a fresh traversal — that count is your number of connected components.\n\nTwo nodes are in the same component if and only if you can walk from one to the other following edges. The traversal explores the entire reachable neighborhood. Each time you start a fresh traversal, you have found a new isolated island.`,
+                bigOExplanation: `Key question: V vertices, E edges — how many steps?\n\nCLONE GRAPH → O(V + E)\nVisit every vertex once and examine every edge once. The hash map lookup and insertion are O(1) each. Total: O(V + E).\n\nCONNECTED COMPONENTS (BFS/DFS) → O(V + E)\nThe outer loop visits each of V vertices once. The inner traversal examines edges, but crucially: across all component traversals combined, each edge is examined at most twice. Total work: O(V + 2E) = O(V + E).\n\nDYNAMIC ALTERNATIVE: If edges are being added one by one and you need to answer "are A and B connected?" after each addition, repeating BFS/DFS would cost O((V + E) × Q) for Q queries. Union-Find (Day 33) handles each query and each edge addition in nearly O(1) — a dramatic improvement for dynamic connectivity problems.`,
+                practiceQuestions: [
+                    { title: "Clone Graph (Medium)", hint: "BFS with a hash map (original → clone) as your visited set — create a clone when you first see a node; use the existing clone if it's already in the map." },
+                    { title: "Number of Connected Components in Undirected Graph (Medium)", hint: "BFS/DFS from each unvisited node, marking all reachable nodes — the component count equals the number of times you start a fresh traversal." },
+                    { title: "Graph Valid Tree (Medium)", hint: "A valid tree has exactly N-1 edges and is fully connected — check both conditions, or run DFS to verify no cycle exists." }
+                ]
+            },
+
+            {
+                dayNumber: 33, phase: 6,
+                topic: "Union Find — Grouping Herds with Ropes",
+                conceptExplanation: `Imagine a vast ranch with hundreds of cattle scattered across it. Some are in the same herd (connected by long ropes), some are in separate herds. You need to answer two questions constantly: "Are cow A and cow B in the same herd?" and "Merge herd A and herd B into one." These operations happen thousands of times as ranchers reorganize.\n\nUnion-Find (also called Disjoint Set Union) is the data structure built exactly for this. Every cow has a "herd representative" — a leader. To find which herd a cow belongs to, follow its rope chain to the leader. Two cows are in the same herd if and only if following their respective rope chains leads to the same leader.\n\nTwo clever tricks make every operation blindingly fast.\n\nPATH COMPRESSION: The first time you follow a chain to find the leader, rewire every cow along the path to point directly to the leader. Future queries on any of those cows skip the whole chain and arrive in 1 step.\n\nUNION BY RANK: When merging two herds, attach the smaller group's leader under the larger group's leader — not the other way around. This keeps the chain depth short.\n\nWith both tricks together, answering "same herd?" and "merge herds" both take essentially 1 step, no matter how many cattle there are or how many merges have happened.`,
+                bigOExplanation: `Key question: N elements, any number of union/find operations — how many steps per operation?\n\nFIND (with path compression) → O(α(N)) amortized\nα is the inverse Ackermann function. In plain English: α(N) is less than 5 for any N you will ever encounter in the real world — including N = 10^80 (more atoms than exist in the observable universe). Effectively 1 step per operation.\n\nUNION (with rank) → O(α(N)) amortized\nSame incredible story.\n\nN OPERATIONS TOTAL → O(N × α(N)) ≈ O(N)\nProcessing N union-find operations on N elements is essentially linear. It does not get much better.\n\nWHEN TO CHOOSE UNION-FIND OVER BFS/DFS: For static graphs (all edges known upfront), BFS/DFS is fine. But when edges arrive one by one and you need fast connectivity answers between arrivals, Union-Find is the champion. Each edge arrival is one union operation, each connectivity query is one find operation — both nearly O(1).`,
+                practiceQuestions: [
+                    { title: "Number of Provinces (Medium)", hint: "Use Union-Find — for each pair (i, j) where isConnected[i][j] = 1, union them; at the end, count unique roots (number of distinct find() values)." },
+                    { title: "Redundant Connection (Medium)", hint: "Process edges one by one with Union-Find — the first edge where both endpoints already share the same root is the redundant edge creating a cycle." },
+                    { title: "Accounts Merge (Medium)", hint: "Union all emails belonging to the same account, then group all emails sharing a root — use the owner name of the root email as the account name." }
+                ]
+            },
+
+            {
+                dayNumber: 34, phase: 6,
+                topic: "Graphs — Topological Sort & Course Schedule",
+                conceptExplanation: `You are signing up for university courses. Calculus requires Algebra. Differential Equations requires Calculus. Linear Algebra requires both Algebra and Calculus. In what order can you possibly take all of these courses? Is there a valid order at all?\n\nThis is topological sort — finding a linear ordering of nodes in a directed graph such that every edge points "forward." Every prerequisite appears before the course that depends on it. If the graph has a cycle (course A requires B, B requires C, C requires A), no valid ordering exists — this is an impossible circular dependency.\n\nKAHN'S ALGORITHM (the BFS approach): Start by finding all courses with zero prerequisites — these can be taken first. Process them. As you "complete" each one, decrement the prerequisite count of every course that depended on it. Any course whose count drops to zero can now be taken. Add it to the ready queue and repeat. If all courses are eventually processed, success! If some courses remain stuck (their counts never reach zero), a cycle exists.\n\nThe computer is thinking: "I will peel off the 'outermost layer' of dependency-free courses, then peel the next layer, then the next — like peeling an onion. Each layer I process reveals the next one. If I ever cannot peel further but courses remain, I have hit a cycle."`,
+                bigOExplanation: `Key question: V vertices (courses), E edges (prerequisites) — how many steps?\n\nTOPOLOGICAL SORT (either algorithm) → O(V + E)\nProcess every vertex once: V steps. Process every edge once (decrement in-degree for each neighbor): E steps. Total: O(V + E). Linear in graph size!\n\nCYCLE DETECTION IS FREE: Kahn's algorithm detects a cycle automatically — if it processes fewer than V nodes, the remainder form a cycle. No extra work required.\n\nBROADER APPLICABILITY: Topological sort solves any "these things must happen in a specific order" problem. Build systems (compile A before B), package dependencies (install X before Y), spreadsheet recalculation order, database query planning — all are topological sort problems. Model the dependencies as a directed graph, detect cycles, apply topological sort, done.`,
+                practiceQuestions: [
+                    { title: "Course Schedule (Medium)", hint: "Model prerequisites as a directed graph; if a cycle exists, return false — use DFS cycle detection with 3-state coloring (0=unvisited, 1=in-progress, 2=done)." },
+                    { title: "Course Schedule II (Medium)", hint: "Topological sort with Kahn's algorithm — collect zero-indegree nodes in a queue, process them, decrement neighbor indegrees; append each processed node to the result." },
+                    { title: "Find All Possible Recipes from Given Supplies (Medium)", hint: "Model ingredients and recipes as a DAG; apply topological sort — a recipe is makeable if all its ingredient prerequisites were processed before it." }
+                ]
+            },
+
+            {
+                dayNumber: 35, phase: 6,
+                topic: "Dijkstra's Algorithm — The Cheapest Flight Path",
+                conceptExplanation: `You are at an airport trying to reach Tokyo as cheaply as possible. Direct flights are available, but some multi-stop routes are cheaper. Some layover combinations beat every direct option. How do you find the globally cheapest route?\n\nDijkstra's algorithm is a greedy approach to finding the shortest path in a weighted graph where all edge weights are non-negative. The core strategy: always explore the currently cheapest reachable destination next.\n\nStep by step, the computer thinks: "I will maintain my best-known cost to reach each airport — initially infinity for all except my starting city (cost = 0). I will use a min-heap to always work on the cheapest reachable city next. When I pop city X: for each of X's neighboring airports, calculate the cost of reaching them via X. If that is cheaper than what I previously knew, update their best-known cost and push them onto the heap."\n\nThe greedy key insight: once a city is popped from the heap, its cheapest path has been found definitively. Why? Because all edge weights are non-negative — any future path to this city would have to go through more edges, making it at least as expensive. You can never discover a cheaper path to an already-popped city. This non-negativity guarantee is the entire reason Dijkstra works. Remove it (allow negative edges) and the guarantee collapses.`,
+                bigOExplanation: `Key question: V airports, E flight connections — how many steps?\n\nDIJKSTRA WITH MIN-HEAP → O((V + E) log V)\nEach of V cities is popped from the heap at most once: V × O(log V) steps for the pops. Each of E edges triggers at most one heap push: E × O(log V) steps for the pushes. Total: O((V + E) log V).\n\nCOMPARED TO BFS: BFS finds shortest paths by number of hops (unweighted). O(V + E). Dijkstra finds shortest paths by total edge weight. O((V + E) log V). The extra log V factor comes from the heap needed to efficiently pick the cheapest unvisited city.\n\nNEGATIVE EDGE PROBLEM: With negative edge weights, Dijkstra's greedy assumption fails — a path that looks expensive now might loop through a negative edge and become cheap later. For negative edges, use Bellman-Ford: O(V × E) steps. Much slower story, but handles negative weights correctly.`,
+                practiceQuestions: [
+                    { title: "Network Delay Time (Medium)", hint: "Single-source shortest paths from node k — Dijkstra's from k, return the maximum distance to any node (if any node is unreachable, return -1)." },
+                    { title: "Cheapest Flights Within K Stops (Medium)", hint: "Modified Dijkstra (or Bellman-Ford with K iterations) — track (cost, city, stops_remaining); use stops count to avoid going beyond K stops." },
+                    { title: "Path With Minimum Effort (Medium)", hint: "Binary search the maximum effort E; for each E, use BFS to check if a path exists where all consecutive cell differences are ≤ E. Or use Dijkstra where 'distance' = max edge weight on path." }
+                ]
+            },
+
+            {
+                dayNumber: 36, phase: 6,
+                topic: "Graphs — Review & Advanced Patterns",
+                conceptExplanation: `Today we zoom out and see the entire graph algorithm toolbox as a unified decision tree. Knowing which tool to reach for is half the battle — and that skill comes from recognizing the structure of a problem, not from memorizing algorithms.\n\nThe decision tree starts with two questions: "What kind of graph do I have?" and "What do I need to find?"\n\nUnweighted graph + shortest path? → BFS. It explores layer by layer, and the first time it reaches a destination is always via the shortest hop count.\n\nWeighted graph + shortest path (non-negative weights)? → Dijkstra. The min-heap ensures you always extend the cheapest known path next.\n\nDirected graph + ordering constraints? → Topological sort. Model dependencies as directed edges, peel layers with Kahn's algorithm.\n\nDynamic connectivity (edges added one by one)? → Union-Find. Near-O(1) per merge and per query.\n\nAll-pairs shortest paths? → Floyd-Warshall. Three nested loops over all vertices.\n\nThe meta-skill: when you read a problem, ask "is this a path problem? A connectivity problem? An ordering problem?" Once you classify it, the algorithm choice follows naturally.`,
+                bigOExplanation: `THE GRAPH ALGORITHM COMPLEXITY MAP — know these as stories, not labels:\n\nBFS/DFS → O(V + E)\nLinear in graph size. The baseline for any "examine every part" operation.\n\nUnion-Find → O(N × α(N)) ≈ O(N)\nNearly linear. Best for dynamic edge-by-edge connectivity.\n\nTopological Sort → O(V + E)\nSame as BFS — it is BFS with an in-degree twist.\n\nDijkstra (binary heap) → O((V+E) log V)\nLog factor from the heap. Fast for sparse graphs.\n\nBellman-Ford → O(V × E)\nHandles negative edges. Story: V times slower than BFS.\n\nFloyd-Warshall → O(V³)\nAll-pairs shortest paths. Cubic — only practical for V ≤ 500.\n\nRULE OF THUMB: V, E ≤ 100,000 → design for O(V+E) or O((V+E)logV). V, E ≤ 10,000 → O(V²) might be acceptable. V ≤ 500 → O(V³) is feasible.`,
+                practiceQuestions: [
+                    { title: "Pacific Atlantic Water Flow (Medium)", hint: "Reverse the flow — BFS from Pacific border cells and BFS from Atlantic border cells separately; cells reachable from both oceans are the answer." },
+                    { title: "Word Ladder (Hard)", hint: "Model as an unweighted graph where edges connect words differing by one letter; BFS from start word gives minimum transformations in O(N × L²) where L is word length." },
+                    { title: "Alien Dictionary (Hard)", hint: "Extract character ordering from adjacent words in the list (first differing character), build a directed graph of character precedence, then topological sort — a cycle means invalid." }
+                ]
+            },
+
+            {
+                dayNumber: 37, phase: 6,
+                topic: "Backtracking — The Maze Explorer",
+                conceptExplanation: `Imagine exploring a maze with a pencil and eraser. At each fork, you try one direction. If you reach a dead end, you erase back to the last fork and try the next direction. Backtracking is this pencil-and-eraser strategy applied to any problem with a large space of candidate solutions.\n\nThe template is elegant and universal — memorize it:\n1. BASE CASE: If the current partial solution is complete and valid, record it (or return true).\n2. FOR EACH CHOICE at the current decision point:\n   — Make the choice (add to the current path).\n   — Recurse deeper (kick the problem down the road to the next decision point!).\n   — UNMAKE the choice (erase — this is the backtrack).\n\nThe unmake step is the heartbeat of backtracking. After the recursive call returns, you restore the state to exactly what it was before the choice was made. This ensures the next choice starts from the same clean position. Forgetting to unmake is the most common backtracking bug — it allows choices to "bleed" across branches.\n\nPRUNING is what makes backtracking practical. At any point, if the current partial solution can never possibly lead to a valid complete solution, stop immediately — do not recurse further. For example, if you are building a combination that already exceeds the target sum, adding more positive numbers makes it worse, not better. Cut that branch before exploring it.`,
+                bigOExplanation: `Key question: How does the search space grow with N?\n\nWORST CASE WITHOUT PRUNING:\nSubsets → O(2^N): each element is either included or excluded. Two choices, N decisions, 2^N paths.\nPermutations → O(N!): N choices for position 1, N-1 for position 2, and so on.\n\nWITH AGGRESSIVE PRUNING: The actual step count is dramatically less. Pruning can reduce O(N!) to practically fast for N ≤ 20, or O(2^N) to fast for N ≤ 40. The exact improvement is problem-specific and hard to express in closed form — but it is often enormous.\n\nSPACE → O(N)\nThe recursion stack is at most N levels deep (one per decision). The current partial solution also uses O(N). This makes backtracking very memory-efficient — you are exploring one path at a time, not storing all paths simultaneously.\n\nTHE BACKTRACKING MANTRA: Generate, check as you go, and if it cannot work — backtrack immediately. Never build a full solution before verifying. Check constraints incrementally and prune dead ends the moment you spot them.`,
+                practiceQuestions: [
+                    { title: "Combination Sum (Medium)", hint: "At each recursive call, choose to include the current candidate (recurse with same candidate, reducing remaining target) or skip to next (recurse with next index)." },
+                    { title: "Subsets (Medium)", hint: "At each element, make a binary choice: include or exclude — this generates all 2^N subsets. No pruning needed; all branches lead to valid subsets." },
+                    { title: "Permutations (Medium)", hint: "At each position, try placing each unused element; use a 'used' boolean array to track which elements have been placed in the current permutation." }
+                ]
+            },
+
+            {
+                dayNumber: 38, phase: 6,
+                topic: "Backtracking — N-Queens & Word Search",
+                conceptExplanation: `Two classic backtracking problems that showcase how powerful constraint checking at each step (instead of at the end) can be.\n\nN-QUEENS: Place N chess queens on an N×N board so that no two queens threaten each other. No shared row, column, or diagonal. The backtracking approach: place queens one row at a time. For each row, try placing a queen in each column. Before placing, run three checks: is this column already occupied? Is this top-left-to-bottom-right diagonal occupied? Is this top-right-to-bottom-left diagonal occupied? (A neat trick: cells on the same "\" diagonal share the value row - col; cells on the same "/" diagonal share the value row + col. Track these two sets alongside the column set.) If all three checks pass, place the queen and recurse to the next row. If nothing works in a row, backtrack.\n\nWORD SEARCH: Given a 2D letter grid and a target word, does the word exist as a path of adjacent cells? DFS from each cell matching the first letter. At each step, try all 4 directions. Mark the current cell as visited before recursing (you cannot reuse a cell in the same path). Unmark it on backtrack (so other paths can use it). If you complete the whole target word — found it!`,
+                bigOExplanation: `Key question: N for Queens, N×M grid and L-letter word for Word Search — how many steps?\n\nN-QUEENS BRUTE FORCE → O(N^N) placements\nWith column uniqueness alone: O(N!). With full diagonal pruning, the real branching factor is dramatically lower. For N=8: only ~15,000 states explored in practice vs. 8! = 40,320 or 8^8 = 16.7 million brute force. Pruning turns a theoretical nightmare into a practical fast solution.\n\nWORD SEARCH → O(N × M × 4^L)\nFrom each of N×M starting positions, at most 4 directions per step for L steps. With the "no revisit" constraint and early mismatch termination, pruning reduces this dramatically in practice.\n\nTHE CORE LESSON: Backtracking's practical speed depends almost entirely on pruning quality. Check constraints as early as possible at each step — the earlier you detect a dead end, the larger the subtree you prune away. Theoretical worst-case complexity often wildly overestimates what actually runs.`,
+                practiceQuestions: [
+                    { title: "N-Queens (Hard)", hint: "Track occupied columns and both diagonal types with sets — use (row - col) for one diagonal family and (row + col) for the other; O(1) constraint checking per cell." },
+                    { title: "Word Search (Medium)", hint: "DFS from each cell matching the first character — mark cells as visited by temporarily modifying the grid (e.g., set to '#'), then restore on backtrack." },
+                    { title: "Sudoku Solver (Hard)", hint: "Backtracking with aggressive pruning — for each empty cell, try digits 1-9; skip those already in the same row, column, or 3×3 box; backtrack if no digit works." }
+                ]
+            },
+
+            {
+                dayNumber: 39, phase: 6,
+                topic: "1D Dynamic Programming — The Notepad Strategy",
+                conceptExplanation: `Here is the core question that unlocks Dynamic Programming: "Am I solving the same sub-problem multiple times?" If the answer is yes — write the solution down on a notepad the first time, and look it up every subsequent time. Never recalculate what you have already solved.\n\nThe simplest example: counting ways to climb a staircase, taking 1 or 2 steps at a time. To reach step N, you must have arrived from step N-1 (by taking 1 step) or from step N-2 (by taking 2 steps). So: ways(N) = ways(N-1) + ways(N-2). That is the Fibonacci sequence!\n\nWithout a notepad (naive recursion): ways(5) calls ways(4) and ways(3). ways(4) calls ways(3) and ways(2). ways(3) is calculated twice! And ways(3) calls ways(2) twice, ways(2) calls ways(1) twice... The calls explode exponentially. For N=50: over 20 billion redundant calculations. The story becomes catastrophic.\n\nWith a notepad (a simple array): calculate ways(1), ways(2), ways(3)... in order, each stored as soon as computed. Each sub-problem is solved exactly once. ways(50) looks up its answer in 1 step. Total steps: O(N). You have traded O(N) memory (the notepad) for a transformation from O(2^N) to O(N) time. That is one of the most powerful trade-offs in all of computer science.`,
+                bigOExplanation: `Key question: N steps — how many steps to count the ways?\n\nWITHOUT MEMOIZATION → O(2^N)\nThe recursion tree branches exponentially — every call branches into two more. N=40 → over 1 billion calls. N=50 → over 1 trillion. Completely impractical.\n\nWITH MEMOIZATION (top-down DP) → O(N) time, O(N) space\nEach of N sub-problems is solved exactly once. The notepad holds N results. Linear time, linear space.\n\nBOTTOM-UP TABULATION → O(N) time, O(N) space\nBuild the table iteratively from the base cases up. Same time and space story. Slightly faster in practice (no recursion overhead, no function call stack).\n\nSPACE OPTIMIZATION → O(N) time, O(1) space\nFor Fibonacci-style problems, each result only needs the previous 1 or 2 values. Store just those two variables — drop the full array entirely. The time story stays O(N), but the space story collapses from linear to constant. The complete win.\n\nTHE SOUL OF DP: O(2^N) → O(N) by writing things down. Memoization converts exponential recurrence into linear computation. Dramatic.`,
+                practiceQuestions: [
+                    { title: "Climbing Stairs (Easy)", hint: "dp[i] = dp[i-1] + dp[i-2] — it's exactly Fibonacci. Optimize to O(1) space by storing only the last two values." },
+                    { title: "House Robber (Medium)", hint: "dp[i] = max(dp[i-1], dp[i-2] + nums[i]) — at each house, choose to rob it (add to two-houses-ago total) or skip it (take previous total)." },
+                    { title: "Min Cost Climbing Stairs (Easy)", hint: "dp[i] = cost[i] + min(dp[i-1], dp[i-2]) — compute the minimum cost to step on or past each stair." }
+                ]
+            },
+
+            {
+                dayNumber: 40, phase: 6,
+                topic: "1D DP — Word Break & Decode Ways",
+                conceptExplanation: `Two problems where defining the right sub-problem is the creative challenge.\n\nWORD BREAK: Can "leetcode" be split into dictionary words? Think of it as a tiling puzzle — tile the whole string with valid word tiles, no gaps, no overlaps. Define dp[i] = true if the first i characters can be word-broken. For each position i, scan backward: if dp[j] is true AND s[j..i] is in the dictionary, then dp[i] is true. You stand at position i asking: "Is there a valid last word whose start traces back to a known good position?"\n\nDECODE WAYS: "12" decodes as "AB" (1 then 2) or "L" (12 as one unit). At each digit, two options: use it alone (valid if non-zero) or pair with the previous digit (valid if they form 10-26). Total ways is the sum of both valid options — a Fibonacci-style recurrence with careful zero-handling.`,
+                bigOExplanation: `Key question: N characters — how many steps?\n\nWORD BREAK → O(N²) time, O(N) space\nN sub-problems. For each, scan up to N possible last-word boundaries. Each hash-set lookup is O(1). The notepad holds N booleans.\n\nDECODE WAYS → O(N) time, O(1) space\nEach position depends only on the previous two values — a rolling two-variable update. One pass, constant space. Linear time.\n\nTHE COMPARISON: Word Break needs O(N²) because a last word can start anywhere in the string. Decode Ways needs only O(N) because the pairing window is fixed at exactly 2 characters. When the look-back range is bounded by a constant, you get linear time. When it reaches all the way back to position 0, you pay O(N²).`,
+                practiceQuestions: [
+                    { title: "Word Break (Medium)", hint: "dp[0]=True; for each i, check all j<i: if dp[j] is True and s[j:i] is in the word set, set dp[i]=True." },
+                    { title: "Decode Ways (Medium)", hint: "dp[i] = dp[i-1] if s[i-1]≠'0', plus dp[i-2] if s[i-2:i] forms 10-26 — be careful with '0' digits which have no single-digit decoding." },
+                    { title: "Palindrome Partitioning II (Hard)", hint: "Two DP passes: precompute isPalin[i][j], then dp[i] = minimum cuts for s[0..i] using dp[j-1]+1 for each j where s[j..i] is a palindrome." }
+                ]
+            },
+
+            {
+                dayNumber: 41, phase: 6,
+                topic: "2D Dynamic Programming — The Grid Notepad",
+                conceptExplanation: `When a problem has two independent dimensions of choice — two strings, a grid — the notepad expands into a 2D table. Each cell dp[i][j] stores the solution to a sub-problem defined by the first i elements of one sequence and the first j of another.\n\nLONGEST COMMON SUBSEQUENCE: Given "ABCDE" and "ACE", the longest subsequence in both is "ACE" — length 3. A subsequence preserves order but need not be contiguous.\n\nThe recurrence is beautifully logical. If current characters match: dp[i][j] = dp[i-1][j-1] + 1 — the match extends the best previous LCS by one. If they don't match: dp[i][j] = max(dp[i-1][j], dp[i][j-1]) — take the better result from ignoring either string's last character. Kick the problem down the road in two directions, take the better answer.\n\nVisualize filling a grid left-to-right, top-to-bottom. The answer sits quietly in the bottom-right corner.`,
+                bigOExplanation: `Key question: strings of length N and M — how many steps?\n\n2D DP TABLE → O(N × M) time, O(N × M) space\nFill N×M cells, each computed in O(1). For N=M=1,000: one million cells — fast.\n\nSPACE OPTIMIZATION → O(min(N,M))\nThe recurrence only looks at the current row and the row above. Store just two rows. Same time, a fraction of the space.\n\nSCALE REALITY CHECK: For N=M=10,000 the full table is 100 million cells — feasible but memory-heavy. Two-row optimization brings this to 20,000 cells. Always reach for row-optimization when space is constrained.\n\nTHE 2D DP TEMPLATE: Define what dp[i][j] means. Write the recurrence for match vs. no-match. Handle base cases (row 0 and column 0). Fill left-to-right, top-to-bottom. The final answer lives at dp[N][M].`,
+                practiceQuestions: [
+                    { title: "Longest Common Subsequence (Medium)", hint: "If characters match: dp[i][j]=dp[i-1][j-1]+1. Else: dp[i][j]=max(dp[i-1][j], dp[i][j-1]). Answer is dp[len1][len2]." },
+                    { title: "Unique Paths (Medium)", hint: "dp[i][j]=dp[i-1][j]+dp[i][j-1] — you can only arrive from above or from the left. Base case: entire first row and column = 1." },
+                    { title: "Minimum Path Sum (Medium)", hint: "dp[i][j]=grid[i][j]+min(dp[i-1][j], dp[i][j-1]) — the cheapest path to each cell comes from the cheaper of its two possible predecessors." }
+                ]
+            },
+
+            {
+                dayNumber: 42, phase: 6,
+                topic: "2D DP — Edit Distance & String Transformations",
+                conceptExplanation: `Edit Distance asks: what is the minimum number of single-character insertions, deletions, or substitutions to transform string A into string B? This powers spell checkers, DNA alignment tools, and git diff.\n\nDefine dp[i][j] = minimum edits to convert the first i characters of A into the first j characters of B.\n\nWhen current characters match — free! Inherit dp[i-1][j-1] unchanged. When they don't match, three options each costing 1 edit:\nDelete from A → look up dp[i-1][j].\nInsert into A → look up dp[i][j-1].\nSubstitute → look up dp[i-1][j-1].\n\nTake the minimum, add 1. Fill the table. The answer waits at dp[len_A][len_B]. The intuitive base cases: dp[i][0] = i (delete all i characters) and dp[0][j] = j (insert j characters from nothing).`,
+                bigOExplanation: `Key question: strings of length N and M — how many steps?\n\nEDIT DISTANCE → O(N × M) time, O(N × M) space\nFill an N×M table. Three neighbor lookups per cell — O(1) each. Total: O(N×M) steps.\n\nSPACE OPTIMIZATION → O(min(N,M))\nEach row only needs the row above. Store two rows, rolling forward. Same time story, a fraction of the space.\n\nIS O(N×M) OPTIMAL? Yes — any correct algorithm must examine every position in both strings at least once. For arbitrary strings, no algorithm can do better. The DP solution is provably optimal.\n\nSCALE: Spell checking compares words of length ~20 — O(400) steps. Instant. For DNA sequences of millions of characters, specialized algorithms with memory tricks are needed. For interviews, O(NM) is the expected answer.`,
+                practiceQuestions: [
+                    { title: "Edit Distance (Hard)", hint: "Build the (len_A+1)×(len_B+1) DP table; three operations (insert, delete, substitute) each cost 1, free when characters match." },
+                    { title: "Distinct Subsequences (Hard)", hint: "dp[i][j]=ways s[0..i-1] contains t[0..j-1] as subsequence; if chars match: dp[i][j]=dp[i-1][j-1]+dp[i-1][j]; else dp[i][j]=dp[i-1][j]." },
+                    { title: "Interleaving String (Medium)", hint: "dp[i][j]=True if s1[0..i-1] and s2[0..j-1] interleave to form s3[0..i+j-1]; check two possible source characters for each cell." }
+                ]
+            },
+
+            {
+                dayNumber: 43, phase: 6,
+                topic: "DP — 0/1 Knapsack & Subset Sum",
+                conceptExplanation: `The 0/1 Knapsack: you are a hiker with a backpack holding at most W kilograms. N items, each with a weight and a value. Which items do you pack to maximize value without exceeding the weight limit? Each item is either fully included (1) or excluded (0) — no fractions.\n\nWhy greedy fails: taking the highest-value item first can block a combination of lighter items with even greater combined value. You need to consider all combinations — but with memoization, not brute-force enumeration.\n\nDefine dp[i][w] = maximum value using the first i items with total weight ≤ w. Two choices per cell: skip item i (inherit dp[i-1][w]), or include it if it fits (dp[i-1][w-item_weight] + item_value). Take the maximum.\n\nSUBSET SUM is knapsack with a boolean answer: can you choose items whose weights sum to exactly target T? Replace max-value tracking with reachability tracking — the same recurrence structure, just asking "can we hit this weight?" instead of "what's the best value at this weight?"`,
+                bigOExplanation: `Key question: N items, max weight W — how many steps?\n\n0/1 KNAPSACK → O(N × W) time, O(N × W) space\nN items × W weight capacities = N×W cells. Each cell O(1). For N=100, W=10,000: one million cells. Fast.\n\nSPACE OPTIMIZATION → O(W)\nRow i only depends on row i-1. Use one 1D array. Iterate weights in REVERSE (crucial — prevents accidentally reusing the same item twice). Same time, O(W) space.\n\nTHE SUBTLE CATCH: Iterate forward in the inner loop for unbounded knapsack (coins can repeat). Iterate backward for 0/1 knapsack (each item used at most once). Getting this direction wrong is the most common knapsack implementation bug.\n\nNP-COMPLETE BUT PRACTICAL: O(N×W) looks polynomial, but W can be exponentially large in the number of bits representing it. This is why 0/1 Knapsack is NP-complete in theory. In interview practice, W≤100,000 is always given, and O(NW) is the expected solution.`,
+                practiceQuestions: [
+                    { title: "Partition Equal Subset Sum (Medium)", hint: "Subset sum to target=total_sum/2; dp[j]=can we achieve exactly sum j? Outer loop over items, inner loop in reverse over capacities." },
+                    { title: "Target Sum (Medium)", hint: "Assign each number + or −; reduces to subset sum where the + subset sums to (target+total)/2." },
+                    { title: "Coin Change II (Medium)", hint: "Count ways to make amount — iterate amounts forward (coins are reusable), unlike 0/1 knapsack which iterates backward." }
+                ]
+            },
+
+            {
+                dayNumber: 44, phase: 6,
+                topic: "DP Mastery — Coin Change & Longest Increasing Subsequence",
+                conceptExplanation: `Two final canonical DP problems to complete the core curriculum.\n\nCOIN CHANGE (Minimum Coins): Given denominations and a target amount, what is the fewest coins needed? Coins are unlimited — this is unbounded knapsack. Define dp[a] = minimum coins to make exactly amount a. For each amount, try every coin: dp[a] = min(dp[a], dp[a-coin] + 1). Build from dp[0]=0 upward. If dp[target] is still infinity at the end, the amount is impossible.\n\nLONGEST INCREASING SUBSEQUENCE (LIS): Given [10, 9, 2, 5, 3, 7, 101, 18], the longest strictly increasing subsequence is [2, 3, 7, 101] — length 4. Define dp[i] = length of the longest increasing subsequence ending at index i. For each i, look back at all j<i where nums[j]<nums[i]: dp[i] = max(dp[j]+1). Answer is the maximum across all dp[i].\n\nThere is also a beautiful O(N log N) LIS algorithm using binary search on a patience-sorting structure — optional for interviews but worth knowing as an example of binary search turbocharing a DP.`,
+                bigOExplanation: `Key question: N coin types, target amount A — how many steps?\n\nCOIN CHANGE → O(A × N) time, O(A) space\nFor each of A amounts, try N coin denominations. The notepad holds A values.\n\nLIS BASIC DP → O(N²) time, O(N) space\nFor each of N elements, scan all previous elements. N×N steps.\n\nLIS OPTIMIZED → O(N log N)\nMaintain a "tails" array where tails[k] = the smallest ending element of any LIS of length k+1. For each new number, binary search its position in tails — O(log N). N elements × O(log N) = O(N log N). The story: log N times better than the quadratic approach!\n\nTHE OPTIMIZATION PATTERN: Whenever you see an O(N²) DP where you scan backward for a "best previous value," ask: "Can binary search find that value instead?" If the sub-problem answers are monotonically structured, binary search drops each O(N) scan to O(log N) — and the whole DP drops from O(N²) to O(N log N).`,
+                practiceQuestions: [
+                    { title: "Coin Change (Medium)", hint: "dp[0]=0, dp[1..amount]=∞; for each amount from 1 to target, for each coin: dp[a]=min(dp[a], dp[a-coin]+1) if a≥coin." },
+                    { title: "Longest Increasing Subsequence (Medium)", hint: "For O(N log N): maintain 'tails'; for each number, binary search for the first tail ≥ number and replace it, or append if it's a new maximum." },
+                    { title: "Maximum Product Subarray (Medium)", hint: "Track both running max AND min — a negative × negative flips the min into the max. Update both at every step." }
+                ]
+            },
+
+            {
+                dayNumber: 45, phase: 7,
+                topic: "Final Mock Interview Day — 25-Minute Timer Challenge",
+                conceptExplanation: `Every algorithm, pattern, and trade-off from the past 44 days converges here. Today you run a real simulated interview — same rules, same pressure, same format.\n\nThe rules:\n1. No IDE autocomplete. Plain text editor only.\n2. Hard 25-minute timer per problem. When it rings, move on — no exceptions.\n3. Think out loud. Explain your approach before writing a single line of code.\n4. Always start with the brute force. State its Big O story. Then optimize.\n5. Walk through a concrete example before declaring your solution done.\n6. Check edge cases: empty input, single element, all-same values, negative numbers.\n\nWengrow's five-step framework:\n1. Clarify — ask about constraints and edge cases upfront.\n2. Write any working brute force — correctness before cleverness.\n3. Analyze — state the Big O story of your brute force clearly.\n4. Identify the bottleneck — where is the N² loop hiding? What data structure eliminates it?\n5. Optimize and test — rewrite with the better approach, verify with examples.\n\nRemember: interviewers weight your reasoning as heavily as your answer. A clean, clearly-explained O(N²) solution beats a silent O(N log N) that the interviewer cannot follow.`,
+                bigOExplanation: `FINAL COMPLEXITY CHEAT SHEET — tell the story, not just the label:\n\nO(1) → "Steps never change no matter how big N grows."\nExamples: hash lookup, array index, stack push, heap peek.\n\nO(log N) → "Each step cuts the problem in half. A billion items → 30 steps."\nExamples: binary search, balanced BST ops, heap push/pop.\n\nO(N) → "Double the data, double the steps. Lockstep growth."\nExamples: linear scan, single pass, hash table build.\n\nO(N log N) → "Slightly worse than linear — typically a sort plus a scan."\nExamples: sorting, Dijkstra, merge K sorted lists.\n\nO(N²) → "Double the data, quadruple the steps."\nExamples: nested loops, bubble sort, naive string matching.\n\nO(2^N) → "Each extra element doubles the work entirely."\nExamples: backtracking subsets without pruning.\n\nO(N!) → "Grows catastrophically — only practical for N≤12."\nExamples: backtracking permutations without pruning.\n\nSPACE STORIES:\nO(1) → two pointers, rolling DP variables\nO(log N) → DFS recursion on balanced tree\nO(N) → hash maps, 1D DP tables, visited arrays\nO(N²) → 2D DP tables, adjacency matrices`,
+                practiceQuestions: [
+                    { title: "Mock Set A — Arrays/Hashing/DP", hint: "Attempt Two Sum + House Robber + Merge Intervals back-to-back, 25 minutes each. Scoring: correct solution=3pts, right approach wrong code=2pts, right pattern identified=1pt." },
+                    { title: "Mock Set B — Trees/Graphs/Backtracking", hint: "Attempt LCA of Binary Tree + Number of Islands + Combination Sum. State your traversal strategy out loud before writing any code." },
+                    { title: "Mock Set C — Hard Challenge Round", hint: "Attempt Trapping Rain Water + Word Break + Serialize & Deserialize Binary Tree. Brute force first, state the Big O story, then optimize step by step." }
+                ]
+            }
+
+        ]; // end curriculumData
+
+        /* ── PHASE METADATA ─────────────────────────────────────────── */
+        const phases = {
+            1: "Phase 1 · Arrays, Hashing & Strings",
+            2: "Phase 2 · Stacks, Sliding Window & Intervals",
+            3: "Phase 3 · Two Pointers, Monotonic Stack & Binary Search",
+            4: "Phase 4 · Linked Lists & LRU Cache",
+            5: "Phase 5 · Strings, Bits & Trees",
+            6: "Phase 6 · Graphs, Backtracking & Dynamic Programming",
+            7: "Phase 7 · Final Mock Interview"
+        };
+
+        const topicTagConfig = {
+            Array: { bg: 'var(--tag-array)', color: 'var(--tag-array-t)' }, Hash: { bg: 'var(--tag-hash)', color: 'var(--tag-hash-t)' },
+            String: { bg: 'var(--tag-hash)', color: 'var(--tag-hash-t)' }, Stack: { bg: 'var(--tag-stack)', color: 'var(--tag-stack-t)' },
+            Sliding: { bg: 'var(--tag-window)', color: 'var(--tag-window-t)' }, Interval: { bg: 'var(--tag-window)', color: 'var(--tag-window-t)' },
+            Two: { bg: 'var(--tag-array)', color: 'var(--tag-array-t)' }, Binary: { bg: 'var(--tag-hash)', color: 'var(--tag-hash-t)' },
+            Linked: { bg: 'var(--tag-stack)', color: 'var(--tag-stack-t)' }, LRU: { bg: 'var(--tag-stack)', color: 'var(--tag-stack-t)' },
+            Merge: { bg: 'var(--tag-stack)', color: 'var(--tag-stack-t)' }, Bit: { bg: 'var(--tag-hash)', color: 'var(--tag-hash-t)' },
+            Tree: { bg: 'var(--tag-tree)', color: 'var(--tag-tree-t)' }, Trie: { bg: 'var(--tag-tree)', color: 'var(--tag-tree-t)' },
+            Heap: { bg: 'var(--tag-tree)', color: 'var(--tag-tree-t)' }, Graph: { bg: 'var(--tag-graph)', color: 'var(--tag-graph-t)' },
+            Union: { bg: 'var(--tag-graph)', color: 'var(--tag-graph-t)' }, Topological: { bg: 'var(--tag-graph)', color: 'var(--tag-graph-t)' },
+            Dijkstra: { bg: 'var(--tag-graph)', color: 'var(--tag-graph-t)' }, Backtracking: { bg: 'var(--tag-dp)', color: 'var(--tag-dp-t)' },
+            Dynamic: { bg: 'var(--tag-dp)', color: 'var(--tag-dp-t)' }, DP: { bg: 'var(--tag-dp)', color: 'var(--tag-dp-t)' },
+            Spaced: { bg: 'var(--tag-default)', color: 'var(--tag-default-t)' }, Final: { bg: 'var(--tag-default)', color: 'var(--tag-default-t)' },
+            Monotonic: { bg: 'var(--tag-stack)', color: 'var(--tag-stack-t)' }, Palindrome: { bg: 'var(--tag-hash)', color: 'var(--tag-hash-t)' },
+            Serialize: { bg: 'var(--tag-tree)', color: 'var(--tag-tree-t)' }, Product: { bg: 'var(--tag-array)', color: 'var(--tag-array-t)' },
+            '1D': { bg: 'var(--tag-dp)', color: 'var(--tag-dp-t)' }, '2D': { bg: 'var(--tag-dp)', color: 'var(--tag-dp-t)' },
+        };
+
+        function getTagStyle(topic) {
+            const first = topic.split(/[\s—–]/)[0];
+            const cfg = topicTagConfig[first] || { bg: 'var(--tag-default)', color: 'var(--tag-default-t)' };
+            return `background:${cfg.bg};color:${cfg.color}`;
+        }
+
+        /* ── STATE ──────────────────────────────────────────────────── */
+        const completedDays = new Set(JSON.parse(localStorage.getItem('dsa45_v2') || '[]'));
+        let activePhase = 'all', searchQuery = '';
+
+        /* ── BUILD CARD ─────────────────────────────────────────────── */
+        function buildCard(day, idx) {
+            const done = completedDays.has(day.dayNumber);
+            const paras = day.conceptExplanation.split('\n\n');
+            const analogy = paras[0] || '';
+            const rest = paras.slice(1).join('\n\n');
+            const bigoLines = day.bigOExplanation.split('\n').map(line => {
+                if (!line.trim()) return '<br>';
+                return '<div>' + line
+                    .replace(/→\s*O\(1\)/g, '→ <span class="ok">O(1)</span>')
+                    .replace(/→\s*O\(log\s*N\)/g, '→ <span class="ok">O(log N)</span>')
+                    .replace(/→\s*O\(α\(N\)\)/g, '→ <span class="ok">O(α(N))</span>')
+                    .replace(/→\s*O\(N\s*log\s*[NKM]\)/g, m => '→ <span class="warn">' + m.slice(2) + '</span>')
+                    .replace(/→\s*O\(N\)/g, '→ <span class="warn">O(N)</span>')
+                    .replace(/→\s*O\(N\s*[×x]\s*[WMA]\)/g, m => '→ <span class="warn">' + m.slice(2) + '</span>')
+                    .replace(/→\s*O\(N[²2]\)/g, '→ <span class="bad">O(N²)</span>')
+                    .replace(/→\s*O\(N[³3]\)/g, '→ <span class="bad">O(N³)</span>')
+                    .replace(/→\s*O\(2\^N\)/g, '→ <span class="bad">O(2^N)</span>')
+                    .replace(/→\s*O\(N!\)/g, '→ <span class="bad">O(N!)</span>')
+                    + '</div>';
+            }).join('');
+            const qs = day.practiceQuestions.map(q => `
+    <li class="question-item">
+      <div class="q-title">🎯 ${q.title}</div>
+      <div class="q-hint"><strong>Hint:</strong> ${q.hint}</div>
+    </li>`).join('');
+            return `
+  <article class="day-card" id="day-${day.dayNumber}" data-phase="${day.phase}" style="animation-delay:${idx * .035}s">
+    <div class="card-header" onclick="toggleCard(${day.dayNumber})">
+      <div class="day-badge">${String(day.dayNumber).padStart(2, '0')}</div>
+      <div class="card-title-wrap">
+        <div class="card-title">${day.topic}</div>
+        <span class="topic-tag" style="${getTagStyle(day.topic)}">${day.topic.split(/[\s—–]/)[0]}</span>
+      </div>
+      <button class="complete-btn ${done ? 'done' : ''}" onclick="event.stopPropagation();toggleComplete(${day.dayNumber})">${done ? '✓' : ''}</button>
+    </div>
+    <div class="card-expand" id="expand-${day.dayNumber}">
+      <div class="card-body">
+        <div class="section-label">📖 Concept Explanation</div>
+        <div class="concept-text">
+          <div class="analogy-highlight">💡 ${analogy}</div>
+          ${rest ? `<p style="margin-top:.6rem">${rest.replace(/\n/g, '<br>')}</p>` : ''}
+        </div>
+        <div class="section-label">⏱ Big O — The Story of Steps</div>
+        <div class="bigo-box">${bigoLines}</div>
+        <div class="section-label">🏋 Practice Problems</div>
+        <ul class="questions-list">${qs}</ul>
+      </div>
+      <div class="toggle-row" onclick="toggleCard(${day.dayNumber})"><span>Collapse</span> <span class="toggle-icon open">▲</span></div>
+    </div>
+    <div class="toggle-row" id="exp-lbl-${day.dayNumber}" onclick="toggleCard(${day.dayNumber})"><span>Expand</span> <span class="toggle-icon">▼</span></div>
+  </article>`;
+        }
+
+        function buildPhaseDivider(pid) {
+            return `<div class="phase-divider"><div class="phase-divider-line"></div><div class="phase-divider-label">${phases[pid] || ''}</div><div class="phase-divider-line"></div></div>`;
+        }
+
+        /* ── RENDER ─────────────────────────────────────────────────── */
+        function render() {
+            const c = document.getElementById('app-container');
+            let html = '', lastPhase = null;
+            const filtered = curriculumData.filter(day => {
+                const pm = activePhase === 'all' || day.phase === parseInt(activePhase);
+                const sm = !searchQuery || day.topic.toLowerCase().includes(searchQuery) ||
+                    day.conceptExplanation.toLowerCase().includes(searchQuery) ||
+                    day.practiceQuestions.some(q => q.title.toLowerCase().includes(searchQuery));
+                return pm && sm;
+            });
+            filtered.forEach((day, i) => {
+                if (day.phase !== lastPhase) { html += buildPhaseDivider(day.phase); lastPhase = day.phase; }
+                html += buildCard(day, i);
+            });
+            if (!filtered.length) html = `<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-size:1.1rem">No days match your search. Try a different keyword.</div>`;
+            c.innerHTML = html;
+            updateProgress();
+        }
+
+        /* ── INTERACTIONS ───────────────────────────────────────────── */
+        function toggleCard(n) {
+            const ex = document.getElementById('expand-' + n);
+            const lb = document.getElementById('exp-lbl-' + n);
+            const open = ex.classList.contains('open');
+            ex.classList.toggle('open', !open);
+            if (lb) lb.style.display = open ? '' : 'none';
+        }
+        function toggleComplete(n) {
+            completedDays.has(n) ? completedDays.delete(n) : completedDays.add(n);
+            localStorage.setItem('dsa45_v2', JSON.stringify([...completedDays]));
+            const btn = document.querySelector('#day-' + n + ' .complete-btn');
+            if (btn) { btn.classList.toggle('done', completedDays.has(n)); btn.textContent = completedDays.has(n) ? '✓' : ''; }
+            updateProgress();
+        }
+        function updateProgress() {
+            const pct = Math.round(completedDays.size / 45 * 100);
+            document.getElementById('progress-fill').style.width = pct + '%';
+            document.getElementById('progress-label').textContent = completedDays.size + ' / 45 days completed';
+        }
+
+        document.getElementById('phase-nav').addEventListener('click', e => {
+            const btn = e.target.closest('.phase-btn');
+            if (!btn) return;
+            document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activePhase = btn.dataset.phase;
+            render();
+        });
+
+        let st;
+        document.getElementById('search-input').addEventListener('input', e => {
+            clearTimeout(st);
+            st = setTimeout(() => { searchQuery = e.target.value.toLowerCase().trim(); render(); }, 250);
+        });
+
+        render();
+    </script>
+</body>
+
+</html>
+conceptExplanation: `Two 1D DP problems where the creative challenge is defining the right sub-problem and
+recurrence.\n\nWORD BREAK: Can the string "leetcode" be split into valid dictionary words? ("leet" + "code" — yes!)
+Think of it as a tiling puzzle: can you tile the entire string exactly using valid word tiles, with no gaps and no
+overlaps?\n\nDefine dp[i] = true if the first i characters can be word-broken. dp[0] = true (the empty string is
+trivially breakable). For each position i, ask: is there a valid split point somewhere behind me? "For each j < i: if
+    dp[j] is true AND the substring from j to i is in the dictionary, then dp[i] is true." Standing at position i, you
+    scan backwards through all possible "last words." If any valid last word traces back to a valid split point,
+    position i is reachable.\n\nDECODE WAYS: The string "12" can decode as "AB" (1 then 2) or as "L" (12 as a single
+    unit). Count all valid decodings. At each digit, two options: decode it as a single digit (valid if it is 1-9, not
+    0) or pair it with the previous digit (valid if they form 10-26). The number of ways to decode the first i
+    characters is the sum of ways using those two options — a Fibonacci-style recurrence with some added edge-case
+    bookkeeping.`, bigOExplanation: `Key question: N characters — how many steps?\n\nWORD BREAK NAIVE → O(N × M ×
+    L)\nFor each position, try all M dictionary words of average length L. For large dictionaries, this story gets
+    expensive.\n\nWORD BREAK WITH DP AND HASH SET → O(N²)\nN sub-problems. For each, check up to N possible "last word"
+    start positions. Each dictionary lookup is O(L) hashing, but with a hash set of prefix lengths, reducible to O(N²)
+    total
