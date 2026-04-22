@@ -12,16 +12,15 @@ Demystifying DSA through intuitive analogies and "steps, not seconds" Big O stor
 
 ### Validated
 
-(None yet — ship to validate)
+- Premium "educational book" aesthetic (Fraunces/Figtree typography) — Validated in Phase 1
+- Topic-based navigation structure — Validated in Phase 1
+- Single-page architecture for static hosting — Validated in Phase 1
 
 ### Active
 
-- [ ] Topic-based navigation (removing "45-day" schedule focus)
 - [ ] Pedagogical content (analogies, Big O stories) based on Wengrow's method
 - [ ] Detailed practice questions with direct LeetCode links
 - [ ] Persistent problem tracker (Solved, Attempted, Need to Revisit) using `localStorage`
-- [ ] Premium "educational book" aesthetic (refined typography, high-end design)
-- [ ] Single-file or simple static-site architecture for GitHub Pages hosting
 - [ ] Search functionality for topics and practice problems
 
 ### Out of Scope
@@ -45,9 +44,10 @@ Demystifying DSA through intuitive analogies and "steps, not seconds" Big O stor
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Topic-based navigation | User requested focus on topics over a fixed timeline | — Pending |
+| Topic-based navigation | User requested focus on topics over a fixed timeline | Implemented (Phase 1) |
+| Hash-based Routing | Required for GitHub Pages static hosting compatibility | Implemented (Phase 1) |
+| Premium Typography | Fraunces (900 variable) and Figtree for "Premium Book" feel | Implemented (Phase 1) |
 | LocalStorage tracking | Allows persistence without a backend | — Pending |
-| Single-file approach | Maximum portability and simplicity for personal use | — Pending |
 
 ## Evolution
 
@@ -67,4 +67,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-23 after initialization*
+*Last updated: 2026-04-22 after Phase 1 completion*
