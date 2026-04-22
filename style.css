@@ -1,0 +1,197 @@
+:root {
+    /* Typography */
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Figtree', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Colors - Premium Educational Palette */
+    --bg-primary: #fcfbf7; /* Soft paper white */
+    --bg-sidebar: rgba(255, 255, 255, 0.7);
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --accent: #4f46e5; /* Indigo */
+    --accent-soft: rgba(79, 70, 229, 0.1);
+    --border: #e5e5e5;
+    
+    /* Layout */
+    --sidebar-width: 300px;
+    --content-max-width: 850px;
+    --padding-base: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+#sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background: var(--bg-sidebar);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-base);
+    z-index: 100;
+}
+
+.platform-header h1 {
+    font-family: var(--font-display);
+    font-variation-settings: 'opsz' 72, 'SOFT' 0;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.platform-header .accent {
+    color: var(--accent);
+}
+
+.platform-header .tagline {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.topic-nav {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.nav-section h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.topic-nav ul {
+    list-style: none;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    margin: 0.2rem -0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.nav-link.active {
+    background: var(--accent);
+    color: white;
+}
+
+/* Progress Tracker */
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+#progress-tracker h3 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-stats {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Content Area */
+#content-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 4rem var(--padding-base);
+}
+
+#content {
+    width: 100%;
+    max-width: var(--content-max-width);
+}
+
+/* Typography Overrides for Content */
+#content h1, #content h2, #content h3 {
+    font-family: var(--font-display);
+    font-variation-settings: 'opsz' 36;
+    margin-bottom: 1.5rem;
+}
+
+#content h1 { font-size: 3.5rem; }
+#content h2 { font-size: 2.2rem; margin-top: 3rem; }
+
+#content p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.loading-state {
+    text-align: center;
+    padding-top: 10vh;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
