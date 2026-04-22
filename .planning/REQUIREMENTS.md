@@ -6,11 +6,11 @@
 ## v1 Requirements
 
 ### Core Architecture & UI
-- [ ] **UI-01**: Single-page static site structure hostable on GitHub Pages.
-- [ ] **UI-02**: Premium typography using Fraunces (Headers) and Figtree (Body).
-- [ ] **UI-03**: Responsive design that works flawlessly on mobile and desktop.
+- [x] **UI-01**: Single-page static site structure hostable on GitHub Pages.
+- [x] **UI-02**: Premium typography using Fraunces (Headers) and Figtree (Body).
+- [x] **UI-03**: Responsive design that works flawlessly on mobile and desktop.
 - [ ] **UI-04**: Global search functionality across all topics and problems.
-- [ ] **UI-05**: Topic-based navigation/filtering (removing "45-day" fixed schedule).
+- [x] **UI-05**: Topic-based navigation/filtering (removing "45-day" fixed schedule).
 
 ### Pedagogical Content
 - [ ] **CONT-01**: Analogy-based topic explanations for all major DSA categories (Wengrow style).
@@ -42,11 +42,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| UI-01 | Phase 1 | Pending |
-| UI-02 | Phase 1 | Pending |
-| UI-03 | Phase 1 | Pending |
+| UI-01 | Phase 1 | Complete |
+| UI-02 | Phase 1 | Complete |
+| UI-03 | Phase 1 | Complete |
 | UI-04 | Phase 8 | Pending |
-| UI-05 | Phase 2 | Pending |
+| UI-05 | Phase 2 | Complete |
 | CONT-01 | Phase 4-7 | Pending |
 | CONT-02 | Phase 4-7 | Pending |
 | CONT-03 | Phase 4-7 | Pending |

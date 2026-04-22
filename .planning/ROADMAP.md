@@ -6,7 +6,7 @@ We're transforming a static "day-based" checklist into a topic-centric, premium 
 
 ## Phases
 
-- [ ] **Phase 1: Foundation (UI & Design System)** - Establish the premium typography, grid, and responsive layout.
+- [x] **Phase 1: Foundation (UI & Design System)** - Establish the premium typography, grid, and responsive layout. (completed 2026-04-22)
 - [ ] **Phase 2: Data Layer (The Curriculum JSON)** - Define the schema and migrate existing content into a topic-centric structure.
 - [ ] **Phase 3: State Engine (Tracking & Persistence)** - Implement `localStorage` logic for problem status and progress bars.
 - [ ] **Phase 4: Pedagogy I (Linear Foundations)** - Author content for Arrays, Ordered Arrays, and Big O storytelling.
@@ -116,7 +116,7 @@ We're transforming a static "day-based" checklist into a topic-centric, premium 
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/1 | Not started | - |
+| 1. Foundation | 1/1 | Complete   | 2026-04-22 |
 | 2. Data Layer | 0/1 | Not started | - |
 | 3. State Engine | 0/2 | Not started | - |
 | 4. Pedagogy I | 0/1 | Not started | - |
