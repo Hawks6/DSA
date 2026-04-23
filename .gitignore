@@ -1,3 +1,6 @@
+# Ignore planning directory
+.planning/
+
 # Ignore VSCode settings
 .vscode/
 
