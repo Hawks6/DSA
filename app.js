@@ -308,7 +308,10 @@ const App = {
                             return `
                                 <li class="practice-problem" data-problem-id="${problemId}">
                                     <div class="problem-header">
-                                        <strong>${q.title}</strong>
+                                        <div class="problem-title-wrapper">
+                                            <strong>${q.title}</strong>
+                                            ${q.url ? `<a href="${q.url}" target="_blank" rel="noopener noreferrer" class="leetcode-link" title="Solve on LeetCode">Solve ↗</a>` : ''}
+                                        </div>
                                         <div class="problem-status-wrapper">
                                             <select class="problem-status-select" data-problem-id="${problemId}">
                                                 <option value="unattempted" ${status === 'unattempted' ? 'selected' : ''}>Unattempted</option>

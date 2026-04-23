@@ -1,15 +1,8 @@
-# Ignore everything
-/*
-
-# But do not ignore the DSA Checklist Website folder
-!DSA Checklist Website/
-!DSA Checklist Website/**
-
-# Ignore the .gitignore file itself if you want, or keep it (standard is to keep it)
-!.gitignore
-
 # Ignore VSCode settings
 .vscode/
 
 # Ignore Mac OS files
 .DS_Store
+
+# Ignore Node modules
+node_modules/

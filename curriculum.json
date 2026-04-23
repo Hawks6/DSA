@@ -8,15 +8,18 @@
     "practiceQuestions": [
       {
         "title": "Contains Duplicate (NeetCode Easy)",
-        "hint": "Think about what data structure lets you check 'have I seen this number before?' in a single step — you don't need to loop through a second array each time."
+        "hint": "Think about what data structure lets you check 'have I seen this number before?' in a single step — you don't need to loop through a second array each time.",
+        "url": "https://leetcode.com/problems/contains-duplicate/"
       },
       {
         "title": "Two Sum (Blind 75 Easy)",
-        "hint": "For each number you visit, ask: 'does its perfect partner (target - num) already exist somewhere I've already checked?' Store what you've seen so partner lookups are instant."
+        "hint": "For each number you visit, ask: 'does its perfect partner (target - num) already exist somewhere I've already checked?' Store what you've seen so partner lookups are instant.",
+        "url": "https://leetcode.com/problems/two-sum/"
       },
       {
         "title": "Best Time to Buy & Sell Stock (Easy)",
-        "hint": "Keep track of the cheapest price you've seen so far as you scan left to right — never look backwards."
+        "hint": "Keep track of the cheapest price you've seen so far as you scan left to right — never look backwards.",
+        "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
       }
     ]
   },
@@ -29,15 +32,18 @@
     "practiceQuestions": [
       {
         "title": "Contains Duplicate (NeetCode Easy)",
-        "hint": "A Set adds each element and tells you instantly if it was already present — one pass through the array is all you need."
+        "hint": "A Set adds each element and tells you instantly if it was already present — one pass through the array is all you need.",
+        "url": "https://leetcode.com/problems/contains-duplicate/"
       },
       {
         "title": "Missing Number (Easy)",
-        "hint": "There's a famous math trick: the expected sum of 0…N is N*(N+1)/2. Subtract the actual sum and the difference is the missing number — no extra data structure needed."
+        "hint": "There's a famous math trick: the expected sum of 0…N is N*(N+1)/2. Subtract the actual sum and the difference is the missing number — no extra data structure needed.",
+        "url": "https://leetcode.com/problems/missing-number/"
       },
       {
         "title": "Find All Duplicates in an Array (Medium)",
-        "hint": "Because all values are in range 1..N, you can use the array's own indices as a visited-marker — negate the value at the index corresponding to each number you see."
+        "hint": "Because all values are in range 1..N, you can use the array's own indices as a visited-marker — negate the value at the index corresponding to each number you see.",
+        "url": "https://leetcode.com/problems/find-all-duplicates-in-an-array/"
       }
     ]
   },
@@ -50,15 +56,18 @@
     "practiceQuestions": [
       {
         "title": "Two Sum (Easy)",
-        "hint": "Use a hash table to store each number's index as you scan — for each new number, look up whether its complement is already in the table."
+        "hint": "Use a hash table to store each number's index as you scan — for each new number, look up whether its complement is already in the table.",
+        "url": "https://leetcode.com/problems/two-sum/"
       },
       {
         "title": "Valid Anagram (Easy)",
-        "hint": "Count the frequency of each character in both strings using a hash map — two strings are anagrams if and only if their frequency maps are identical."
+        "hint": "Count the frequency of each character in both strings using a hash map — two strings are anagrams if and only if their frequency maps are identical.",
+        "url": "https://leetcode.com/problems/valid-anagram/"
       },
       {
         "title": "Group Anagrams (Medium)",
-        "hint": "If you sort the characters of a word, all anagrams produce the same sorted string — use that sorted string as a hash map key to group them together."
+        "hint": "If you sort the characters of a word, all anagrams produce the same sorted string — use that sorted string as a hash map key to group them together.",
+        "url": "https://leetcode.com/problems/group-anagrams/"
       }
     ]
   },
@@ -71,15 +80,18 @@
     "practiceQuestions": [
       {
         "title": "Product of Array Except Self (Medium)",
-        "hint": "Build the prefix products left-to-right into the answer array, then multiply in the suffix products right-to-left using a single running variable — no division needed."
+        "hint": "Build the prefix products left-to-right into the answer array, then multiply in the suffix products right-to-left using a single running variable — no division needed.",
+        "url": "https://leetcode.com/problems/product-of-array-except-self/"
       },
       {
         "title": "3Sum (Medium)",
-        "hint": "Sort the array first, then for each element fix it as a candidate and use the two-pointer technique on the rest — sorting lets you skip duplicates cleanly."
+        "hint": "Sort the array first, then for each element fix it as a candidate and use the two-pointer technique on the rest — sorting lets you skip duplicates cleanly.",
+        "url": "https://leetcode.com/problems/3sum/"
       },
       {
         "title": "Subarray Sum Equals K (Medium)",
-        "hint": "A prefix sum tells you the cumulative total up to each index — if two prefix sums differ by K, the subarray between them sums to K. Use a hash map to check this in O(1)."
+        "hint": "A prefix sum tells you the cumulative total up to each index — if two prefix sums differ by K, the subarray between them sums to K. Use a hash map to check this in O(1).",
+        "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
       }
     ]
   },
@@ -92,15 +104,18 @@
     "practiceQuestions": [
       {
         "title": "Valid Parentheses (Easy)",
-        "hint": "Push every opening bracket; when you see a closing bracket, pop the stack and check if they match — an empty stack at the end means every bracket was paired."
+        "hint": "Push every opening bracket; when you see a closing bracket, pop the stack and check if they match — an empty stack at the end means every bracket was paired.",
+        "url": "https://leetcode.com/problems/valid-parentheses/"
       },
       {
         "title": "Min Stack (Medium)",
-        "hint": "Maintain two parallel stacks — one for regular values and one that tracks the current minimum after each push, so getMin() is always O(1) without scanning."
+        "hint": "Maintain two parallel stacks — one for regular values and one that tracks the current minimum after each push, so getMin() is always O(1) without scanning.",
+        "url": "https://leetcode.com/problems/min-stack/"
       },
       {
         "title": "Evaluate Reverse Polish Notation (Medium)",
-        "hint": "Scan tokens left to right: push numbers, and when you see an operator, pop two numbers, apply the operator, and push the result back."
+        "hint": "Scan tokens left to right: push numbers, and when you see an operator, pop two numbers, apply the operator, and push the result back.",
+        "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
       }
     ]
   },
@@ -113,15 +128,18 @@
     "practiceQuestions": [
       {
         "title": "Two Sum — revisit without looking at previous solution",
-        "hint": "Can you write the hash map solution from scratch and explain why each line is necessary?"
+        "hint": "Can you write the hash map solution from scratch and explain why each line is necessary?",
+        "url": "https://leetcode.com/problems/two-sum/"
       },
       {
         "title": "Valid Parentheses — revisit",
-        "hint": "What edge case breaks a naive solution that doesn't use a stack? (Hint: try ']' as the first character.)"
+        "hint": "What edge case breaks a naive solution that doesn't use a stack? (Hint: try ']' as the first character.)",
+        "url": "https://leetcode.com/problems/valid-parentheses/"
       },
       {
         "title": "Valid Anagram — revisit",
-        "hint": "What are the two different approaches — sort-then-compare vs. frequency count — and what are their Big O stories?"
+        "hint": "What are the two different approaches — sort-then-compare vs. frequency count — and what are their Big O stories?",
+        "url": "https://leetcode.com/problems/valid-anagram/"
       }
     ]
   },
@@ -134,15 +152,18 @@
     "practiceQuestions": [
       {
         "title": "Best Time to Buy and Sell Stock (Easy)",
-        "hint": "Use two pointers: left is the buy day, right is the sell day — advance right each day; if you find a better buy price, move left to right's position."
+        "hint": "Use two pointers: left is the buy day, right is the sell day — advance right each day; if you find a better buy price, move left to right's position.",
+        "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
       },
       {
         "title": "Longest Substring Without Repeating Characters (Medium)",
-        "hint": "Expand right, and whenever you see a duplicate character, shrink from the left until the duplicate is removed — use a set to track what's in the current window."
+        "hint": "Expand right, and whenever you see a duplicate character, shrink from the left until the duplicate is removed — use a set to track what's in the current window.",
+        "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
       },
       {
         "title": "Longest Repeating Character Replacement (Medium)",
-        "hint": "The window is valid as long as (window length - count of most frequent character) ≤ K — if not, shrink from the left."
+        "hint": "The window is valid as long as (window length - count of most frequent character) ≤ K — if not, shrink from the left.",
+        "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
       }
     ]
   },
@@ -155,15 +176,18 @@
     "practiceQuestions": [
       {
         "title": "Minimum Window Substring (Hard)",
-        "hint": "Expand right until all required characters are covered, then shrink left as much as possible while still maintaining coverage — track counts with two hash maps."
+        "hint": "Expand right until all required characters are covered, then shrink left as much as possible while still maintaining coverage — track counts with two hash maps.",
+        "url": "https://leetcode.com/problems/minimum-window-substring/"
       },
       {
         "title": "Permutation in String (Medium)",
-        "hint": "Use a fixed window of size len(s1) and compare character frequency maps — if they match at any position, a permutation exists."
+        "hint": "Use a fixed window of size len(s1) and compare character frequency maps — if they match at any position, a permutation exists.",
+        "url": "https://leetcode.com/problems/permutation-in-string/"
       },
       {
         "title": "Fruit Into Baskets (Medium)",
-        "hint": "This is 'longest subarray with at most 2 distinct values' — classic variable sliding window with a frequency map."
+        "hint": "This is 'longest subarray with at most 2 distinct values' — classic variable sliding window with a frequency map.",
+        "url": "https://leetcode.com/problems/fruit-into-baskets/"
       }
     ]
   },
@@ -176,15 +200,18 @@
     "practiceQuestions": [
       {
         "title": "Merge Intervals (Medium)",
-        "hint": "Sort by start time, then iterate — if the current interval's start is ≤ the last merged interval's end, extend the end; otherwise start a new merged interval."
+        "hint": "Sort by start time, then iterate — if the current interval's start is ≤ the last merged interval's end, extend the end; otherwise start a new merged interval.",
+        "url": "https://leetcode.com/problems/merge-intervals/"
       },
       {
         "title": "Insert Interval (Medium)",
-        "hint": "Insert the new interval into the sorted list, then apply the same merge algorithm — or handle the three zones (before, overlapping, after) directly in one pass."
+        "hint": "Insert the new interval into the sorted list, then apply the same merge algorithm — or handle the three zones (before, overlapping, after) directly in one pass.",
+        "url": "https://leetcode.com/problems/insert-interval/"
       },
       {
         "title": "Non-overlapping Intervals (Medium)",
-        "hint": "Sort by end time and greedily keep intervals that end earliest — count how many must be removed to make the rest non-overlapping."
+        "hint": "Sort by end time and greedily keep intervals that end earliest — count how many must be removed to make the rest non-overlapping.",
+        "url": "https://leetcode.com/problems/non-overlapping-intervals/"
       }
     ]
   },
@@ -197,15 +224,18 @@
     "practiceQuestions": [
       {
         "title": "Meeting Rooms (Easy)",
-        "hint": "Sort by start time; if any adjacent pair of intervals overlaps (next start < current end), return false — someone can't attend all meetings."
+        "hint": "Sort by start time; if any adjacent pair of intervals overlaps (next start < current end), return false — someone can't attend all meetings.",
+        "url": "https://leetcode.com/problems/meeting-rooms/"
       },
       {
         "title": "Meeting Rooms II (Medium)",
-        "hint": "Use a min-heap of end times — for each meeting (sorted by start), if the earliest ending meeting is done, pop and reuse the room; always push the current meeting's end time."
+        "hint": "Use a min-heap of end times — for each meeting (sorted by start), if the earliest ending meeting is done, pop and reuse the room; always push the current meeting's end time.",
+        "url": "https://leetcode.com/problems/meeting-rooms-ii/"
       },
       {
         "title": "Non-overlapping Intervals (Medium)",
-        "hint": "Sort by end time and greedily select intervals with the earliest end — every selected interval is the one that leaves the most future room."
+        "hint": "Sort by end time and greedily select intervals with the earliest end — every selected interval is the one that leaves the most future room.",
+        "url": "https://leetcode.com/problems/non-overlapping-intervals/"
       }
     ]
   },
@@ -218,15 +248,18 @@
     "practiceQuestions": [
       {
         "title": "Container With Most Water (Medium)",
-        "hint": "Start with the widest possible container; shrink the side with the shorter line, because only a taller short-side can possibly improve the area."
+        "hint": "Start with the widest possible container; shrink the side with the shorter line, because only a taller short-side can possibly improve the area.",
+        "url": "https://leetcode.com/problems/container-with-most-water/"
       },
       {
         "title": "3Sum (Medium)",
-        "hint": "Sort the array, fix one element in an outer loop, then use two pointers on the rest — skip duplicate values to avoid duplicate triplets."
+        "hint": "Sort the array, fix one element in an outer loop, then use two pointers on the rest — skip duplicate values to avoid duplicate triplets.",
+        "url": "https://leetcode.com/problems/3sum/"
       },
       {
         "title": "Two Sum II — Input Array Is Sorted (Medium)",
-        "hint": "Because the array is already sorted, two pointers give O(N) without a hash map — left moves right when sum is too small, right moves left when too large."
+        "hint": "Because the array is already sorted, two pointers give O(N) without a hash map — left moves right when sum is too small, right moves left when too large.",
+        "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
       }
     ]
   },
@@ -239,15 +272,18 @@
     "practiceQuestions": [
       {
         "title": "Trapping Rain Water (Hard)",
-        "hint": "Two pointers from both ends — always process the side with the smaller max height, because that side's water level is definitively determined."
+        "hint": "Two pointers from both ends — always process the side with the smaller max height, because that side's water level is definitively determined.",
+        "url": "https://leetcode.com/problems/trapping-rain-water/"
       },
       {
         "title": "Container With Most Water (Medium)",
-        "hint": "The area = width × shorter height; moving the taller pointer inward can never improve the result, so always move the shorter one."
+        "hint": "The area = width × shorter height; moving the taller pointer inward can never improve the result, so always move the shorter one.",
+        "url": "https://leetcode.com/problems/container-with-most-water/"
       },
       {
         "title": "Largest Rectangle in Histogram (Hard)",
-        "hint": "Use a monotonic stack — push bar indices while heights are increasing; when a shorter bar appears, pop and calculate the area using the current bar as the right boundary."
+        "hint": "Use a monotonic stack — push bar indices while heights are increasing; when a shorter bar appears, pop and calculate the area using the current bar as the right boundary.",
+        "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
       }
     ]
   },
@@ -260,15 +296,18 @@
     "practiceQuestions": [
       {
         "title": "Daily Temperatures (Medium)",
-        "hint": "Maintain a decreasing monotonic stack of indices — when today's temperature exceeds the temperature at the stack's top, pop and record (current_index - popped_index) as the wait time."
+        "hint": "Maintain a decreasing monotonic stack of indices — when today's temperature exceeds the temperature at the stack's top, pop and record (current_index - popped_index) as the wait time.",
+        "url": "https://leetcode.com/problems/daily-temperatures/"
       },
       {
         "title": "Next Greater Element I (Easy)",
-        "hint": "Build a 'next greater' map for the second array using a monotonic stack, then answer queries against that map in O(1)."
+        "hint": "Build a 'next greater' map for the second array using a monotonic stack, then answer queries against that map in O(1).",
+        "url": "https://leetcode.com/problems/next-greater-element-i/"
       },
       {
         "title": "Largest Rectangle in Histogram (Hard)",
-        "hint": "Push bar indices in increasing-height order; when a shorter bar is encountered, pop and compute area using the popped bar's height and the current span width."
+        "hint": "Push bar indices in increasing-height order; when a shorter bar is encountered, pop and compute area using the popped bar's height and the current span width.",
+        "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
       }
     ]
   },
@@ -281,15 +320,18 @@
     "practiceQuestions": [
       {
         "title": "Binary Search (Easy)",
-        "hint": "Classic: left = 0, right = len-1; each iteration compare mid to target and eliminate one half — be careful with ≤ vs. < in the while condition."
+        "hint": "Classic: left = 0, right = len-1; each iteration compare mid to target and eliminate one half — be careful with ≤ vs. < in the while condition.",
+        "url": "https://leetcode.com/problems/binary-search/"
       },
       {
         "title": "Search a 2D Matrix (Medium)",
-        "hint": "Treat the M×N matrix as a sorted array of length M*N — convert a 1D mid index to a 2D row/column using integer division and modulo."
+        "hint": "Treat the M×N matrix as a sorted array of length M*N — convert a 1D mid index to a 2D row/column using integer division and modulo.",
+        "url": "https://leetcode.com/problems/search-a-2d-matrix/"
       },
       {
         "title": "Find Minimum in Rotated Sorted Array (Medium)",
-        "hint": "Binary search on a rotated array: if the mid element is greater than the right element, the minimum is in the right half; otherwise it's in the left half."
+        "hint": "Binary search on a rotated array: if the mid element is greater than the right element, the minimum is in the right half; otherwise it's in the left half.",
+        "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
       }
     ]
   },
@@ -302,15 +344,18 @@
     "practiceQuestions": [
       {
         "title": "Koko Eating Bananas (Medium)",
-        "hint": "Binary search on the eating speed from 1 to max(piles) — for each candidate speed, check if sum(ceil(pile/speed)) ≤ H."
+        "hint": "Binary search on the eating speed from 1 to max(piles) — for each candidate speed, check if sum(ceil(pile/speed)) ≤ H.",
+        "url": "https://leetcode.com/problems/koko-eating-bananas/"
       },
       {
         "title": "Capacity to Ship Packages Within D Days (Medium)",
-        "hint": "Binary search the ship capacity from max(weights) to sum(weights) — simulate greedily whether packages can be shipped within D days at that capacity."
+        "hint": "Binary search the ship capacity from max(weights) to sum(weights) — simulate greedily whether packages can be shipped within D days at that capacity.",
+        "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/"
       },
       {
         "title": "Split Array Largest Sum (Hard)",
-        "hint": "Binary search on the maximum subarray sum; for each candidate maximum, greedily check how many partitions are needed — if ≤ m, the answer may be smaller."
+        "hint": "Binary search on the maximum subarray sum; for each candidate maximum, greedily check how many partitions are needed — if ≤ m, the answer may be smaller.",
+        "url": "https://leetcode.com/problems/split-array-largest-sum/"
       }
     ]
   },
@@ -323,15 +368,18 @@
     "practiceQuestions": [
       {
         "title": "Reverse Linked List (Easy)",
-        "hint": "Use three variables: prev (starts null), curr (starts at head), next_node (temporary) — in each iteration, point curr.next backward to prev, then advance all three pointers."
+        "hint": "Use three variables: prev (starts null), curr (starts at head), next_node (temporary) — in each iteration, point curr.next backward to prev, then advance all three pointers.",
+        "url": "https://leetcode.com/problems/reverse-linked-list/"
       },
       {
         "title": "Merge Two Sorted Lists (Easy)",
-        "hint": "Compare the heads of both lists, attach the smaller one to your result, and advance that list's pointer — a dummy head node simplifies edge cases."
+        "hint": "Compare the heads of both lists, attach the smaller one to your result, and advance that list's pointer — a dummy head node simplifies edge cases.",
+        "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
       },
       {
         "title": "Linked List Cycle (Easy)",
-        "hint": "Use Floyd's tortoise-and-hare: slow moves one step, fast moves two — if there's a cycle, they will eventually meet; if not, fast reaches null."
+        "hint": "Use Floyd's tortoise-and-hare: slow moves one step, fast moves two — if there's a cycle, they will eventually meet; if not, fast reaches null.",
+        "url": "https://leetcode.com/problems/linked-list-cycle/"
       }
     ]
   },
@@ -344,15 +392,18 @@
     "practiceQuestions": [
       {
         "title": "Linked List Cycle II (Medium)",
-        "hint": "After detecting a cycle with fast/slow pointers, reset one pointer to head — advance both one step at a time; they meet exactly at the cycle entry node (this requires a mathematical proof to understand why)."
+        "hint": "After detecting a cycle with fast/slow pointers, reset one pointer to head — advance both one step at a time; they meet exactly at the cycle entry node (this requires a mathematical proof to understand why).",
+        "url": "https://leetcode.com/problems/linked-list-cycle-ii/"
       },
       {
         "title": "Find the Duplicate Number (Medium)",
-        "hint": "Treat the array as a linked list (value = next node index) — a cycle exists because of the duplicate; apply Floyd's algorithm, then the two-pointer meeting trick to find the duplicate."
+        "hint": "Treat the array as a linked list (value = next node index) — a cycle exists because of the duplicate; apply Floyd's algorithm, then the two-pointer meeting trick to find the duplicate.",
+        "url": "https://leetcode.com/problems/find-the-duplicate-number/"
       },
       {
         "title": "Middle of the Linked List (Easy)",
-        "hint": "Fast pointer moves 2, slow moves 1 — when fast is at the last node or null, slow is at the middle."
+        "hint": "Fast pointer moves 2, slow moves 1 — when fast is at the last node or null, slow is at the middle.",
+        "url": "https://leetcode.com/problems/middle-of-the-linked-list/"
       }
     ]
   },
@@ -365,15 +416,18 @@
     "practiceQuestions": [
       {
         "title": "Reorder List (Medium)",
-        "hint": "Three steps: find middle with slow/fast pointers, reverse the second half in-place, then merge the two halves alternately — all three steps are O(N) / O(1)."
+        "hint": "Three steps: find middle with slow/fast pointers, reverse the second half in-place, then merge the two halves alternately — all three steps are O(N) / O(1).",
+        "url": "https://leetcode.com/problems/reorder-list/"
       },
       {
         "title": "Merge K Sorted Lists (Hard)",
-        "hint": "Use a min-heap initialized with the head of each list — repeatedly extract the minimum node, attach it to the result, and push that node's next into the heap."
+        "hint": "Use a min-heap initialized with the head of each list — repeatedly extract the minimum node, attach it to the result, and push that node's next into the heap.",
+        "url": "https://leetcode.com/problems/merge-k-sorted-lists/"
       },
       {
         "title": "Sort List (Medium)",
-        "hint": "Merge sort on a linked list: find the middle (slow/fast), recursively sort each half, then merge — O(N log N) time, O(log N) space for the recursion stack."
+        "hint": "Merge sort on a linked list: find the middle (slow/fast), recursively sort each half, then merge — O(N log N) time, O(log N) space for the recursion stack.",
+        "url": "https://leetcode.com/problems/sort-list/"
       }
     ]
   },
@@ -386,15 +440,18 @@
     "practiceQuestions": [
       {
         "title": "LRU Cache (Medium)",
-        "hint": "Use an OrderedDict in Python (or a HashMap + DoublyLinkedList in Java/JS) — on get, move the accessed key to the end; on put over capacity, remove the front (oldest) entry."
+        "hint": "Use an OrderedDict in Python (or a HashMap + DoublyLinkedList in Java/JS) — on get, move the accessed key to the end; on put over capacity, remove the front (oldest) entry.",
+        "url": "https://leetcode.com/problems/lru-cache/"
       },
       {
         "title": "Design a HashMap (Easy)",
-        "hint": "Use an array of buckets with chaining (linked lists at each bucket) — hash the key to a bucket index, then scan the chain for the key."
+        "hint": "Use an array of buckets with chaining (linked lists at each bucket) — hash the key to a bucket index, then scan the chain for the key.",
+        "url": "https://leetcode.com/problems/design-hashmap/"
       },
       {
         "title": "All O(1) Data Structure (Hard)",
-        "hint": "Combine a doubly linked list of frequency nodes with a hash map from key to its frequency node — similar intuition to LRU but tracking min/max access counts."
+        "hint": "Combine a doubly linked list of frequency nodes with a hash map from key to its frequency node — similar intuition to LRU but tracking min/max access counts.",
+        "url": "https://leetcode.com/problems/all-oone-data-structure/"
       }
     ]
   },
@@ -407,15 +464,18 @@
     "practiceQuestions": [
       {
         "title": "Merge K Sorted Lists (Hard)",
-        "hint": "Push the head of each list into a min-heap with (value, list_index, node) tuples — pop the minimum, add to result, push that node's next if it exists."
+        "hint": "Push the head of each list into a min-heap with (value, list_index, node) tuples — pop the minimum, add to result, push that node's next if it exists.",
+        "url": "https://leetcode.com/problems/merge-k-sorted-lists/"
       },
       {
         "title": "Find K Pairs with Smallest Sums (Medium)",
-        "hint": "This is another K-way merge: start with (nums1[0]+nums2[j]) for all j, then expand the frontier lazily using a min-heap."
+        "hint": "This is another K-way merge: start with (nums1[0]+nums2[j]) for all j, then expand the frontier lazily using a min-heap.",
+        "url": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/"
       },
       {
         "title": "Kth Smallest Element in a Sorted Matrix (Medium)",
-        "hint": "Treat each row as a sorted list — apply the K-way merge pattern with a min-heap initialized from the first column."
+        "hint": "Treat each row as a sorted list — apply the K-way merge pattern with a min-heap initialized from the first column.",
+        "url": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/"
       }
     ]
   },
@@ -428,15 +488,18 @@
     "practiceQuestions": [
       {
         "title": "Palindromic Substrings (Medium)",
-        "hint": "For each index, expand from center for both odd and even length palindromes — count each valid palindrome as you expand."
+        "hint": "For each index, expand from center for both odd and even length palindromes — count each valid palindrome as you expand.",
+        "url": "https://leetcode.com/problems/palindromic-substrings/"
       },
       {
         "title": "Longest Palindromic Substring (Medium)",
-        "hint": "Same expand-from-center logic, but track the longest palindrome found instead of counting all of them."
+        "hint": "Same expand-from-center logic, but track the longest palindrome found instead of counting all of them.",
+        "url": "https://leetcode.com/problems/longest-palindromic-substring/"
       },
       {
         "title": "Valid Palindrome (Easy)",
-        "hint": "Use two pointers from both ends, skipping non-alphanumeric characters, and compare lowercased characters — no need to create a cleaned string."
+        "hint": "Use two pointers from both ends, skipping non-alphanumeric characters, and compare lowercased characters — no need to create a cleaned string.",
+        "url": "https://leetcode.com/problems/valid-palindrome/"
       }
     ]
   },
@@ -449,15 +512,18 @@
     "practiceQuestions": [
       {
         "title": "Missing Number (Easy)",
-        "hint": "XOR all indices 0..N with all values in the array — everything cancels except the missing number, which has no pair."
+        "hint": "XOR all indices 0..N with all values in the array — everything cancels except the missing number, which has no pair.",
+        "url": "https://leetcode.com/problems/missing-number/"
       },
       {
         "title": "Counting Bits (Easy)",
-        "hint": "For each n, dp[n] = dp[n >> 1] + (n & 1) — the number of set bits in n equals the bits in n/2 plus whether n is odd."
+        "hint": "For each n, dp[n] = dp[n >> 1] + (n & 1) — the number of set bits in n equals the bits in n/2 plus whether n is odd.",
+        "url": "https://leetcode.com/problems/counting-bits/"
       },
       {
         "title": "Number of 1 Bits (Easy)",
-        "hint": "Repeatedly apply n = n & (n-1) to clear the lowest set bit, counting iterations until n becomes zero."
+        "hint": "Repeatedly apply n = n & (n-1) to clear the lowest set bit, counting iterations until n becomes zero.",
+        "url": "https://leetcode.com/problems/number-of-1-bits/"
       }
     ]
   },
@@ -470,15 +536,18 @@
     "practiceQuestions": [
       {
         "title": "Invert Binary Tree (Easy)",
-        "hint": "Recursively swap the left and right children of every node — the base case is when the node is null."
+        "hint": "Recursively swap the left and right children of every node — the base case is when the node is null.",
+        "url": "https://leetcode.com/problems/invert-binary-tree/"
       },
       {
         "title": "Maximum Depth of Binary Tree (Easy)",
-        "hint": "Return 1 + max(depth(left), depth(right)) — the base case (null node) returns 0."
+        "hint": "Return 1 + max(depth(left), depth(right)) — the base case (null node) returns 0.",
+        "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
       },
       {
         "title": "Same Tree (Easy)",
-        "hint": "Two trees are the same if their roots match AND their left subtrees are the same AND their right subtrees are the same — a direct recursive definition."
+        "hint": "Two trees are the same if their roots match AND their left subtrees are the same AND their right subtrees are the same — a direct recursive definition.",
+        "url": "https://leetcode.com/problems/same-tree/"
       }
     ]
   },
@@ -491,15 +560,18 @@
     "practiceQuestions": [
       {
         "title": "Path Sum (Easy)",
-        "hint": "DFS tracking the running sum — subtract the current node's value; if you reach a leaf with remaining sum = 0, a valid path exists."
+        "hint": "DFS tracking the running sum — subtract the current node's value; if you reach a leaf with remaining sum = 0, a valid path exists.",
+        "url": "https://leetcode.com/problems/path-sum/"
       },
       {
         "title": "Diameter of Binary Tree (Easy)",
-        "hint": "At each node, the diameter passing through it = depth(left) + depth(right) — track the global maximum as you compute depths bottom-up."
+        "hint": "At each node, the diameter passing through it = depth(left) + depth(right) — track the global maximum as you compute depths bottom-up.",
+        "url": "https://leetcode.com/problems/diameter-of-binary-tree/"
       },
       {
         "title": "Lowest Common Ancestor of BST (Easy)",
-        "hint": "In a BST, if both target values are smaller than the current node, go left; if both larger, go right; otherwise the current node IS the LCA."
+        "hint": "In a BST, if both target values are smaller than the current node, go left; if both larger, go right; otherwise the current node IS the LCA.",
+        "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
       }
     ]
   },
@@ -512,15 +584,18 @@
     "practiceQuestions": [
       {
         "title": "Binary Tree Level Order Traversal (Medium)",
-        "hint": "BFS with a queue — at the start of each level, snapshot the queue's current length; process exactly that many nodes and collect their values before starting the next level."
+        "hint": "BFS with a queue — at the start of each level, snapshot the queue's current length; process exactly that many nodes and collect their values before starting the next level.",
+        "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
       },
       {
         "title": "Minimum Depth of Binary Tree (Easy)",
-        "hint": "BFS naturally finds the minimum depth — the first leaf node encountered is at the shallowest level; return its depth immediately."
+        "hint": "BFS naturally finds the minimum depth — the first leaf node encountered is at the shallowest level; return its depth immediately.",
+        "url": "https://leetcode.com/problems/minimum-depth-of-binary-tree/"
       },
       {
         "title": "Zigzag Level Order Traversal (Medium)",
-        "hint": "Same BFS level-order approach, but alternate the direction you append values to each level's list using a boolean flag."
+        "hint": "Same BFS level-order approach, but alternate the direction you append values to each level's list using a boolean flag.",
+        "url": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
       }
     ]
   },
@@ -533,15 +608,18 @@
     "practiceQuestions": [
       {
         "title": "Validate Binary Search Tree (Medium)",
-        "hint": "Pass valid range bounds [min_val, max_val] through recursion — every node must satisfy min_val < node.val < max_val, with bounds tightened at each step."
+        "hint": "Pass valid range bounds [min_val, max_val] through recursion — every node must satisfy min_val < node.val < max_val, with bounds tightened at each step.",
+        "url": "https://leetcode.com/problems/validate-binary-search-tree/"
       },
       {
         "title": "Kth Smallest Element in a BST (Medium)",
-        "hint": "In-order traversal of a BST produces sorted values — stop at the kth node visited."
+        "hint": "In-order traversal of a BST produces sorted values — stop at the kth node visited.",
+        "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
       },
       {
         "title": "Lowest Common Ancestor of a Binary Tree (Medium)",
-        "hint": "If the current node equals either target, it's the LCA — otherwise, if targets appear in different subtrees, the current node is the LCA."
+        "hint": "If the current node equals either target, it's the LCA — otherwise, if targets appear in different subtrees, the current node is the LCA.",
+        "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
       }
     ]
   },
@@ -554,15 +632,18 @@
     "practiceQuestions": [
       {
         "title": "Binary Tree Maximum Path Sum (Hard)",
-        "hint": "Each recursive call returns the best single-branch gain from that node; separately track the global max which may include the full arc (left + node + right) — only return the one-branch version to the parent."
+        "hint": "Each recursive call returns the best single-branch gain from that node; separately track the global max which may include the full arc (left + node + right) — only return the one-branch version to the parent.",
+        "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
       },
       {
         "title": "Balanced Binary Tree (Easy)",
-        "hint": "Return -1 if the subtree is unbalanced, or the actual height if balanced — if either child returns -1, propagate -1 immediately."
+        "hint": "Return -1 if the subtree is unbalanced, or the actual height if balanced — if either child returns -1, propagate -1 immediately.",
+        "url": "https://leetcode.com/problems/balanced-binary-tree/"
       },
       {
         "title": "House Robber III (Medium)",
-        "hint": "Each node returns a pair (rob_this_node, skip_this_node) — rob = left.skip + right.skip + value; skip = max(left) + max(right). Classic tree DP with dual-return."
+        "hint": "Each node returns a pair (rob_this_node, skip_this_node) — rob = left.skip + right.skip + value; skip = max(left) + max(right). Classic tree DP with dual-return.",
+        "url": "https://leetcode.com/problems/house-robber-iii/"
       }
     ]
   },
@@ -575,15 +656,18 @@
     "practiceQuestions": [
       {
         "title": "Serialize and Deserialize Binary Tree (Hard)",
-        "hint": "Serialize with preorder DFS, using 'N,' for nulls; deserialize by splitting on comma and recursively building left then right subtrees from the resulting token iterator."
+        "hint": "Serialize with preorder DFS, using 'N,' for nulls; deserialize by splitting on comma and recursively building left then right subtrees from the resulting token iterator.",
+        "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
       },
       {
         "title": "Serialize and Deserialize BST (Medium)",
-        "hint": "BST can be serialized with preorder (no null markers needed!) because BST structure can be reconstructed from preorder values alone using range bounds."
+        "hint": "BST can be serialized with preorder (no null markers needed!) because BST structure can be reconstructed from preorder values alone using range bounds.",
+        "url": "https://leetcode.com/problems/serialize-and-deserialize-bst/"
       },
       {
         "title": "Construct Binary Tree from Preorder and Inorder Traversal (Medium)",
-        "hint": "The first element of preorder is always the root; find it in inorder to split left and right subtrees, then recurse on each piece."
+        "hint": "The first element of preorder is always the root; find it in inorder to split left and right subtrees, then recurse on each piece.",
+        "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
       }
     ]
   },
@@ -596,15 +680,18 @@
     "practiceQuestions": [
       {
         "title": "Implement Trie (Medium)",
-        "hint": "Each TrieNode has a children dictionary (or 26-length array) and an is_end_of_word boolean — insert/search/startsWith each walk the trie character by character."
+        "hint": "Each TrieNode has a children dictionary (or 26-length array) and an is_end_of_word boolean — insert/search/startsWith each walk the trie character by character.",
+        "url": "https://leetcode.com/problems/implement-trie-prefix-tree/"
       },
       {
         "title": "Design Add and Search Words Data Structure (Medium)",
-        "hint": "This is trie search with a wildcard '.' that can match any character — use DFS when you encounter '.', trying all non-null children."
+        "hint": "This is trie search with a wildcard '.' that can match any character — use DFS when you encounter '.', trying all non-null children.",
+        "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/"
       },
       {
         "title": "Word Search II (Hard)",
-        "hint": "Build a trie from the word list, then DFS from each cell on the board — at each step, check if the current prefix exists in the trie to prune dead ends early."
+        "hint": "Build a trie from the word list, then DFS from each cell on the board — at each step, check if the current prefix exists in the trie to prune dead ends early.",
+        "url": "https://leetcode.com/problems/word-search-ii/"
       }
     ]
   },
@@ -617,15 +704,18 @@
     "practiceQuestions": [
       {
         "title": "Kth Largest Element in an Array (Medium)",
-        "hint": "Maintain a min-heap of size K — push each element; if the heap exceeds K elements, pop the minimum; the top of the heap is the Kth largest."
+        "hint": "Maintain a min-heap of size K — push each element; if the heap exceeds K elements, pop the minimum; the top of the heap is the Kth largest.",
+        "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
       },
       {
         "title": "Top K Frequent Elements (Medium)",
-        "hint": "Count frequencies with a hash map, then use a min-heap of size K to efficiently track the K most frequent — pop when size exceeds K, keeping only the top K."
+        "hint": "Count frequencies with a hash map, then use a min-heap of size K to efficiently track the K most frequent — pop when size exceeds K, keeping only the top K.",
+        "url": "https://leetcode.com/problems/top-k-frequent-elements/"
       },
       {
         "title": "Task Scheduler (Medium)",
-        "hint": "The key formula: the answer is max(N, (max_freq - 1) * (n + 1) + count_of_max_freq_tasks) — no heap required, but a greedy frequency analysis."
+        "hint": "The key formula: the answer is max(N, (max_freq - 1) * (n + 1) + count_of_max_freq_tasks) — no heap required, but a greedy frequency analysis.",
+        "url": "https://leetcode.com/problems/task-scheduler/"
       }
     ]
   },
@@ -638,15 +728,18 @@
     "practiceQuestions": [
       {
         "title": "Number of Islands (Medium)",
-        "hint": "For each unvisited '1' cell, launch a DFS/BFS that marks all connected '1' cells as visited — the number of times you launch a new traversal = number of islands."
+        "hint": "For each unvisited '1' cell, launch a DFS/BFS that marks all connected '1' cells as visited — the number of times you launch a new traversal = number of islands.",
+        "url": "https://leetcode.com/problems/number-of-islands/"
       },
       {
         "title": "Max Area of Island (Medium)",
-        "hint": "Same as Number of Islands but instead of counting launches, count the size of each traversal and track the maximum."
+        "hint": "Same as Number of Islands but instead of counting launches, count the size of each traversal and track the maximum.",
+        "url": "https://leetcode.com/problems/max-area-of-island/"
       },
       {
         "title": "Flood Fill (Easy)",
-        "hint": "BFS/DFS from the starting cell — replace the original color with the new color and continue expanding to same-colored neighbors."
+        "hint": "BFS/DFS from the starting cell — replace the original color with the new color and continue expanding to same-colored neighbors.",
+        "url": "https://leetcode.com/problems/flood-fill/"
       }
     ]
   },
@@ -659,15 +752,18 @@
     "practiceQuestions": [
       {
         "title": "Clone Graph (Medium)",
-        "hint": "BFS with a hash map (original → clone) as your visited set — create a clone when you first see a node; use the existing clone if it's already in the map."
+        "hint": "BFS with a hash map (original → clone) as your visited set — create a clone when you first see a node; use the existing clone if it's already in the map.",
+        "url": "https://leetcode.com/problems/clone-graph/"
       },
       {
         "title": "Number of Connected Components in Undirected Graph (Medium)",
-        "hint": "BFS/DFS from each unvisited node, marking all reachable nodes — the component count equals the number of times you start a fresh traversal."
+        "hint": "BFS/DFS from each unvisited node, marking all reachable nodes — the component count equals the number of times you start a fresh traversal.",
+        "url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"
       },
       {
         "title": "Graph Valid Tree (Medium)",
-        "hint": "A valid tree has exactly N-1 edges and is fully connected — check both conditions, or run DFS to verify no cycle exists."
+        "hint": "A valid tree has exactly N-1 edges and is fully connected — check both conditions, or run DFS to verify no cycle exists.",
+        "url": "https://leetcode.com/problems/graph-valid-tree/"
       }
     ]
   },
@@ -680,15 +776,18 @@
     "practiceQuestions": [
       {
         "title": "Number of Provinces (Medium)",
-        "hint": "Use Union-Find — for each pair (i, j) where isConnected[i][j] = 1, union them; at the end, count unique roots (number of distinct find() values)."
+        "hint": "Use Union-Find — for each pair (i, j) where isConnected[i][j] = 1, union them; at the end, count unique roots (number of distinct find() values).",
+        "url": "https://leetcode.com/problems/number-of-provinces/"
       },
       {
         "title": "Redundant Connection (Medium)",
-        "hint": "Process edges one by one with Union-Find — the first edge where both endpoints already share the same root is the redundant edge creating a cycle."
+        "hint": "Process edges one by one with Union-Find — the first edge where both endpoints already share the same root is the redundant edge creating a cycle.",
+        "url": "https://leetcode.com/problems/redundant-connection/"
       },
       {
         "title": "Accounts Merge (Medium)",
-        "hint": "Union all emails belonging to the same account, then group all emails sharing a root — use the owner name of the root email as the account name."
+        "hint": "Union all emails belonging to the same account, then group all emails sharing a root — use the owner name of the root email as the account name.",
+        "url": "https://leetcode.com/problems/accounts-merge/"
       }
     ]
   },
@@ -701,15 +800,18 @@
     "practiceQuestions": [
       {
         "title": "Course Schedule (Medium)",
-        "hint": "Model prerequisites as a directed graph; if a cycle exists, return false — use DFS cycle detection with 3-state coloring (0=unvisited, 1=in-progress, 2=done)."
+        "hint": "Model prerequisites as a directed graph; if a cycle exists, return false — use DFS cycle detection with 3-state coloring (0=unvisited, 1=in-progress, 2=done).",
+        "url": "https://leetcode.com/problems/course-schedule/"
       },
       {
         "title": "Course Schedule II (Medium)",
-        "hint": "Topological sort with Kahn's algorithm — collect zero-indegree nodes in a queue, process them, decrement neighbor indegrees; append each processed node to the result."
+        "hint": "Topological sort with Kahn's algorithm — collect zero-indegree nodes in a queue, process them, decrement neighbor indegrees; append each processed node to the result.",
+        "url": "https://leetcode.com/problems/course-schedule-ii/"
       },
       {
         "title": "Find All Possible Recipes from Given Supplies (Medium)",
-        "hint": "Model ingredients and recipes as a DAG; apply topological sort — a recipe is makeable if all its ingredient prerequisites were processed before it."
+        "hint": "Model ingredients and recipes as a DAG; apply topological sort — a recipe is makeable if all its ingredient prerequisites were processed before it.",
+        "url": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/"
       }
     ]
   },
@@ -722,15 +824,18 @@
     "practiceQuestions": [
       {
         "title": "Network Delay Time (Medium)",
-        "hint": "Single-source shortest paths from node k — Dijkstra's from k, return the maximum distance to any node (if any node is unreachable, return -1)."
+        "hint": "Single-source shortest paths from node k — Dijkstra's from k, return the maximum distance to any node (if any node is unreachable, return -1).",
+        "url": "https://leetcode.com/problems/network-delay-time/"
       },
       {
         "title": "Cheapest Flights Within K Stops (Medium)",
-        "hint": "Modified Dijkstra (or Bellman-Ford with K iterations) — track (cost, city, stops_remaining); use stops count to avoid going beyond K stops."
+        "hint": "Modified Dijkstra (or Bellman-Ford with K iterations) — track (cost, city, stops_remaining); use stops count to avoid going beyond K stops.",
+        "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
       },
       {
         "title": "Path With Minimum Effort (Medium)",
-        "hint": "Binary search the maximum effort E; for each E, use BFS to check if a path exists where all consecutive cell differences are ≤ E. Or use Dijkstra where 'distance' = max edge weight on path."
+        "hint": "Binary search the maximum effort E; for each E, use BFS to check if a path exists where all consecutive cell differences are ≤ E. Or use Dijkstra where 'distance' = max edge weight on path.",
+        "url": "https://leetcode.com/problems/path-with-minimum-effort/"
       }
     ]
   },
@@ -743,15 +848,18 @@
     "practiceQuestions": [
       {
         "title": "Pacific Atlantic Water Flow (Medium)",
-        "hint": "Reverse the flow — BFS from Pacific border cells and BFS from Atlantic border cells separately; cells reachable from both oceans are the answer."
+        "hint": "Reverse the flow — BFS from Pacific border cells and BFS from Atlantic border cells separately; cells reachable from both oceans are the answer.",
+        "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/"
       },
       {
         "title": "Word Ladder (Hard)",
-        "hint": "Model as an unweighted graph where edges connect words differing by one letter; BFS from start word gives minimum transformations in O(N × L²) where L is word length."
+        "hint": "Model as an unweighted graph where edges connect words differing by one letter; BFS from start word gives minimum transformations in O(N × L²) where L is word length.",
+        "url": "https://leetcode.com/problems/word-ladder/"
       },
       {
         "title": "Alien Dictionary (Hard)",
-        "hint": "Extract character ordering from adjacent words in the list (first differing character), build a directed graph of character precedence, then topological sort — a cycle means invalid."
+        "hint": "Extract character ordering from adjacent words in the list (first differing character), build a directed graph of character precedence, then topological sort — a cycle means invalid.",
+        "url": "https://leetcode.com/problems/alien-dictionary/"
       }
     ]
   },
@@ -764,15 +872,18 @@
     "practiceQuestions": [
       {
         "title": "Combination Sum (Medium)",
-        "hint": "At each recursive call, choose to include the current candidate (recurse with same candidate, reducing remaining target) or skip to next (recurse with next index)."
+        "hint": "At each recursive call, choose to include the current candidate (recurse with same candidate, reducing remaining target) or skip to next (recurse with next index).",
+        "url": "https://leetcode.com/problems/combination-sum/"
       },
       {
         "title": "Subsets (Medium)",
-        "hint": "At each element, make a binary choice: include or exclude — this generates all 2^N subsets. No pruning needed; all branches lead to valid subsets."
+        "hint": "At each element, make a binary choice: include or exclude — this generates all 2^N subsets. No pruning needed; all branches lead to valid subsets.",
+        "url": "https://leetcode.com/problems/subsets/"
       },
       {
         "title": "Permutations (Medium)",
-        "hint": "At each position, try placing each unused element; use a 'used' boolean array to track which elements have been placed in the current permutation."
+        "hint": "At each position, try placing each unused element; use a 'used' boolean array to track which elements have been placed in the current permutation.",
+        "url": "https://leetcode.com/problems/permutations/"
       }
     ]
   },
@@ -785,15 +896,18 @@
     "practiceQuestions": [
       {
         "title": "N-Queens (Hard)",
-        "hint": "Track occupied columns and both diagonal types with sets — use (row - col) for one diagonal family and (row + col) for the other; O(1) constraint checking per cell."
+        "hint": "Track occupied columns and both diagonal types with sets — use (row - col) for one diagonal family and (row + col) for the other; O(1) constraint checking per cell.",
+        "url": "https://leetcode.com/problems/n-queens/"
       },
       {
         "title": "Word Search (Medium)",
-        "hint": "DFS from each cell matching the first character — mark cells as visited by temporarily modifying the grid (e.g., set to '#'), then restore on backtrack."
+        "hint": "DFS from each cell matching the first character — mark cells as visited by temporarily modifying the grid (e.g., set to '#'), then restore on backtrack.",
+        "url": "https://leetcode.com/problems/word-search/"
       },
       {
         "title": "Sudoku Solver (Hard)",
-        "hint": "Backtracking with aggressive pruning — for each empty cell, try digits 1-9; skip those already in the same row, column, or 3×3 box; backtrack if no digit works."
+        "hint": "Backtracking with aggressive pruning — for each empty cell, try digits 1-9; skip those already in the same row, column, or 3×3 box; backtrack if no digit works.",
+        "url": "https://leetcode.com/problems/sudoku-solver/"
       }
     ]
   },
@@ -806,15 +920,18 @@
     "practiceQuestions": [
       {
         "title": "Climbing Stairs (Easy)",
-        "hint": "dp[i] = dp[i-1] + dp[i-2] — it's exactly Fibonacci. Optimize to O(1) space by storing only the last two values."
+        "hint": "dp[i] = dp[i-1] + dp[i-2] — it's exactly Fibonacci. Optimize to O(1) space by storing only the last two values.",
+        "url": "https://leetcode.com/problems/climbing-stairs/"
       },
       {
         "title": "House Robber (Medium)",
-        "hint": "dp[i] = max(dp[i-1], dp[i-2] + nums[i]) — at each house, choose to rob it (add to two-houses-ago total) or skip it (take previous total)."
+        "hint": "dp[i] = max(dp[i-1], dp[i-2] + nums[i]) — at each house, choose to rob it (add to two-houses-ago total) or skip it (take previous total).",
+        "url": "https://leetcode.com/problems/house-robber/"
       },
       {
         "title": "Min Cost Climbing Stairs (Easy)",
-        "hint": "dp[i] = cost[i] + min(dp[i-1], dp[i-2]) — compute the minimum cost to step on or past each stair."
+        "hint": "dp[i] = cost[i] + min(dp[i-1], dp[i-2]) — compute the minimum cost to step on or past each stair.",
+        "url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
       }
     ]
   },
@@ -827,15 +944,18 @@
     "practiceQuestions": [
       {
         "title": "Word Break (Medium)",
-        "hint": "dp[0]=True; for each i, check all j<i: if dp[j] is True and s[j:i] is in the word set, set dp[i]=True."
+        "hint": "dp[0]=True; for each i, check all j<i: if dp[j] is True and s[j:i] is in the word set, set dp[i]=True.",
+        "url": "https://leetcode.com/problems/word-break/"
       },
       {
         "title": "Decode Ways (Medium)",
-        "hint": "dp[i] = dp[i-1] if s[i-1]≠'0', plus dp[i-2] if s[i-2:i] forms 10-26 — be careful with '0' digits which have no single-digit decoding."
+        "hint": "dp[i] = dp[i-1] if s[i-1]≠'0', plus dp[i-2] if s[i-2:i] forms 10-26 — be careful with '0' digits which have no single-digit decoding.",
+        "url": "https://leetcode.com/problems/decode-ways/"
       },
       {
         "title": "Palindrome Partitioning II (Hard)",
-        "hint": "Two DP passes: precompute isPalin[i][j], then dp[i] = minimum cuts for s[0..i] using dp[j-1]+1 for each j where s[j..i] is a palindrome."
+        "hint": "Two DP passes: precompute isPalin[i][j], then dp[i] = minimum cuts for s[0..i] using dp[j-1]+1 for each j where s[j..i] is a palindrome.",
+        "url": "https://leetcode.com/problems/palindrome-partitioning-ii/"
       }
     ]
   },
@@ -848,15 +968,18 @@
     "practiceQuestions": [
       {
         "title": "Longest Common Subsequence (Medium)",
-        "hint": "If characters match: dp[i][j]=dp[i-1][j-1]+1. Else: dp[i][j]=max(dp[i-1][j], dp[i][j-1]). Answer is dp[len1][len2]."
+        "hint": "If characters match: dp[i][j]=dp[i-1][j-1]+1. Else: dp[i][j]=max(dp[i-1][j], dp[i][j-1]). Answer is dp[len1][len2].",
+        "url": "https://leetcode.com/problems/longest-common-subsequence/"
       },
       {
         "title": "Unique Paths (Medium)",
-        "hint": "dp[i][j]=dp[i-1][j]+dp[i][j-1] — you can only arrive from above or from the left. Base case: entire first row and column = 1."
+        "hint": "dp[i][j]=dp[i-1][j]+dp[i][j-1] — you can only arrive from above or from the left. Base case: entire first row and column = 1.",
+        "url": "https://leetcode.com/problems/unique-paths/"
       },
       {
         "title": "Minimum Path Sum (Medium)",
-        "hint": "dp[i][j]=grid[i][j]+min(dp[i-1][j], dp[i][j-1]) — the cheapest path to each cell comes from the cheaper of its two possible predecessors."
+        "hint": "dp[i][j]=grid[i][j]+min(dp[i-1][j], dp[i][j-1]) — the cheapest path to each cell comes from the cheaper of its two possible predecessors.",
+        "url": "https://leetcode.com/problems/minimum-path-sum/"
       }
     ]
   },
@@ -869,15 +992,18 @@
     "practiceQuestions": [
       {
         "title": "Edit Distance (Hard)",
-        "hint": "Build the (len_A+1)×(len_B+1) DP table; three operations (insert, delete, substitute) each cost 1, free when characters match."
+        "hint": "Build the (len_A+1)×(len_B+1) DP table; three operations (insert, delete, substitute) each cost 1, free when characters match.",
+        "url": "https://leetcode.com/problems/edit-distance/"
       },
       {
         "title": "Distinct Subsequences (Hard)",
-        "hint": "dp[i][j]=ways s[0..i-1] contains t[0..j-1] as subsequence; if chars match: dp[i][j]=dp[i-1][j-1]+dp[i-1][j]; else dp[i][j]=dp[i-1][j]."
+        "hint": "dp[i][j]=ways s[0..i-1] contains t[0..j-1] as subsequence; if chars match: dp[i][j]=dp[i-1][j-1]+dp[i-1][j]; else dp[i][j]=dp[i-1][j].",
+        "url": "https://leetcode.com/problems/distinct-subsequences/"
       },
       {
         "title": "Interleaving String (Medium)",
-        "hint": "dp[i][j]=True if s1[0..i-1] and s2[0..j-1] interleave to form s3[0..i+j-1]; check two possible source characters for each cell."
+        "hint": "dp[i][j]=True if s1[0..i-1] and s2[0..j-1] interleave to form s3[0..i+j-1]; check two possible source characters for each cell.",
+        "url": "https://leetcode.com/problems/interleaving-string/"
       }
     ]
   },
@@ -890,15 +1016,18 @@
     "practiceQuestions": [
       {
         "title": "Partition Equal Subset Sum (Medium)",
-        "hint": "Subset sum to target=total_sum/2; dp[j]=can we achieve exactly sum j? Outer loop over items, inner loop in reverse over capacities."
+        "hint": "Subset sum to target=total_sum/2; dp[j]=can we achieve exactly sum j? Outer loop over items, inner loop in reverse over capacities.",
+        "url": "https://leetcode.com/problems/partition-equal-subset-sum/"
       },
       {
         "title": "Target Sum (Medium)",
-        "hint": "Assign each number + or −; reduces to subset sum where the + subset sums to (target+total)/2."
+        "hint": "Assign each number + or −; reduces to subset sum where the + subset sums to (target+total)/2.",
+        "url": "https://leetcode.com/problems/target-sum/"
       },
       {
         "title": "Coin Change II (Medium)",
-        "hint": "Count ways to make amount — iterate amounts forward (coins are reusable), unlike 0/1 knapsack which iterates backward."
+        "hint": "Count ways to make amount — iterate amounts forward (coins are reusable), unlike 0/1 knapsack which iterates backward.",
+        "url": "https://leetcode.com/problems/coin-change-ii/"
       }
     ]
   },
@@ -911,15 +1040,18 @@
     "practiceQuestions": [
       {
         "title": "Coin Change (Medium)",
-        "hint": "dp[0]=0, dp[1..amount]=∞; for each amount from 1 to target, for each coin: dp[a]=min(dp[a], dp[a-coin]+1) if a≥coin."
+        "hint": "dp[0]=0, dp[1..amount]=∞; for each amount from 1 to target, for each coin: dp[a]=min(dp[a], dp[a-coin]+1) if a≥coin.",
+        "url": "https://leetcode.com/problems/coin-change/"
       },
       {
         "title": "Longest Increasing Subsequence (Medium)",
-        "hint": "For O(N log N): maintain 'tails'; for each number, binary search for the first tail ≥ number and replace it, or append if it's a new maximum."
+        "hint": "For O(N log N): maintain 'tails'; for each number, binary search for the first tail ≥ number and replace it, or append if it's a new maximum.",
+        "url": "https://leetcode.com/problems/longest-increasing-subsequence/"
       },
       {
         "title": "Maximum Product Subarray (Medium)",
-        "hint": "Track both running max AND min — a negative × negative flips the min into the max. Update both at every step."
+        "hint": "Track both running max AND min — a negative × negative flips the min into the max. Update both at every step.",
+        "url": "https://leetcode.com/problems/maximum-product-subarray/"
       }
     ]
   },
@@ -932,15 +1064,18 @@
     "practiceQuestions": [
       {
         "title": "Mock Set A — Arrays/Hashing/DP",
-        "hint": "Attempt Two Sum + House Robber + Merge Intervals back-to-back, 25 minutes each. Scoring: correct solution=3pts, right approach wrong code=2pts, right pattern identified=1pt."
+        "hint": "Attempt Two Sum + House Robber + Merge Intervals back-to-back, 25 minutes each. Scoring: correct solution=3pts, right approach wrong code=2pts, right pattern identified=1pt.",
+        "url": "https://leetcode.com/assessment/"
       },
       {
         "title": "Mock Set B — Trees/Graphs/Backtracking",
-        "hint": "Attempt LCA of Binary Tree + Number of Islands + Combination Sum. State your traversal strategy out loud before writing any code."
+        "hint": "Attempt LCA of Binary Tree + Number of Islands + Combination Sum. State your traversal strategy out loud before writing any code.",
+        "url": "https://leetcode.com/assessment/"
       },
       {
         "title": "Mock Set C — Hard Challenge Round",
-        "hint": "Attempt Trapping Rain Water + Word Break + Serialize & Deserialize Binary Tree. Brute force first, state the Big O story, then optimize step by step."
+        "hint": "Attempt Trapping Rain Water + Word Break + Serialize & Deserialize Binary Tree. Brute force first, state the Big O story, then optimize step by step.",
+        "url": "https://leetcode.com/assessment/"
       }
     ]
   }
