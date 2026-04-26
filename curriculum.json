@@ -20,6 +20,36 @@
         "title": "Best Time to Buy & Sell Stock (Easy)",
         "hint": "Keep track of the cheapest price you've seen so far as you scan left to right — never look backwards.",
         "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+      },
+      {
+        "title": "Missing Number (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/missing-number/"
+      },
+      {
+        "title": "Find All Numbers Disappeared in an Array (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/"
+      },
+      {
+        "title": "How Many Numbers Are Smaller Than the Current Number (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/"
+      },
+      {
+        "title": "Minimum Time Visiting All Points (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/minimum-time-visiting-all-points/"
+      },
+      {
+        "title": "Spiral Matrix (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/spiral-matrix/"
+      },
+      {
+        "title": "Number of Islands (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/number-of-islands/"
       }
     ]
   },
@@ -116,6 +146,11 @@
         "title": "Evaluate Reverse Polish Notation (Medium)",
         "hint": "Scan tokens left to right: push numbers, and when you see an operator, pop two numbers, apply the operator, and push the result back.",
         "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
+      },
+      {
+        "title": "Stack Sorting (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://www.geeksforgeeks.org/sort-a-stack-using-recursion/"
       }
     ]
   },
@@ -164,6 +199,21 @@
         "title": "Longest Repeating Character Replacement (Medium)",
         "hint": "The window is valid as long as (window length - count of most frequent character) ≤ K — if not, shrink from the left.",
         "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
+      },
+      {
+        "title": "Contains Duplicate II (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/contains-duplicate-ii/"
+      },
+      {
+        "title": "Minimum Absolute Difference (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/minimum-absolute-difference/"
+      },
+      {
+        "title": "Minimum Size Subarray Sum (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/minimum-size-subarray-sum/"
       }
     ]
   },
@@ -260,6 +310,21 @@
         "title": "Two Sum II — Input Array Is Sorted (Medium)",
         "hint": "Because the array is already sorted, two pointers give O(N) without a hash map — left moves right when sum is too small, right moves left when too large.",
         "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+      },
+      {
+        "title": "Best Time to Buy and Sell Stock (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+      },
+      {
+        "title": "Squares of a Sorted Array (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/squares-of-a-sorted-array/"
+      },
+      {
+        "title": "Longest Mountain in Array (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/longest-mountain-in-array/"
       }
     ]
   },
@@ -380,6 +445,26 @@
         "title": "Linked List Cycle (Easy)",
         "hint": "Use Floyd's tortoise-and-hare: slow moves one step, fast moves two — if there's a cycle, they will eventually meet; if not, fast reaches null.",
         "url": "https://leetcode.com/problems/linked-list-cycle/"
+      },
+      {
+        "title": "Middle of the Linked List (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/middle-of-the-linked-list/"
+      },
+      {
+        "title": "Remove Linked List Elements (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/remove-linked-list-elements/"
+      },
+      {
+        "title": "Reverse Linked List II (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/reverse-linked-list-ii/"
+      },
+      {
+        "title": "Palindrome Linked List (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/palindrome-linked-list/"
       }
     ]
   },
@@ -524,6 +609,11 @@
         "title": "Number of 1 Bits (Easy)",
         "hint": "Repeatedly apply n = n & (n-1) to clear the lowest set bit, counting iterations until n becomes zero.",
         "url": "https://leetcode.com/problems/number-of-1-bits/"
+      },
+      {
+        "title": "Single Number (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/single-number/"
       }
     ]
   },
@@ -548,6 +638,41 @@
         "title": "Same Tree (Easy)",
         "hint": "Two trees are the same if their roots match AND their left subtrees are the same AND their right subtrees are the same — a direct recursive definition.",
         "url": "https://leetcode.com/problems/same-tree/"
+      },
+      {
+        "title": "Average of Levels in Binary Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/average-of-levels-in-binary-tree/"
+      },
+      {
+        "title": "Minimum Depth of Binary Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/minimum-depth-of-binary-tree/"
+      },
+      {
+        "title": "Find Max and Min Node in a Binary Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/"
+      },
+      {
+        "title": "Binary Tree Level Order Traversal (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
+      },
+      {
+        "title": "Path Sum (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/path-sum/"
+      },
+      {
+        "title": "Diameter of Binary Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/diameter-of-binary-tree/"
+      },
+      {
+        "title": "Lowest Common Ancestor of a Binary Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
       }
     ]
   },
@@ -596,6 +721,21 @@
         "title": "Zigzag Level Order Traversal (Medium)",
         "hint": "Same BFS level-order approach, but alternate the direction you append values to each level's list using a boolean flag.",
         "url": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+      },
+      {
+        "title": "Implement Stack Using Queues (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/implement-stack-using-queues/"
+      },
+      {
+        "title": "Time Needed to Buy Tickets (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/time-needed-to-buy-tickets/"
+      },
+      {
+        "title": "Reverse First K Elements of a Queue (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://www.geeksforgeeks.org/reversing-the-first-k-elements-of-a-queue/"
       }
     ]
   },
@@ -620,6 +760,46 @@
         "title": "Lowest Common Ancestor of a Binary Tree (Medium)",
         "hint": "If the current node equals either target, it's the LCA — otherwise, if targets appear in different subtrees, the current node is the LCA.",
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+      },
+      {
+        "title": "Search in a Binary Search Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
+      },
+      {
+        "title": "Insert into a Binary Search Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/insert-into-a-binary-search-tree/"
+      },
+      {
+        "title": "Convert Sorted Array to Binary Search Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/"
+      },
+      {
+        "title": "Two Sum IV - Input is a BST (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/"
+      },
+      {
+        "title": "Lowest Common Ancestor of a Binary Search Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+      },
+      {
+        "title": "Minimum Absolute Difference in BST (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/minimum-absolute-difference-in-bst/"
+      },
+      {
+        "title": "Balance a Binary Search Tree (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/balance-a-binary-search-tree/"
+      },
+      {
+        "title": "Delete Node in a BST (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/delete-node-in-a-bst/"
       }
     ]
   },
@@ -716,6 +896,11 @@
         "title": "Task Scheduler (Medium)",
         "hint": "The key formula: the answer is max(N, (max_freq - 1) * (n + 1) + count_of_max_freq_tasks) — no heap required, but a greedy frequency analysis.",
         "url": "https://leetcode.com/problems/task-scheduler/"
+      },
+      {
+        "title": "K Closest Points to Origin (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/k-closest-points-to-origin/"
       }
     ]
   },
@@ -740,6 +925,26 @@
         "title": "Flood Fill (Easy)",
         "hint": "BFS/DFS from the starting cell — replace the original color with the new color and continue expanding to same-colored neighbors.",
         "url": "https://leetcode.com/problems/flood-fill/"
+      },
+      {
+        "title": "Clone Graph (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/clone-graph/"
+      },
+      {
+        "title": "Graph Core Operations (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/"
+      },
+      {
+        "title": "Cheapest Flights Within K Stops (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+      },
+      {
+        "title": "Course Schedule (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/course-schedule/"
       }
     ]
   },
@@ -884,6 +1089,16 @@
         "title": "Permutations (Medium)",
         "hint": "At each position, try placing each unused element; use a 'used' boolean array to track which elements have been placed in the current permutation.",
         "url": "https://leetcode.com/problems/permutations/"
+      },
+      {
+        "title": "Letter Case Permutation (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/letter-case-permutation/"
+      },
+      {
+        "title": "Combinations (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/combinations/"
       }
     ]
   },
@@ -932,6 +1147,26 @@
         "title": "Min Cost Climbing Stairs (Easy)",
         "hint": "dp[i] = cost[i] + min(dp[i-1], dp[i-2]) — compute the minimum cost to step on or past each stair.",
         "url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
+      },
+      {
+        "title": "Coin Change (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/coin-change/"
+      },
+      {
+        "title": "Maximum Subarray (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/maximum-subarray/"
+      },
+      {
+        "title": "Counting Bits (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/counting-bits/"
+      },
+      {
+        "title": "Range Sum Query - Immutable (Practice)",
+        "hint": "Practice this core problem to solidify the topic concepts.",
+        "url": "https://leetcode.com/problems/range-sum-query-immutable/"
       }
     ]
   },
