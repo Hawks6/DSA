@@ -8,32 +8,32 @@
     "practiceQuestions": [
       {
         "title": "Contains Duplicate (NeetCode Easy)",
-        "hint": "Think about what data structure lets you check 'have I seen this number before?' in a single step — you don't need to loop through a second array each time.",
+        "hint": "Given an integer array, return true if any value appears at least twice in the array, and return false if every element is distinct.",
         "url": "https://leetcode.com/problems/contains-duplicate/"
       },
       {
         "title": "Two Sum (Blind 75 Easy)",
-        "hint": "For each number you visit, ask: 'does its perfect partner (target - num) already exist somewhere I've already checked?' Store what you've seen so partner lookups are instant.",
+        "hint": "Given an array of integers and a target integer, return the indices of the two numbers such that they add up to the target.",
         "url": "https://leetcode.com/problems/two-sum/"
       },
       {
         "title": "Best Time to Buy & Sell Stock (Easy)",
-        "hint": "Keep track of the cheapest price you've seen so far as you scan left to right — never look backwards.",
+        "hint": "Given an array of prices, maximize your profit by choosing a single day to buy one stock and a different day in the future to sell it.",
         "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
       },
       {
         "title": "How Many Numbers Are Smaller Than the Current Number",
-        "hint": "Sorting a copy of the array and using a hash map to store the first index of each number gives you the count of smaller numbers.",
+        "hint": "For each number in a given array, find out how many numbers in the array are smaller than it and return the results in an array.",
         "url": "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/"
       },
       {
         "title": "Minimum Time Visiting All Points",
-        "hint": "The time between two points is the maximum of the absolute differences of their x and y coordinates (Chebyshev distance).",
+        "hint": "Given a list of points on a 2D plane, return the minimum time in seconds required to visit all points in the exact order they are given (moving vertically, horizontally, or diagonally takes 1 second).",
         "url": "https://leetcode.com/problems/minimum-time-visiting-all-points/"
       },
       {
         "title": "Minimum Absolute Difference",
-        "hint": "Sort the array first. The minimum absolute difference must occur between adjacent elements.",
+        "hint": "Find all unique pairs of elements in an array that have the minimum absolute difference, returning the list of pairs in ascending order.",
         "url": "https://leetcode.com/problems/minimum-absolute-difference/"
       }
     ]
@@ -47,12 +47,12 @@
     "practiceQuestions": [
       {
         "title": "Contains Duplicate (NeetCode Easy)",
-        "hint": "A Set adds each element and tells you instantly if it was already present — one pass through the array is all you need.",
+        "hint": "Given an integer array, return true if any value appears at least twice in the array, and return false if every element is distinct.",
         "url": "https://leetcode.com/problems/contains-duplicate/"
       },
       {
         "title": "Missing Number (Easy)",
-        "hint": "There's a famous math trick: the expected sum of 0…N is N*(N+1)/2. Subtract the actual sum and the difference is the missing number — no extra data structure needed.",
+        "hint": "Given an array containing n distinct numbers in the range 0 to n, return the only number in that range that is missing from the array.",
         "url": "https://leetcode.com/problems/missing-number/"
       },
       {
@@ -62,12 +62,12 @@
       },
       {
         "title": "Missing Number",
-        "hint": "You can use XOR or the mathematical formula for the sum of the first N numbers to find the missing one in O(n) time.",
+        "hint": "Given an array containing n distinct numbers in the range 0 to n, return the only number in that range that is missing from the array.",
         "url": "https://leetcode.com/problems/missing-number/"
       },
       {
         "title": "Find All Numbers Disappeared in an Array",
-        "hint": "Since numbers are in the range [1, n], you can negate the value at the index corresponding to each number. Positive values left indicate missing numbers.",
+        "hint": "Given an array of integers where the values are in the range 1 to n, return an array of all the integers in that range that do not appear in the input array.",
         "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/"
       }
     ]
@@ -81,7 +81,7 @@
     "practiceQuestions": [
       {
         "title": "Two Sum (Easy)",
-        "hint": "Use a hash table to store each number's index as you scan — for each new number, look up whether its complement is already in the table.",
+        "hint": "Given an array of integers and a target integer, return the indices of the two numbers such that they add up to the target.",
         "url": "https://leetcode.com/problems/two-sum/"
       },
       {
@@ -110,7 +110,7 @@
       },
       {
         "title": "3Sum (Medium)",
-        "hint": "Sort the array first, then for each element fix it as a candidate and use the two-pointer technique on the rest — sorting lets you skip duplicates cleanly.",
+        "hint": "Given an integer array, return all the unique triplets (i, j, k) such that the sum of the three numbers equals zero.",
         "url": "https://leetcode.com/problems/3sum/"
       },
       {
@@ -120,12 +120,12 @@
       },
       {
         "title": "Spiral Matrix",
-        "hint": "Maintain four boundaries (top, bottom, left, right) and shrink them as you traverse the matrix in a spiral order.",
+        "hint": "Given an m x n matrix, return all elements of the matrix in a spiral order.",
         "url": "https://leetcode.com/problems/spiral-matrix/"
       },
       {
         "title": "Range Sum Query - Immutable",
-        "hint": "Precompute an array of prefix sums. The sum of range [left, right] is prefix[right] - prefix[left-1].",
+        "hint": "Given an array, handle queries that ask for the sum of the elements between a given left and right index.",
         "url": "https://leetcode.com/problems/range-sum-query-immutable/"
       }
     ]
@@ -139,22 +139,22 @@
     "practiceQuestions": [
       {
         "title": "Valid Parentheses (Easy)",
-        "hint": "Push every opening bracket; when you see a closing bracket, pop the stack and check if they match — an empty stack at the end means every bracket was paired.",
+        "hint": "Given a string of brackets, determine if it is valid by checking if opening brackets are closed by the same type of brackets in the correct order.",
         "url": "https://leetcode.com/problems/valid-parentheses/"
       },
       {
         "title": "Min Stack (Medium)",
-        "hint": "Maintain two parallel stacks — one for regular values and one that tracks the current minimum after each push, so getMin() is always O(1) without scanning.",
+        "hint": "Design a stack datastructure that supports standard push, pop, and top operations while also retrieving the minimum element in constant time.",
         "url": "https://leetcode.com/problems/min-stack/"
       },
       {
         "title": "Evaluate Reverse Polish Notation (Medium)",
-        "hint": "Scan tokens left to right: push numbers, and when you see an operator, pop two numbers, apply the operator, and push the result back.",
+        "hint": "Given an array of strings representing an arithmetic expression in reverse polish notation (where operators follow their operands), evaluate the expression and return the integer result.",
         "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
       },
       {
         "title": "Stack Sorting",
-        "hint": "Use an auxiliary stack. Pop from the main stack, and while the auxiliary stack top is larger, pop it and push to the main stack, then push the element.",
+        "hint": "Sort a stack of integers into ascending or descending order using only an additional temporary stack.",
         "url": "https://www.geeksforgeeks.org/sort-a-stack-using-recursion/"
       }
     ]
@@ -168,12 +168,12 @@
     "practiceQuestions": [
       {
         "title": "Two Sum — revisit without looking at previous solution",
-        "hint": "Can you write the hash map solution from scratch and explain why each line is necessary?",
+        "hint": "Given an array of integers and a target integer, return the indices of the two numbers such that they add up to the target.",
         "url": "https://leetcode.com/problems/two-sum/"
       },
       {
         "title": "Valid Parentheses — revisit",
-        "hint": "What edge case breaks a naive solution that doesn't use a stack? (Hint: try ']' as the first character.)",
+        "hint": "Given a string of brackets, determine if it is valid by checking if opening brackets are closed by the same type of brackets in the correct order.",
         "url": "https://leetcode.com/problems/valid-parentheses/"
       },
       {
@@ -192,7 +192,7 @@
     "practiceQuestions": [
       {
         "title": "Best Time to Buy and Sell Stock (Easy)",
-        "hint": "Use two pointers: left is the buy day, right is the sell day — advance right each day; if you find a better buy price, move left to right's position.",
+        "hint": "Given an array of prices, maximize your profit by choosing a single day to buy one stock and a different day in the future to sell it.",
         "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
       },
       {
@@ -207,12 +207,12 @@
       },
       {
         "title": "Contains Duplicate II",
-        "hint": "Maintain a sliding window of size k using a HashSet, or use a HashMap to store the last seen index of each element.",
+        "hint": "Return true if there are two distinct indices in the array such that their values are equal and the absolute difference between their indices is less than or equal to k.",
         "url": "https://leetcode.com/problems/contains-duplicate-ii/"
       },
       {
         "title": "Best Time to Buy and Sell Stock",
-        "hint": "Keep track of the minimum price seen so far and update the maximum profit at each step.",
+        "hint": "Given an array of prices, maximize your profit by choosing a single day to buy one stock and a different day in the future to sell it.",
         "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
       }
     ]
@@ -241,7 +241,7 @@
       },
       {
         "title": "Minimum Size Subarray Sum",
-        "hint": "Use two pointers to create a dynamic window. Expand the right pointer to increase the sum, and shrink the left pointer to minimize the size while the sum is >= target.",
+        "hint": "Given an array of positive integers and a target integer, return the minimal length of a subarray whose sum is greater than or equal to the target.",
         "url": "https://leetcode.com/problems/minimum-size-subarray-sum/"
       }
     ]
@@ -308,7 +308,7 @@
       },
       {
         "title": "3Sum (Medium)",
-        "hint": "Sort the array, fix one element in an outer loop, then use two pointers on the rest — skip duplicate values to avoid duplicate triplets.",
+        "hint": "Given an integer array, return all the unique triplets (i, j, k) such that the sum of the three numbers equals zero.",
         "url": "https://leetcode.com/problems/3sum/"
       },
       {
@@ -318,12 +318,12 @@
       },
       {
         "title": "Squares of a Sorted Array",
-        "hint": "Use two pointers, one at the start and one at the end. Compare the absolute values, square the larger one, and place it at the end of the result array.",
+        "hint": "Given an integer array sorted in non-decreasing order, return a new array containing the squares of each number, also sorted in non-decreasing order.",
         "url": "https://leetcode.com/problems/squares-of-a-sorted-array/"
       },
       {
         "title": "Longest Mountain in Array",
-        "hint": "Find the peak of the mountain first, then expand outwards with two pointers to measure its length.",
+        "hint": "Return the length of the longest subarray that forms a \"mountain\" (a sequence of at least 3 elements that strictly increases to a peak and then strictly decreases).",
         "url": "https://leetcode.com/problems/longest-mountain-in-array/"
       }
     ]
@@ -433,37 +433,37 @@
     "practiceQuestions": [
       {
         "title": "Reverse Linked List (Easy)",
-        "hint": "Use three variables: prev (starts null), curr (starts at head), next_node (temporary) — in each iteration, point curr.next backward to prev, then advance all three pointers.",
+        "hint": "Reverse a singly linked list from end to end.",
         "url": "https://leetcode.com/problems/reverse-linked-list/"
       },
       {
         "title": "Merge Two Sorted Lists (Easy)",
-        "hint": "Compare the heads of both lists, attach the smaller one to your result, and advance that list's pointer — a dummy head node simplifies edge cases.",
+        "hint": "Given the heads of two sorted linked lists, splice their nodes together to merge them into one newly sorted linked list.",
         "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
       },
       {
         "title": "Linked List Cycle (Easy)",
-        "hint": "Use Floyd's tortoise-and-hare: slow moves one step, fast moves two — if there's a cycle, they will eventually meet; if not, fast reaches null.",
+        "hint": "Determine if a given linked list has a cycle in it (a node that can be reached again by continuously following the next pointer).",
         "url": "https://leetcode.com/problems/linked-list-cycle/"
       },
       {
         "title": "Middle of the Linked List",
-        "hint": "Use the slow and fast pointer technique. Move slow by one step and fast by two steps; when fast reaches the end, slow is at the middle.",
+        "hint": "Given the head of a singly linked list, return the middle node of the linked list.",
         "url": "https://leetcode.com/problems/middle-of-the-linked-list/"
       },
       {
         "title": "Remove Linked List Elements",
-        "hint": "Use a dummy head node to simplify edge cases (like removing the actual head). Iterate through and skip nodes with the target value.",
+        "hint": "Remove all nodes in a linked list that have a specific target value and return the new head.",
         "url": "https://leetcode.com/problems/remove-linked-list-elements/"
       },
       {
         "title": "Reverse Linked List II",
-        "hint": "Traverse to the node just before the start of the sublist, then reverse the sublist in-place by carefully updating pointers.",
+        "hint": "Reverse a single specific portion of a linked list, dictated by a given left and right index.",
         "url": "https://leetcode.com/problems/reverse-linked-list-ii/"
       },
       {
         "title": "Palindrome Linked List",
-        "hint": "Find the middle using slow/fast pointers, reverse the second half, and compare it with the first half.",
+        "hint": "Determine whether a given singly linked list reads the same forwards and backwards.",
         "url": "https://leetcode.com/problems/palindrome-linked-list/"
       }
     ]
@@ -487,7 +487,7 @@
       },
       {
         "title": "Middle of the Linked List (Easy)",
-        "hint": "Fast pointer moves 2, slow moves 1 — when fast is at the last node or null, slow is at the middle.",
+        "hint": "Given the head of a singly linked list, return the middle node of the linked list.",
         "url": "https://leetcode.com/problems/middle-of-the-linked-list/"
       }
     ]
@@ -597,12 +597,12 @@
     "practiceQuestions": [
       {
         "title": "Missing Number (Easy)",
-        "hint": "XOR all indices 0..N with all values in the array — everything cancels except the missing number, which has no pair.",
+        "hint": "Given an array containing n distinct numbers in the range 0 to n, return the only number in that range that is missing from the array.",
         "url": "https://leetcode.com/problems/missing-number/"
       },
       {
         "title": "Counting Bits (Easy)",
-        "hint": "For each n, dp[n] = dp[n >> 1] + (n & 1) — the number of set bits in n equals the bits in n/2 plus whether n is odd.",
+        "hint": "For numbers 0 to n, find the number of 1s inside their binary representations.",
         "url": "https://leetcode.com/problems/counting-bits/"
       },
       {
@@ -612,12 +612,12 @@
       },
       {
         "title": "Single Number",
-        "hint": "XOR all the elements together. Since XORing a number with itself yields 0, the paired numbers will cancel out, leaving only the single number.",
+        "hint": "Given a non-empty array of integers where every element appears twice except for one, find and return that single number.",
         "url": "https://leetcode.com/problems/single-number/"
       },
       {
         "title": "Counting Bits",
-        "hint": "The number of 1s in `n` is the number of 1s in `n >> 1` plus `n & 1`. You can build this dynamically.",
+        "hint": "For numbers 0 to n, find the number of 1s inside their binary representations.",
         "url": "https://leetcode.com/problems/counting-bits/"
       }
     ]
@@ -631,42 +631,42 @@
     "practiceQuestions": [
       {
         "title": "Invert Binary Tree (Easy)",
-        "hint": "Recursively swap the left and right children of every node — the base case is when the node is null.",
+        "hint": "Invert a binary tree by swapping the left and right children of every single node.",
         "url": "https://leetcode.com/problems/invert-binary-tree/"
       },
       {
         "title": "Maximum Depth of Binary Tree (Easy)",
-        "hint": "Return 1 + max(depth(left), depth(right)) — the base case (null node) returns 0.",
+        "hint": "Find the maximum depth by exploring the longest path to a leaf node.",
         "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
       },
       {
         "title": "Same Tree (Easy)",
-        "hint": "Two trees are the same if their roots match AND their left subtrees are the same AND their right subtrees are the same — a direct recursive definition.",
+        "hint": "Given the root nodes of two different trees, check if they are entirely identical in structure and node values.",
         "url": "https://leetcode.com/problems/same-tree/"
       },
       {
         "title": "Minimum Depth of Binary Tree",
-        "hint": "Use BFS to find the first leaf node (no children), or use DFS and return the minimum of the depths of the left and right subtrees (handle single child cases!).",
+        "hint": "Find the minimum depth of a binary tree by locating the shortest path to the first leaf node.",
         "url": "https://leetcode.com/problems/minimum-depth-of-binary-tree/"
       },
       {
         "title": "Find Max and Min Node in a Binary Tree",
-        "hint": "Traverse the entire tree (using DFS or BFS) and keep track of the maximum and minimum values seen so far.",
+        "hint": "Traverse an unordered binary tree to track and return the absolute maximum and minimum node values.",
         "url": "https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/"
       },
       {
         "title": "Path Sum",
-        "hint": "Recursively subtract the node's value from the target. When reaching a leaf, check if the remaining target equals the leaf's value.",
+        "hint": "Check if the tree has a root-to-leaf path where adding up all the node values along the path equals a specific target integer.",
         "url": "https://leetcode.com/problems/path-sum/"
       },
       {
         "title": "Diameter of Binary Tree",
-        "hint": "The diameter passes through some node. For each node, it is the depth of the left subtree + depth of the right subtree. Keep a global max.",
+        "hint": "Find the longest possible path between any two nodes in a binary tree.",
         "url": "https://leetcode.com/problems/diameter-of-binary-tree/"
       },
       {
         "title": "Lowest Common Ancestor of a Binary Tree",
-        "hint": "Use DFS. If the current node is p or q, return it. If both left and right return a valid node, the current node is the LCA.",
+        "hint": "Find the lowest node in a standard binary tree that has two specific given nodes as descendants.",
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
       }
     ]
@@ -680,17 +680,17 @@
     "practiceQuestions": [
       {
         "title": "Path Sum (Easy)",
-        "hint": "DFS tracking the running sum — subtract the current node's value; if you reach a leaf with remaining sum = 0, a valid path exists.",
+        "hint": "Check if the tree has a root-to-leaf path where adding up all the node values along the path equals a specific target integer.",
         "url": "https://leetcode.com/problems/path-sum/"
       },
       {
         "title": "Diameter of Binary Tree (Easy)",
-        "hint": "At each node, the diameter passing through it = depth(left) + depth(right) — track the global maximum as you compute depths bottom-up.",
+        "hint": "Find the longest possible path between any two nodes in a binary tree.",
         "url": "https://leetcode.com/problems/diameter-of-binary-tree/"
       },
       {
         "title": "Lowest Common Ancestor of BST (Easy)",
-        "hint": "In a BST, if both target values are smaller than the current node, go left; if both larger, go right; otherwise the current node IS the LCA.",
+        "hint": "Use the ordered properties of a BST to easily find the lowest common parent of two given nodes.",
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
       }
     ]
@@ -704,12 +704,12 @@
     "practiceQuestions": [
       {
         "title": "Binary Tree Level Order Traversal (Medium)",
-        "hint": "BFS with a queue — at the start of each level, snapshot the queue's current length; process exactly that many nodes and collect their values before starting the next level.",
+        "hint": "Perform a breadth-first search and return each level of the tree in a separate array.",
         "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
       },
       {
         "title": "Minimum Depth of Binary Tree (Easy)",
-        "hint": "BFS naturally finds the minimum depth — the first leaf node encountered is at the shallowest level; return its depth immediately.",
+        "hint": "Find the minimum depth of a binary tree by locating the shortest path to the first leaf node.",
         "url": "https://leetcode.com/problems/minimum-depth-of-binary-tree/"
       },
       {
@@ -719,27 +719,27 @@
       },
       {
         "title": "Implement Stack Using Queues",
-        "hint": "Use a single queue. When pushing a new element, enqueue it and then dequeue and enqueue all previous elements to reverse the order.",
+        "hint": "Implement a last-in-first-out (LIFO) stack using only the standard operations of up to two queues.",
         "url": "https://leetcode.com/problems/implement-stack-using-queues/"
       },
       {
         "title": "Time Needed to Buy Tickets",
-        "hint": "You can simulate the queue or use a single pass: count full tickets for people before k and up to tickets[k]-1 for people after k.",
+        "hint": "Given a queue of people wanting to buy a certain number of tickets (processing 1 ticket per second before the person returns to the back of the queue), return the total time it takes for the person at index k to finish buying their tickets.",
         "url": "https://leetcode.com/problems/time-needed-to-buy-tickets/"
       },
       {
         "title": "Reverse First K Elements of a Queue",
-        "hint": "Dequeue the first K elements into a stack, then pop from the stack and enqueue them back. Finally, rotate the remaining N-K elements.",
+        "hint": "Reverse the first k elements of a given queue using a stack.",
         "url": "https://www.geeksforgeeks.org/reversing-the-first-k-elements-of-a-queue/"
       },
       {
         "title": "Average of Levels in Binary Tree",
-        "hint": "Use BFS with a queue. At each level, calculate the sum of the nodes and divide by the size of the queue for that level.",
+        "hint": "Return the average value of the nodes on each depth level of a binary tree in the form of an array.",
         "url": "https://leetcode.com/problems/average-of-levels-in-binary-tree/"
       },
       {
         "title": "Binary Tree Level Order Traversal",
-        "hint": "Use a queue. Process nodes level by level by iterating exactly queue.length times per level.",
+        "hint": "Perform a breadth-first search and return each level of the tree in a separate array.",
         "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
       }
     ]
@@ -758,52 +758,52 @@
       },
       {
         "title": "Kth Smallest Element in a BST (Medium)",
-        "hint": "In-order traversal of a BST produces sorted values — stop at the kth node visited.",
+        "hint": "Find and return the value of the kth smallest node in the tree.",
         "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
       },
       {
         "title": "Lowest Common Ancestor of a Binary Tree (Medium)",
-        "hint": "If the current node equals either target, it's the LCA — otherwise, if targets appear in different subtrees, the current node is the LCA.",
+        "hint": "Find the lowest node in a standard binary tree that has two specific given nodes as descendants.",
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
       },
       {
         "title": "Search in a Binary Search Tree",
-        "hint": "Exploit the BST property: if the value is less than the current node, search left; if greater, search right.",
+        "hint": "Use the strict less-than/greater-than property of a BST to traverse the tree and find a specific node.",
         "url": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
       },
       {
         "title": "Insert into a Binary Search Tree",
-        "hint": "Traverse down the tree similarly to searching. When you hit a null child in the correct direction, attach the new node there.",
+        "hint": "Find the correct leaf position for a new value and insert it while maintaining the binary search tree properties.",
         "url": "https://leetcode.com/problems/insert-into-a-binary-search-tree/"
       },
       {
         "title": "Convert Sorted Array to Binary Search Tree",
-        "hint": "Find the middle of the array to use as the root, then recursively build the left and right subtrees from the left and right halves.",
+        "hint": "Convert an array sorted in ascending order into a height-balanced binary search tree.",
         "url": "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/"
       },
       {
         "title": "Two Sum IV - Input is a BST",
-        "hint": "Use an in-order traversal to get a sorted array and apply the two-pointer approach, or use a HashSet during traversal.",
+        "hint": "Determine if there are two elements in the BST that sum up to a given target k.",
         "url": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/"
       },
       {
         "title": "Lowest Common Ancestor of a Binary Search Tree",
-        "hint": "Use the BST property: if both p and q are smaller than the current node, the LCA is in the left subtree. If both are larger, it's in the right subtree.",
+        "hint": "Use the ordered properties of a BST to easily find the lowest common parent of two given nodes.",
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
       },
       {
         "title": "Minimum Absolute Difference in BST",
-        "hint": "Perform an in-order traversal (which visits nodes in sorted order) and keep track of the minimum difference between the current and previous nodes.",
+        "hint": "Return the minimum absolute difference between any two nodes in the tree.",
         "url": "https://leetcode.com/problems/minimum-absolute-difference-in-bst/"
       },
       {
         "title": "Balance a Binary Search Tree",
-        "hint": "Extract all values with an in-order traversal, then rebuild a balanced BST by continually selecting the middle element as the root.",
+        "hint": "Take an unbalanced BST and return a perfectly height-balanced version of it.",
         "url": "https://leetcode.com/problems/balance-a-binary-search-tree/"
       },
       {
         "title": "Delete Node in a BST",
-        "hint": "If the node has two children, find its in-order successor (minimum in right subtree), replace the node's value with it, and delete the successor.",
+        "hint": "Search for a node, evaluate its children (0, 1, or 2 children), and delete it while keeping the BST properties intact.",
         "url": "https://leetcode.com/problems/delete-node-in-a-bst/"
       }
     ]
@@ -889,22 +889,22 @@
     "practiceQuestions": [
       {
         "title": "Kth Largest Element in an Array (Medium)",
-        "hint": "Maintain a min-heap of size K — push each element; if the heap exceeds K elements, pop the minimum; the top of the heap is the Kth largest.",
+        "hint": "Use a heap to efficiently find the kth largest element in an unordered array without fully sorting it.",
         "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
       },
       {
         "title": "Top K Frequent Elements (Medium)",
-        "hint": "Count frequencies with a hash map, then use a min-heap of size K to efficiently track the K most frequent — pop when size exceeds K, keeping only the top K.",
+        "hint": "Return the k elements that appear the most frequently in a given array.",
         "url": "https://leetcode.com/problems/top-k-frequent-elements/"
       },
       {
         "title": "Task Scheduler (Medium)",
-        "hint": "The key formula: the answer is max(N, (max_freq - 1) * (n + 1) + count_of_max_freq_tasks) — no heap required, but a greedy frequency analysis.",
+        "hint": "Given a list of CPU tasks and an integer representing cooling/waiting time between identical tasks, find the minimum interval time required to execute all of them.",
         "url": "https://leetcode.com/problems/task-scheduler/"
       },
       {
         "title": "K Closest Points to Origin",
-        "hint": "Calculate the Euclidean distance and use a max-heap of size k to keep track of the closest points.",
+        "hint": "Given an array of points coordinates on a graph, return the k points that are closest to the origin [0,0].",
         "url": "https://leetcode.com/problems/k-closest-points-to-origin/"
       }
     ]
@@ -918,7 +918,7 @@
     "practiceQuestions": [
       {
         "title": "Number of Islands (Medium)",
-        "hint": "For each unvisited '1' cell, launch a DFS/BFS that marks all connected '1' cells as visited — the number of times you launch a new traversal = number of islands.",
+        "hint": "Given a 2D binary grid representing a map of ones (land) and zeros (water), return the total number of islands (land connected horizontally or vertically).",
         "url": "https://leetcode.com/problems/number-of-islands/"
       },
       {
@@ -933,17 +933,17 @@
       },
       {
         "title": "Clone Graph",
-        "hint": "Use DFS or BFS to traverse the graph while maintaining a hash map from original nodes to their copies to avoid infinite loops.",
+        "hint": "Given a node in a connected, undirected graph, return a complete deep copy of the entire graph.",
         "url": "https://leetcode.com/problems/clone-graph/"
       },
       {
         "title": "Graph Core Operations",
-        "hint": "Master the adjacency list representation. Practice both BFS (using a queue) and DFS (using recursion or a stack) to visit all reachable nodes.",
+        "hint": "Implement standard algorithms to find the largest node, detect a cycle within the graph, and easily count the total number of edges.",
         "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/"
       },
       {
         "title": "Number of Islands",
-        "hint": "Iterate through the grid. When you find land ('1'), start a DFS or BFS to sink the island (turn to '0') and increment your island count.",
+        "hint": "Given a 2D binary grid representing a map of ones (land) and zeros (water), return the total number of islands (land connected horizontally or vertically).",
         "url": "https://leetcode.com/problems/number-of-islands/"
       }
     ]
@@ -957,7 +957,7 @@
     "practiceQuestions": [
       {
         "title": "Clone Graph (Medium)",
-        "hint": "BFS with a hash map (original → clone) as your visited set — create a clone when you first see a node; use the existing clone if it's already in the map.",
+        "hint": "Given a node in a connected, undirected graph, return a complete deep copy of the entire graph.",
         "url": "https://leetcode.com/problems/clone-graph/"
       },
       {
@@ -972,7 +972,7 @@
       },
       {
         "title": "Course Schedule",
-        "hint": "This is cycle detection in a directed graph. Use Kahn's algorithm (indegree counting) or DFS to find if a cycle exists.",
+        "hint": "Given a total number of courses and a list of prerequisites, determine if it's possible to complete all courses by checking the graph for circular dependencies.",
         "url": "https://leetcode.com/problems/course-schedule/"
       }
     ]
@@ -1010,7 +1010,7 @@
     "practiceQuestions": [
       {
         "title": "Course Schedule (Medium)",
-        "hint": "Model prerequisites as a directed graph; if a cycle exists, return false — use DFS cycle detection with 3-state coloring (0=unvisited, 1=in-progress, 2=done).",
+        "hint": "Given a total number of courses and a list of prerequisites, determine if it's possible to complete all courses by checking the graph for circular dependencies.",
         "url": "https://leetcode.com/problems/course-schedule/"
       },
       {
@@ -1025,7 +1025,7 @@
       },
       {
         "title": "Cheapest Flights Within K Stops",
-        "hint": "Use Bellman-Ford or a modified Dijkstra's algorithm (BFS with a priority queue tracking cost and stops) to find the cheapest path.",
+        "hint": "Given an array of flights (from, to, and price), a source, a destination, and a max number of allowed stops k, find the cheapest path possible.",
         "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
       }
     ]
@@ -1044,7 +1044,7 @@
       },
       {
         "title": "Cheapest Flights Within K Stops (Medium)",
-        "hint": "Modified Dijkstra (or Bellman-Ford with K iterations) — track (cost, city, stops_remaining); use stops count to avoid going beyond K stops.",
+        "hint": "Given an array of flights (from, to, and price), a source, a destination, and a max number of allowed stops k, find the cheapest path possible.",
         "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
       },
       {
@@ -1092,22 +1092,22 @@
       },
       {
         "title": "Subsets (Medium)",
-        "hint": "At each element, make a binary choice: include or exclude — this generates all 2^N subsets. No pruning needed; all branches lead to valid subsets.",
+        "hint": "Return all possible unique subsets of a given array of numbers.",
         "url": "https://leetcode.com/problems/subsets/"
       },
       {
         "title": "Permutations (Medium)",
-        "hint": "At each position, try placing each unused element; use a 'used' boolean array to track which elements have been placed in the current permutation.",
+        "hint": "Given an array of distinct integers, return all possible permutations of those integers in any order.",
         "url": "https://leetcode.com/problems/permutations/"
       },
       {
         "title": "Letter Case Permutation",
-        "hint": "For each character, if it's a letter, branch into two paths (lowercase and uppercase). If it's a number, just continue.",
+        "hint": "Given a string, transform the casing of every letter individually to create all possible string permutations.",
         "url": "https://leetcode.com/problems/letter-case-permutation/"
       },
       {
         "title": "Combinations",
-        "hint": "Build combinations of size k by selecting numbers from 1 to n. Use backtracking to try different combinations, maintaining a start index.",
+        "hint": "Given two integers n and k, return all possible combinations of k numbers chosen from the range 1 to n.",
         "url": "https://leetcode.com/problems/combinations/"
       }
     ]
@@ -1145,7 +1145,7 @@
     "practiceQuestions": [
       {
         "title": "Climbing Stairs (Easy)",
-        "hint": "dp[i] = dp[i-1] + dp[i-2] — it's exactly Fibonacci. Optimize to O(1) space by storing only the last two values.",
+        "hint": "If it takes a certain number of steps to reach the top of a staircase, and you can either climb 1 or 2 steps at a time, determine how many distinct ways you can reach the top.",
         "url": "https://leetcode.com/problems/climbing-stairs/"
       },
       {
@@ -1160,12 +1160,12 @@
       },
       {
         "title": "Coin Change",
-        "hint": "Use DP to store the minimum coins needed for each amount up to the target. For each amount, try all coins.",
+        "hint": "Given an array of coins of different denominations and an integer target amount, return the fewest number of coins needed to make up that amount.",
         "url": "https://leetcode.com/problems/coin-change/"
       },
       {
         "title": "Maximum Subarray",
-        "hint": "Use Kadane's Algorithm: keep a running sum, and if it drops below 0, reset it to 0. Update the max sum seen so far.",
+        "hint": "Find the contiguous subarray (containing at least one number) with the largest sum and return its sum.",
         "url": "https://leetcode.com/problems/maximum-subarray/"
       }
     ]
@@ -1275,7 +1275,7 @@
     "practiceQuestions": [
       {
         "title": "Coin Change (Medium)",
-        "hint": "dp[0]=0, dp[1..amount]=∞; for each amount from 1 to target, for each coin: dp[a]=min(dp[a], dp[a-coin]+1) if a≥coin.",
+        "hint": "Given an array of coins of different denominations and an integer target amount, return the fewest number of coins needed to make up that amount.",
         "url": "https://leetcode.com/problems/coin-change/"
       },
       {
