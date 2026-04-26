@@ -22,34 +22,19 @@
         "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
       },
       {
-        "title": "Missing Number (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/missing-number/"
-      },
-      {
-        "title": "Find All Numbers Disappeared in an Array (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/"
-      },
-      {
-        "title": "How Many Numbers Are Smaller Than the Current Number (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "How Many Numbers Are Smaller Than the Current Number",
+        "hint": "Sorting a copy of the array and using a hash map to store the first index of each number gives you the count of smaller numbers.",
         "url": "https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/"
       },
       {
-        "title": "Minimum Time Visiting All Points (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Minimum Time Visiting All Points",
+        "hint": "The time between two points is the maximum of the absolute differences of their x and y coordinates (Chebyshev distance).",
         "url": "https://leetcode.com/problems/minimum-time-visiting-all-points/"
       },
       {
-        "title": "Spiral Matrix (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/spiral-matrix/"
-      },
-      {
-        "title": "Number of Islands (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/number-of-islands/"
+        "title": "Minimum Absolute Difference",
+        "hint": "Sort the array first. The minimum absolute difference must occur between adjacent elements.",
+        "url": "https://leetcode.com/problems/minimum-absolute-difference/"
       }
     ]
   },
@@ -74,6 +59,16 @@
         "title": "Find All Duplicates in an Array (Medium)",
         "hint": "Because all values are in range 1..N, you can use the array's own indices as a visited-marker — negate the value at the index corresponding to each number you see.",
         "url": "https://leetcode.com/problems/find-all-duplicates-in-an-array/"
+      },
+      {
+        "title": "Missing Number",
+        "hint": "You can use XOR or the mathematical formula for the sum of the first N numbers to find the missing one in O(n) time.",
+        "url": "https://leetcode.com/problems/missing-number/"
+      },
+      {
+        "title": "Find All Numbers Disappeared in an Array",
+        "hint": "Since numbers are in the range [1, n], you can negate the value at the index corresponding to each number. Positive values left indicate missing numbers.",
+        "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/"
       }
     ]
   },
@@ -122,6 +117,16 @@
         "title": "Subarray Sum Equals K (Medium)",
         "hint": "A prefix sum tells you the cumulative total up to each index — if two prefix sums differ by K, the subarray between them sums to K. Use a hash map to check this in O(1).",
         "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
+      },
+      {
+        "title": "Spiral Matrix",
+        "hint": "Maintain four boundaries (top, bottom, left, right) and shrink them as you traverse the matrix in a spiral order.",
+        "url": "https://leetcode.com/problems/spiral-matrix/"
+      },
+      {
+        "title": "Range Sum Query - Immutable",
+        "hint": "Precompute an array of prefix sums. The sum of range [left, right] is prefix[right] - prefix[left-1].",
+        "url": "https://leetcode.com/problems/range-sum-query-immutable/"
       }
     ]
   },
@@ -148,8 +153,8 @@
         "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
       },
       {
-        "title": "Stack Sorting (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Stack Sorting",
+        "hint": "Use an auxiliary stack. Pop from the main stack, and while the auxiliary stack top is larger, pop it and push to the main stack, then push the element.",
         "url": "https://www.geeksforgeeks.org/sort-a-stack-using-recursion/"
       }
     ]
@@ -201,19 +206,14 @@
         "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
       },
       {
-        "title": "Contains Duplicate II (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Contains Duplicate II",
+        "hint": "Maintain a sliding window of size k using a HashSet, or use a HashMap to store the last seen index of each element.",
         "url": "https://leetcode.com/problems/contains-duplicate-ii/"
       },
       {
-        "title": "Minimum Absolute Difference (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/minimum-absolute-difference/"
-      },
-      {
-        "title": "Minimum Size Subarray Sum (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/minimum-size-subarray-sum/"
+        "title": "Best Time to Buy and Sell Stock",
+        "hint": "Keep track of the minimum price seen so far and update the maximum profit at each step.",
+        "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
       }
     ]
   },
@@ -238,6 +238,11 @@
         "title": "Fruit Into Baskets (Medium)",
         "hint": "This is 'longest subarray with at most 2 distinct values' — classic variable sliding window with a frequency map.",
         "url": "https://leetcode.com/problems/fruit-into-baskets/"
+      },
+      {
+        "title": "Minimum Size Subarray Sum",
+        "hint": "Use two pointers to create a dynamic window. Expand the right pointer to increase the sum, and shrink the left pointer to minimize the size while the sum is >= target.",
+        "url": "https://leetcode.com/problems/minimum-size-subarray-sum/"
       }
     ]
   },
@@ -312,18 +317,13 @@
         "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
       },
       {
-        "title": "Best Time to Buy and Sell Stock (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
-      },
-      {
-        "title": "Squares of a Sorted Array (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Squares of a Sorted Array",
+        "hint": "Use two pointers, one at the start and one at the end. Compare the absolute values, square the larger one, and place it at the end of the result array.",
         "url": "https://leetcode.com/problems/squares-of-a-sorted-array/"
       },
       {
-        "title": "Longest Mountain in Array (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Longest Mountain in Array",
+        "hint": "Find the peak of the mountain first, then expand outwards with two pointers to measure its length.",
         "url": "https://leetcode.com/problems/longest-mountain-in-array/"
       }
     ]
@@ -447,23 +447,23 @@
         "url": "https://leetcode.com/problems/linked-list-cycle/"
       },
       {
-        "title": "Middle of the Linked List (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Middle of the Linked List",
+        "hint": "Use the slow and fast pointer technique. Move slow by one step and fast by two steps; when fast reaches the end, slow is at the middle.",
         "url": "https://leetcode.com/problems/middle-of-the-linked-list/"
       },
       {
-        "title": "Remove Linked List Elements (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Remove Linked List Elements",
+        "hint": "Use a dummy head node to simplify edge cases (like removing the actual head). Iterate through and skip nodes with the target value.",
         "url": "https://leetcode.com/problems/remove-linked-list-elements/"
       },
       {
-        "title": "Reverse Linked List II (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Reverse Linked List II",
+        "hint": "Traverse to the node just before the start of the sublist, then reverse the sublist in-place by carefully updating pointers.",
         "url": "https://leetcode.com/problems/reverse-linked-list-ii/"
       },
       {
-        "title": "Palindrome Linked List (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Palindrome Linked List",
+        "hint": "Find the middle using slow/fast pointers, reverse the second half, and compare it with the first half.",
         "url": "https://leetcode.com/problems/palindrome-linked-list/"
       }
     ]
@@ -611,9 +611,14 @@
         "url": "https://leetcode.com/problems/number-of-1-bits/"
       },
       {
-        "title": "Single Number (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Single Number",
+        "hint": "XOR all the elements together. Since XORing a number with itself yields 0, the paired numbers will cancel out, leaving only the single number.",
         "url": "https://leetcode.com/problems/single-number/"
+      },
+      {
+        "title": "Counting Bits",
+        "hint": "The number of 1s in `n` is the number of 1s in `n >> 1` plus `n & 1`. You can build this dynamically.",
+        "url": "https://leetcode.com/problems/counting-bits/"
       }
     ]
   },
@@ -640,38 +645,28 @@
         "url": "https://leetcode.com/problems/same-tree/"
       },
       {
-        "title": "Average of Levels in Binary Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/average-of-levels-in-binary-tree/"
-      },
-      {
-        "title": "Minimum Depth of Binary Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Minimum Depth of Binary Tree",
+        "hint": "Use BFS to find the first leaf node (no children), or use DFS and return the minimum of the depths of the left and right subtrees (handle single child cases!).",
         "url": "https://leetcode.com/problems/minimum-depth-of-binary-tree/"
       },
       {
-        "title": "Find Max and Min Node in a Binary Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Find Max and Min Node in a Binary Tree",
+        "hint": "Traverse the entire tree (using DFS or BFS) and keep track of the maximum and minimum values seen so far.",
         "url": "https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/"
       },
       {
-        "title": "Binary Tree Level Order Traversal (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
-      },
-      {
-        "title": "Path Sum (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Path Sum",
+        "hint": "Recursively subtract the node's value from the target. When reaching a leaf, check if the remaining target equals the leaf's value.",
         "url": "https://leetcode.com/problems/path-sum/"
       },
       {
-        "title": "Diameter of Binary Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Diameter of Binary Tree",
+        "hint": "The diameter passes through some node. For each node, it is the depth of the left subtree + depth of the right subtree. Keep a global max.",
         "url": "https://leetcode.com/problems/diameter-of-binary-tree/"
       },
       {
-        "title": "Lowest Common Ancestor of a Binary Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Lowest Common Ancestor of a Binary Tree",
+        "hint": "Use DFS. If the current node is p or q, return it. If both left and right return a valid node, the current node is the LCA.",
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
       }
     ]
@@ -723,19 +718,29 @@
         "url": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
       },
       {
-        "title": "Implement Stack Using Queues (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Implement Stack Using Queues",
+        "hint": "Use a single queue. When pushing a new element, enqueue it and then dequeue and enqueue all previous elements to reverse the order.",
         "url": "https://leetcode.com/problems/implement-stack-using-queues/"
       },
       {
-        "title": "Time Needed to Buy Tickets (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Time Needed to Buy Tickets",
+        "hint": "You can simulate the queue or use a single pass: count full tickets for people before k and up to tickets[k]-1 for people after k.",
         "url": "https://leetcode.com/problems/time-needed-to-buy-tickets/"
       },
       {
-        "title": "Reverse First K Elements of a Queue (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Reverse First K Elements of a Queue",
+        "hint": "Dequeue the first K elements into a stack, then pop from the stack and enqueue them back. Finally, rotate the remaining N-K elements.",
         "url": "https://www.geeksforgeeks.org/reversing-the-first-k-elements-of-a-queue/"
+      },
+      {
+        "title": "Average of Levels in Binary Tree",
+        "hint": "Use BFS with a queue. At each level, calculate the sum of the nodes and divide by the size of the queue for that level.",
+        "url": "https://leetcode.com/problems/average-of-levels-in-binary-tree/"
+      },
+      {
+        "title": "Binary Tree Level Order Traversal",
+        "hint": "Use a queue. Process nodes level by level by iterating exactly queue.length times per level.",
+        "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
       }
     ]
   },
@@ -762,43 +767,43 @@
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
       },
       {
-        "title": "Search in a Binary Search Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Search in a Binary Search Tree",
+        "hint": "Exploit the BST property: if the value is less than the current node, search left; if greater, search right.",
         "url": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
       },
       {
-        "title": "Insert into a Binary Search Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Insert into a Binary Search Tree",
+        "hint": "Traverse down the tree similarly to searching. When you hit a null child in the correct direction, attach the new node there.",
         "url": "https://leetcode.com/problems/insert-into-a-binary-search-tree/"
       },
       {
-        "title": "Convert Sorted Array to Binary Search Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Convert Sorted Array to Binary Search Tree",
+        "hint": "Find the middle of the array to use as the root, then recursively build the left and right subtrees from the left and right halves.",
         "url": "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/"
       },
       {
-        "title": "Two Sum IV - Input is a BST (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Two Sum IV - Input is a BST",
+        "hint": "Use an in-order traversal to get a sorted array and apply the two-pointer approach, or use a HashSet during traversal.",
         "url": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/"
       },
       {
-        "title": "Lowest Common Ancestor of a Binary Search Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Lowest Common Ancestor of a Binary Search Tree",
+        "hint": "Use the BST property: if both p and q are smaller than the current node, the LCA is in the left subtree. If both are larger, it's in the right subtree.",
         "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
       },
       {
-        "title": "Minimum Absolute Difference in BST (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Minimum Absolute Difference in BST",
+        "hint": "Perform an in-order traversal (which visits nodes in sorted order) and keep track of the minimum difference between the current and previous nodes.",
         "url": "https://leetcode.com/problems/minimum-absolute-difference-in-bst/"
       },
       {
-        "title": "Balance a Binary Search Tree (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Balance a Binary Search Tree",
+        "hint": "Extract all values with an in-order traversal, then rebuild a balanced BST by continually selecting the middle element as the root.",
         "url": "https://leetcode.com/problems/balance-a-binary-search-tree/"
       },
       {
-        "title": "Delete Node in a BST (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Delete Node in a BST",
+        "hint": "If the node has two children, find its in-order successor (minimum in right subtree), replace the node's value with it, and delete the successor.",
         "url": "https://leetcode.com/problems/delete-node-in-a-bst/"
       }
     ]
@@ -898,8 +903,8 @@
         "url": "https://leetcode.com/problems/task-scheduler/"
       },
       {
-        "title": "K Closest Points to Origin (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "K Closest Points to Origin",
+        "hint": "Calculate the Euclidean distance and use a max-heap of size k to keep track of the closest points.",
         "url": "https://leetcode.com/problems/k-closest-points-to-origin/"
       }
     ]
@@ -927,24 +932,19 @@
         "url": "https://leetcode.com/problems/flood-fill/"
       },
       {
-        "title": "Clone Graph (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Clone Graph",
+        "hint": "Use DFS or BFS to traverse the graph while maintaining a hash map from original nodes to their copies to avoid infinite loops.",
         "url": "https://leetcode.com/problems/clone-graph/"
       },
       {
-        "title": "Graph Core Operations (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Graph Core Operations",
+        "hint": "Master the adjacency list representation. Practice both BFS (using a queue) and DFS (using recursion or a stack) to visit all reachable nodes.",
         "url": "https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/"
       },
       {
-        "title": "Cheapest Flights Within K Stops (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
-      },
-      {
-        "title": "Course Schedule (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/course-schedule/"
+        "title": "Number of Islands",
+        "hint": "Iterate through the grid. When you find land ('1'), start a DFS or BFS to sink the island (turn to '0') and increment your island count.",
+        "url": "https://leetcode.com/problems/number-of-islands/"
       }
     ]
   },
@@ -969,6 +969,11 @@
         "title": "Graph Valid Tree (Medium)",
         "hint": "A valid tree has exactly N-1 edges and is fully connected — check both conditions, or run DFS to verify no cycle exists.",
         "url": "https://leetcode.com/problems/graph-valid-tree/"
+      },
+      {
+        "title": "Course Schedule",
+        "hint": "This is cycle detection in a directed graph. Use Kahn's algorithm (indegree counting) or DFS to find if a cycle exists.",
+        "url": "https://leetcode.com/problems/course-schedule/"
       }
     ]
   },
@@ -1017,6 +1022,11 @@
         "title": "Find All Possible Recipes from Given Supplies (Medium)",
         "hint": "Model ingredients and recipes as a DAG; apply topological sort — a recipe is makeable if all its ingredient prerequisites were processed before it.",
         "url": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/"
+      },
+      {
+        "title": "Cheapest Flights Within K Stops",
+        "hint": "Use Bellman-Ford or a modified Dijkstra's algorithm (BFS with a priority queue tracking cost and stops) to find the cheapest path.",
+        "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
       }
     ]
   },
@@ -1091,13 +1101,13 @@
         "url": "https://leetcode.com/problems/permutations/"
       },
       {
-        "title": "Letter Case Permutation (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Letter Case Permutation",
+        "hint": "For each character, if it's a letter, branch into two paths (lowercase and uppercase). If it's a number, just continue.",
         "url": "https://leetcode.com/problems/letter-case-permutation/"
       },
       {
-        "title": "Combinations (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Combinations",
+        "hint": "Build combinations of size k by selecting numbers from 1 to n. Use backtracking to try different combinations, maintaining a start index.",
         "url": "https://leetcode.com/problems/combinations/"
       }
     ]
@@ -1149,24 +1159,14 @@
         "url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
       },
       {
-        "title": "Coin Change (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Coin Change",
+        "hint": "Use DP to store the minimum coins needed for each amount up to the target. For each amount, try all coins.",
         "url": "https://leetcode.com/problems/coin-change/"
       },
       {
-        "title": "Maximum Subarray (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
+        "title": "Maximum Subarray",
+        "hint": "Use Kadane's Algorithm: keep a running sum, and if it drops below 0, reset it to 0. Update the max sum seen so far.",
         "url": "https://leetcode.com/problems/maximum-subarray/"
-      },
-      {
-        "title": "Counting Bits (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/counting-bits/"
-      },
-      {
-        "title": "Range Sum Query - Immutable (Practice)",
-        "hint": "Practice this core problem to solidify the topic concepts.",
-        "url": "https://leetcode.com/problems/range-sum-query-immutable/"
       }
     ]
   },
